@@ -39,6 +39,10 @@ h2, h3, h4, h5 {
   color: var(--MAIN-TITLES-TEXT-color) !important;
 }
 
+h2 {
+  border-bottom: 1px solid black;
+}
+
 a {
   color: var(--MAIN-LINK-color);
 }
@@ -53,6 +57,32 @@ a:hover {
 
 #sidebar ul li.visited > a .read-icon {
 color: var(--MENU-VISITED-color);
+}
+
+#chapter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem 0;
+}
+#chapter #body-inner {
+  padding-bottom: 3rem;
+  max-width: 80%;
+}
+#chapter h3 {
+  font-family: "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-weight: 300;
+  text-align: center;
+}
+#chapter h1 {
+  font-size: 5rem;
+  border-bottom: 4px solid #F0F2F4;
+}
+#chapter p {
+  text-align: left;
+  font-size: 1rem;
+  font-family: "Open Sans";
 }
 
 #body a.highlight:after {
@@ -100,4 +130,36 @@ border-color: var(--MENU-SEARCH-BOX-color);
 
 #sidebar hr {
   border-color: var(--MENU-SECTION-HR-color);
+}
+
+@font-face {
+  font-family: 'Good Times Rg';
+  src: url('../fonts/GoodTimesRg-Regular.eot');
+  src: url('../fonts/GoodTimesRg-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/GoodTimesRg-Regular.woff2') format('woff2'),
+      url('../fonts/GoodTimesRg-Regular.woff') format('woff'),
+      url('../fonts/GoodTimesRg-Regular.ttf') format('truetype'),
+      url('../fonts/GoodTimesRg-Regular.svg#GoodTimesRg-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body #chapter h1 {
+  font-size: 3rem;
+  font-family: "Good Times Rg";
+  letter-spacing: 0.3rem;
+}
+
+h1 {
+  font-family: "Good Times Rg", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  text-align: center;
+  letter-spacing: 1.1rem;
+  text-transform: uppercase;
+  color: #222;
+  font-weight: 200;
+}
+
+
+#body-inner ul li {
+	font-family: "Open Sans", sans-serif;
 }
