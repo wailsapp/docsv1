@@ -7,4 +7,4 @@ chapter = true
 
 # Reference
 
-A reference guide to Wails and the Wails runtime
+This section goes into detail about the components of the Wails framework
