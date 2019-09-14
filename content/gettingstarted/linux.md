@@ -8,6 +8,33 @@ disableNextPrev: true
 
 There are many Linux distributions in existence and we strive to support as many as possible. 
 
+_If you don't see your distro in the lists bellow you have two options. Either open a ticket asking for support or if you feel adventurus follow the [guide how to add support for your linux distro]({{}}) and also consider making a PR so the community  can benefit._
+
+### Oficially supported distros:
+
+Distro  | Version
+--------|--------
+Debian  | 8, 9, 10
+Ubuntu  | 16.04, 18,04, 19.04
+Arch    | Rolling
+CentOS  | 6, 7
+Fedora  | 29, 30
+
+
+### Community supported distros:
+
+Distro  | Version
+--------|--------
+Zorin   | 15
+Parrot  | 4.7
+Mint    | 19
+Elementary | 5
+Kali    | Rolling
+Neon    | 5.16
+VoidLinux & VoidLinux-musl | Rolling
+Gentoo  | Rolling
+
+
 ## Prerequisites
 
 Wails uses cgo to bind to the native rendering engines so a number of platform dependent libraries are needed as well as an installation of Go. The basic requirements are:
@@ -22,7 +49,7 @@ Download Go either using your system package manager or from the [Go Downloads P
 
 Ensure that you follow the official [Go installation instructions](https://golang.org/doc/install#install). 
 
-Add `$GOPATH/bin` to the `PATH` and `on` to the `GO111MODULE` environment variables. You can do this by adding this line to your `/etc/profile` (for a system-wide installation) or `$HOME/.profile`:
+Add `$GOPATH/bin` to the `PATH` and `on` to the `GO111MODULE` environment variables. You can do this by adding these lines to your `/etc/profile` (for a system-wide installation) or `$HOME/.profile`:
 
 ```bash
 export PATH=$PATH:$GOPATH/bin
@@ -44,33 +71,21 @@ Run `npm --version` to verify.
 
 For Linux, Wails uses `gcc`, `webkit` and `GTK`. These need to be installed using the distribution specific commands below.
 
-#### Debian/Ubuntu
+#### Debian/Ubuntu & derivatives
 
 `sudo apt install build-essential libgtk-3-dev libwebkit2gtk-4.0-dev`
 
-_Debian: 8, 9, 10_
-
-_Ubuntu: 16.04, 18.04, 19.04_
-
-_Also succesfully tested on: Zorin 15, Parrot 4.7, Linuxmint 19, Elementary 5, Kali, Neon_
-
-#### Arch Linux
+#### Arch Linux & derivatives
 
 `sudo pacman -S gcc pkgconf webkit2gtk gtk3`
-
-_Also succesfully test on: ArcoLinuxB_
 
 #### Centos
 
 `sudo yum install gcc-c++ make pkgconf-pkg-config webkitgtk3-devel gtk3-devel`
 
-_CentOS 6, 7_
-
 #### Fedora
 
 `sudo yum install gcc-c++ make pkgconf-pkg-config webkit2gtk3-devel gtk3-devel`
-
-_Fedora 29, 30_
 
 #### VoidLinux & VoidLinux-musl
 

@@ -9,10 +9,14 @@ chapter = true
 
 ## Guides
 
-* using Yarn instead of npm
-* using events with react
-* adding support for your (linux) distro
+### npm, JS
+* Switch to Yarn
+* events with react template
 * creating a new `nuxt` project
+
+### Linux
+* add support for your Linux distro
+* snap your application
 
 ## Tutorials
 
