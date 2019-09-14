@@ -5,7 +5,7 @@ weight = 10
 chapter = false
 +++
 
-Wails officially supports only npm. But if you wish to use `Yarn` instead, switching is really easy. 
+Wails officially supports only `npm`. But if you wish to use `Yarn` instead, switching is really easy. 
 
 [On a newly created project]({{}}), locate the file `project.json`.
 
