@@ -11,7 +11,7 @@ disableNextPrev = true
 <p style="text-align: center; margin-top: 2rem;">Please select your Operating System</p>
 
 <div>
-<a href="/gettingstarted/mac/" style="color:black; font-size: 5rem; margin: 1rem;"><i class="fab fa-apple"></i> <span style="color:black; font-size: 2rem;">Mac</span></a>
-<a href="/gettingstarted/linux/" style="color:black; font-size: 5rem; margin: 1rem;"><i class="fab fa-linux"></i> <span style="color:black; font-size: 2rem;">Linux</span></a>
-<a href="/gettingstarted/windows/" style="color:black; font-size: 5rem; margin: 1rem;"><i class="fab fa-windows"></i> <span style="color:black; font-size: 2rem;">Windows</span></a>
+<a href="/gettingstarted/mac/" style="color:black; font-size: 5rem; margin: 1rem;"><i class="fab fa-apple" style="text-shadow: 3px 3px 5px #ccc;"></i> <span style="color:black; font-size: 2rem;">Mac</span></a>
+<a href="/gettingstarted/linux/" style="color:black; font-size: 5rem; margin: 1rem;"><i class="fab fa-linux" style="text-shadow: 3px 3px 5px #ccc;"></i> <span style="color:black; font-size: 2rem;">Linux</span></a>
+<a href="/gettingstarted/windows/" style="color:black; font-size: 5rem; margin: 1rem;"><i class="fab fa-windows" style="text-shadow: 3px 3px 5px #ccc;"></i> <span style="color:black; font-size: 2rem;">Windows</span></a>
 </div>
