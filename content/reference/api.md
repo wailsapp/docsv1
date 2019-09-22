@@ -7,11 +7,16 @@ chapter = false
 
 ### Binding
 
-Having just a web frontend means nothing unless you can interact with the system. Wails enables this through 'binding' - making Go code callable from the frontend. There are 2 types of code you can bind to the frontend: Functions and Struct Methods. When they are bound, they may be used in the frontend.
+Having just a web frontend means nothing unless you can interact with the system. Wails enables this through 'binding' - making Go code callable from the frontend. There are 2 types of code you can bind to the frontend: 
+  
+  * Functions
+  * Struct Methods
+  
+  When they are bound, they may be used in the frontend.
 
 #### Functions
 
-Binding a function is as easy as this:
+Binding a function is as easy as calling `Bind` with the function name:
 
 {{< highlight go "hl_lines=18" >}}
 package main
@@ -39,10 +44,9 @@ func main() {
 
 When this is run, a Javascript function called 'Greet' is made available under the global 'backend' object. The function may be invoked by calling `backend.Greet`, EG: `backend.Greet("World")`. The dynamically generated functions return a standard promise. For this simple example, you could therefore print the result as so: `backend.Greet("World").then(console.log)`.
 
+#### Struct Methods
 
-#### Structs
-
-It is possible to bind structs to the frontend in a similar way but we must be clear on what this means: Binding a struct simply means exposing the public methods of the struct to the frontend. Wails does not attempt, or even believe, that binding data to the frontend is a good thing. Wails views the frontend as primarily a view layer with state and business logic normally handled by Go. As such, the structs that you bind to the front end should be viewed as a "wrapper" or an "interface".
+It is possible to bind struct methods to the frontend in a similar way. This is done by binding an instance of the struct you wish to use in the frontend. When this is done, all public methods of the struct will be made available to the frontend. Wails does not attempt, or even believe, that binding data to the frontend is a good thing. Wails views the frontend as primarily a view layer with state and business logic normally handled by the backend in Go. As such, the structs that you bind to the front end should be viewed as a "wrapper" or an "interface" onto your business logic.
 
 Binding a struct is as easy as:
 
