@@ -10,7 +10,6 @@ chapter = true
 ## Guides
 
 ### npm, JS
-* [Switch to Yarn]({{}})
 * Events with React JS template
 * Creating new `nuxt` project
 
