@@ -28,7 +28,7 @@ Ensure that you follow the official [Go installation instructions](https://golan
 
 ### npm
 
-Download Go either using your system package manager or from the [Node Downloads Page](https://nodejs.org/en/download/). It is best to use the latest release as that is what we generally test against.
+Download NPM either using your system package manager or from the [Node Downloads Page](https://nodejs.org/en/download/). It is best to use the latest release as that is what we generally test against.
 
 Run `npm --version` to verify.
 
