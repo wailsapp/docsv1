@@ -66,7 +66,6 @@ Download `npm` either using your system package manager or from the [Node Downlo
 
 Run `npm --version` to verify.
 
-
 ### gcc, gtk, webkit
 
 For Linux, Wails uses `gcc`, `webkit` and `GTK`. These need to be installed using the distribution specific commands below.
