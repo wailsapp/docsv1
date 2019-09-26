@@ -3,7 +3,7 @@
 
 ## DEV TEST/BUILD
 
-The documentation site is build using the [Hugo](https://gohugo.io/) static site generation tool. To test, preview or get a real feel for the site, you will need to build the site from this repository.
+The documentation site is built using the [Hugo](https://gohugo.io/) static site generation tool. To test, preview or get a real feel for the site, you will need to build the site from this repository.
 
 This short document assumes that you are familiar with `git` and the associated shell tools for your platform. Please note that the initial example commands are based on Linux (but should work on a Mac). I would encourage those who have access to these systems to add the appropriate command samples to this document.
 
