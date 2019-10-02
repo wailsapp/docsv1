@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.56.3" />
+  <meta name="description" content="Official Wails Documentation">
+<meta name="author" content="Lea Anthony">
+
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+
+  <title>Development :: Wails</title>
+
+  
+  <link href="/css/nucleus.css?1569997042" rel="stylesheet">
+  <link href="/css/fontawesome-all.min.css?1569997042"
+    rel="stylesheet">
+  <link href="/css/hybrid.css?1569997042" rel="stylesheet">
+  <link href="/css/featherlight.min.css?1569997042" rel="stylesheet">
+  <link href="/css/perfect-scrollbar.min.css?1569997042"
+    rel="stylesheet">
+  <link href="/css/auto-complete.css?1569997042" rel="stylesheet">
+  <link href="/css/atom-one-dark-reasonable.css?1569997042"
+    rel="stylesheet">
+  <link href="/css/theme.css?1569997042" rel="stylesheet">
+  <link href="/css/hugo-theme.css?1569997042" rel="stylesheet">
+  
+  <link href="/css/theme-wails.css?1569997042"
+    rel="stylesheet">
+  
+
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Open+Sans|Red+Hat+Display&display=swap"
+    rel="stylesheet">
+  <script src="/js/jquery-3.3.1.min.js?1569997042"></script>
+
+  <style>
+    :root #header+#content>#left>#rlblock_left {
+      display: none !important;
+    }
+
+      {
+        {
+        if .Site.Params.disableInlineCopyToClipBoard
+      }
+    }
+
+    :not(pre)>code+span.copy-to-clipboard {
+      display: none;
+    }
+
+      {
+        {
+        end
+      }
+    }
+  </style>
+  
+</head>
+
+<body class="" data-url="/development/">
+  <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+  <a href="/"><img src="/img/wails-logo-white.svg" style="width:70%" /></a>
+</div>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1569997042"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1569997042"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/wails.app\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1569997042"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/about/" title="About" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/about/">
+          About
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/about/concepts/" title="Concepts" class="dd-item ">
+        <a href="/about/concepts/">
+        Concepts
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/gettingstarted/" title="Getting Started" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/gettingstarted/">
+          Getting Started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/gettingstarted/linux/" title="Linux" class="dd-item ">
+        <a href="/gettingstarted/linux/">
+        Linux
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/gettingstarted/mac/" title="Mac" class="dd-item ">
+        <a href="/gettingstarted/mac/">
+        Mac
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/gettingstarted/windows/" title="Windows" class="dd-item ">
+        <a href="/gettingstarted/windows/">
+        Windows
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/gettingstarted/installing/" title="Installing Wails" class="dd-item ">
+        <a href="/gettingstarted/installing/">
+        Installing Wails
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/" title="Reference" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/">
+          Reference
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/api/" title="API" class="dd-item ">
+        <a href="/reference/api/">
+        API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/runtime/" title="Runtime" class="dd-item ">
+        <a href="/reference/runtime/">
+        Runtime
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/cli/" title="CLI" class="dd-item ">
+        <a href="/reference/cli/">
+        CLI
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/" title="Guides" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/guides/">
+          Guides
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/guides/distro/" title="Add support for your Linux distro" class="dd-item ">
+        <a href="/guides/distro/">
+        Add support for your Linux distro
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/development/" title="Development" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/development/">
+          Development
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/releases/" title="Releases" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/releases/">
+          Releases
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+  <section id="body">
+    <div id="overlay"></div>
+    <div class="padding highlightable">
+      
+      <div>
+        <div id="top-bar">
+          
+          
+          
+          
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page'
+              href="https://github.com/wailsapp/docsv1/edit/master/content/development/_index.md" target="blank">
+              <i class="fas fa-code-branch"></i>
+              <span id="top-github-link-text">Edit this page</span>
+            </a>
+          </div>
+          
+          
+          
+          <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                <i class="fas fa-bars"></i>
+              </a>
+            </span>
+            
+            <span class="links">
+              
+              
+              Development
+              
+            </span>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div id="head-tags">
+        
+      </div>
+      
+      <div id="chapter">
+        
+        <div id="body-inner">
+          
+
+          
+
+
+	
+
+<h1 id="development">Development</h1>
+
+<p>In this section we cover all aspects of Wails development and contribution guidelines.</p>
+
+<h2 id="issue-driven-development">Issue Driven Development</h2>
+
+<p>If there is something to add to the code, whether a bug or enhancement, a ticket should be opened so that it can be discussed. If the coding goes ahead, a new branch should be created from the <code>develop</code> branch with a reference to the ticket ID, eg:
+  <code>64 - Support react</code></p>
+
+<p>Commit messages should follow the <a href="https://www.conventionalcommits.org/en/v1.0.0-beta.3/#summary">conventional commits</a> format:</p>
+
+<ul>
+<li>tag[(scope)]: message</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Meaning</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>fix</td>
+<td>Bugfix</td>
+</tr>
+
+<tr>
+<td>feat</td>
+<td>New Feature</td>
+</tr>
+
+<tr>
+<td>docs</td>
+<td>Documentation update</td>
+</tr>
+
+<tr>
+<td>BREAKING CHANGE</td>
+<td>API Change</td>
+</tr>
+</tbody>
+</table>
+
+<p>Examples:</p>
+
+<ul>
+<li>fix: this is a fix for the project as a whole</li>
+<li>fix(cli): this is a fix for the cli</li>
+<li>docs: updated the contributors</li>
+</ul>
+
+<h2 id="branch-workflow">Branch Workflow</h2>
+
+<ul>
+<li>Wails uses a gitflow-like approach to development</li>
+<li>Feature/Bugfix branches are created from the <code>develop</code> branch</li>
+<li>Once the work is complete, pull requests should be made against the develop branch</li>
+<li>As features are added, the <code>develop</code> branch is tagged with pre-release tags</li>
+<li>Releases are made weekly, so at the end of the weekly cycle, the latest features and bugfixes that      were made will be merged to master and tagged with the next appropriate version.</li>
+</ul>
+
+<p>Example:</p>
+
+<ul>
+<li>After release v0.14.0, a ticket (#63) is opened requesting react support</li>
+<li>This is worked on and a PR is made back to <code>develop</code></li>
+<li>Once merged, <code>develop</code> is tagged with <code>v0.14.1-pre</code></li>
+<li>A ticket (#64) is opened requesting ultralight support</li>
+<li>This is worked on and a PR is made back to <code>develop</code></li>
+<li>Once merged, <code>develop</code> is tagged with <code>v0.14.2-pre</code></li>
+<li>We reach the end of our week and merge v0.14.2-pre to master, tagging it as v0.15.0</li>
+<li>Work continues on the <code>devel</code> branch</li>
+</ul>
+
+<div class="imagecontainer">
+  <img src="/images/develbranch.png">
+</div>
+
+<h2 id="tooling">Tooling</h2>
+
+<p>The Wails cli has developer tooling built in, but needs activating. To create a developer version, do the following:</p>
+
+<pre><code>cd cmd/wails
+go install --tags=dev
+</code></pre>
+
+<p>This unlocks a <code>wails dev</code> command that has subcommands for development.</p>
+
+<h3 id="creating-new-project-templates">Creating new project templates</h3>
+
+<p>With a developer enabled cli, you can run <code>wails dev newtemplate</code> to create a new project template. You will be asked a number of questions regarding your template and as a result, a new directory will be created in <code>&lt;project-root&gt;/cmd/templates</code>.</p>
+
+<p>Here is an example run:</p>
+
+<pre><code>Wails v0.14.4-pre - Generating new project template
+
+? Please enter the name of your template (eg: React/Webpack Basic): Mithril Basic
+? Please enter a short description for the template (eg: React with Webpack 4): Mithril with Webpack 3
+? Please enter a long description: Mithril v2.0.0-rc.4 with Webpack 4
+? Please enter the name of the directory the frontend code resides (eg: frontend): frontend
+? Please enter the install command (eg: npm install): npm install
+? Please enter the build command (eg: npm run build): npm run build
+? Please enter the serve command (eg: npm run serve): npm run serve
+? Please enter the name of the directory to copy the wails bridge runtime (eg: src): src
+? Please enter a directory name for the template: mithril-basic
+Created new template 'Mithril Basic' in directory '/Users/lea/Projects/wails/cmd/templates/mithril-basic'
+</code></pre>
+
+<p>This generates the following <code>template.json</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Mithril Basic&#34;</span>,
+  <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;1.0.0&#34;</span>,
+  <span style="color:#f92672">&#34;shortdescription&#34;</span>: <span style="color:#e6db74">&#34;Mithril with Webpack 3&#34;</span>,
+  <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;Mithril v2.0.0-rc.4 with Webpack 4&#34;</span>,
+  <span style="color:#f92672">&#34;install&#34;</span>: <span style="color:#e6db74">&#34;npm install&#34;</span>,
+  <span style="color:#f92672">&#34;build&#34;</span>: <span style="color:#e6db74">&#34;npm run build&#34;</span>,
+  <span style="color:#f92672">&#34;author&#34;</span>: <span style="color:#e6db74">&#34;Duncan Disorderly &lt;frostyjack@sesh.com&gt;&#34;</span>,
+  <span style="color:#f92672">&#34;created&#34;</span>: <span style="color:#e6db74">&#34;2019-05-20 20:16:30.394489 +1000 AEST m=+159.490635188&#34;</span>,
+  <span style="color:#f92672">&#34;frontenddir&#34;</span>: <span style="color:#e6db74">&#34;frontend&#34;</span>,
+  <span style="color:#f92672">&#34;serve&#34;</span>: <span style="color:#e6db74">&#34;npm run serve&#34;</span>,
+  <span style="color:#f92672">&#34;bridge&#34;</span>: <span style="color:#e6db74">&#34;src&#34;</span>,
+  <span style="color:#f92672">&#34;wailsdir&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>
+}</code></pre></div>
+<p><em>Note: The <code>wailsdir</code> key is currently unused but will be used in place of bridge in the <a href="https://github.com/wailsapp/wails/issues/88">near future</a></em></p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+</div> 
+
+</div>
+
+
+</div>
+
+<div id="navigation">
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+
+    
+
+
+    
+    
+    
+    <a class="nav nav-prev" href="/guides/distro/" title="Add support for your Linux distro"> <i class="fa fa-chevron-left"></i></a>
+    
+    
+    <a class="nav nav-next" href="/releases/" title="Releases" style="margin-right: 0px;"><i
+            class="fa fa-chevron-right"></i></a>
+    
+    
+</div>
+
+</section>
+
+<div
+    style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+    <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+</div>
+<script
+    src="/js/clipboard.min.js?1569997042"></script>
+<script
+    src="/js/perfect-scrollbar.min.js?1569997042"></script>
+<script
+    src="/js/perfect-scrollbar.jquery.min.js?1569997042"></script>
+<script
+    src="/js/jquery.sticky.js?1569997042"></script>
+<script
+    src="/js/featherlight.min.js?1569997042"></script>
+<script
+    src="/js/highlight.pack.js?1569997042"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script
+    src="/js/modernizr.custom-3.6.0.js?1569997042"></script>
+<script src="/js/learn.js?1569997042"></script>
+<script
+    src="/js/hugo-learn.js?1569997042"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139310949-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+<link href="/mermaid/mermaid.css?1569997042"
+    rel="stylesheet" />
+<script
+    src="/mermaid/mermaid.js?1569997042"></script>
+<script>
+    mermaid.initialize({ startOnLoad: true });
+</script>
+
+
+</body>
+
+</html>

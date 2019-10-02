@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://wails.app/about/</loc>
+    <lastmod>2019-08-29T19:33:11+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wails.app/gettingstarted/</loc>
+    <lastmod>2019-08-29T04:51:27+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wails.app/gettingstarted/linux/</loc>
+    <lastmod>2019-08-29T04:54:28+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wails.app/gettingstarted/mac/</loc>
+    <lastmod>2019-08-29T04:54:28+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wails.app/gettingstarted/windows/</loc>
+    <lastmod>2019-08-29T04:54:28+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wails.app/reference/api/</loc>
+    <lastmod>2019-08-29T04:56:50+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wails.app/guides/distro/</loc>
+    <lastmod>2019-08-29T04:56:50+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wails.app/reference/</loc>
+    <lastmod>2019-08-29T04:56:50+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wails.app/reference/runtime/</loc>
+    <lastmod>2019-08-29T04:56:50+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wails.app/gettingstarted/installing/</loc>
+    <lastmod>2019-08-29T04:54:28+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wails.app/guides/</loc>
+    <lastmod>2019-08-29T04:56:56+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wails.app/reference/cli/</loc>
+    <lastmod>2019-08-29T04:56:50+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wails.app/development/</loc>
+    <lastmod>2019-08-29T04:51:27+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wails.app/releases/</loc>
+    <lastmod>2019-08-29T04:56:50+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wails.app/</loc>
+    <lastmod>2019-08-29T04:56:50+10:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wails.app/about/concepts/</loc>
+    <lastmod>2019-08-29T04:54:28+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wails.app/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wails.app/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

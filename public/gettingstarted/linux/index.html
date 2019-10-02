@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.56.3" />
+  <meta name="description" content="Official Wails Documentation">
+<meta name="author" content="Lea Anthony">
+
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+
+  <title>Linux :: Wails</title>
+
+  
+  <link href="/css/nucleus.css?1569997041" rel="stylesheet">
+  <link href="/css/fontawesome-all.min.css?1569997041"
+    rel="stylesheet">
+  <link href="/css/hybrid.css?1569997041" rel="stylesheet">
+  <link href="/css/featherlight.min.css?1569997041" rel="stylesheet">
+  <link href="/css/perfect-scrollbar.min.css?1569997041"
+    rel="stylesheet">
+  <link href="/css/auto-complete.css?1569997041" rel="stylesheet">
+  <link href="/css/atom-one-dark-reasonable.css?1569997041"
+    rel="stylesheet">
+  <link href="/css/theme.css?1569997041" rel="stylesheet">
+  <link href="/css/hugo-theme.css?1569997041" rel="stylesheet">
+  
+  <link href="/css/theme-wails.css?1569997041"
+    rel="stylesheet">
+  
+
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Open+Sans|Red+Hat+Display&display=swap"
+    rel="stylesheet">
+  <script src="/js/jquery-3.3.1.min.js?1569997041"></script>
+
+  <style>
+    :root #header+#content>#left>#rlblock_left {
+      display: none !important;
+    }
+
+      {
+        {
+        if .Site.Params.disableInlineCopyToClipBoard
+      }
+    }
+
+    :not(pre)>code+span.copy-to-clipboard {
+      display: none;
+    }
+
+      {
+        {
+        end
+      }
+    }
+  </style>
+  
+</head>
+
+<body class="" data-url="/gettingstarted/linux/">
+  <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+  <a href="/"><img src="/img/wails-logo-white.svg" style="width:70%" /></a>
+</div>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1569997041"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1569997041"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/wails.app\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1569997041"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/about/" title="About" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/about/">
+          About
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/about/concepts/" title="Concepts" class="dd-item ">
+        <a href="/about/concepts/">
+        Concepts
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/gettingstarted/" title="Getting Started" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/gettingstarted/">
+          Getting Started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/gettingstarted/linux/" title="Linux" class="dd-item active">
+        <a href="/gettingstarted/linux/">
+        Linux
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/gettingstarted/mac/" title="Mac" class="dd-item ">
+        <a href="/gettingstarted/mac/">
+        Mac
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/gettingstarted/windows/" title="Windows" class="dd-item ">
+        <a href="/gettingstarted/windows/">
+        Windows
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/gettingstarted/installing/" title="Installing Wails" class="dd-item ">
+        <a href="/gettingstarted/installing/">
+        Installing Wails
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/" title="Reference" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/">
+          Reference
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/api/" title="API" class="dd-item ">
+        <a href="/reference/api/">
+        API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/runtime/" title="Runtime" class="dd-item ">
+        <a href="/reference/runtime/">
+        Runtime
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/cli/" title="CLI" class="dd-item ">
+        <a href="/reference/cli/">
+        CLI
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/" title="Guides" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/guides/">
+          Guides
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/guides/distro/" title="Add support for your Linux distro" class="dd-item ">
+        <a href="/guides/distro/">
+        Add support for your Linux distro
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/development/" title="Development" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/development/">
+          Development
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/releases/" title="Releases" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/releases/">
+          Releases
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+  <section id="body">
+    <div id="overlay"></div>
+    <div class="padding highlightable">
+      
+      <div>
+        <div id="top-bar">
+          
+          
+          
+          
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page'
+              href="https://github.com/wailsapp/docsv1/edit/master/content/gettingstarted/linux.md" target="blank">
+              <i class="fas fa-code-branch"></i>
+              <span id="top-github-link-text">Edit this page</span>
+            </a>
+          </div>
+          
+          
+          
+          <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                <i class="fas fa-bars"></i>
+              </a>
+            </span>
+            
+            <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+            
+            <span class="links">
+              
+              
+              
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href='/'>Wails</a> > <a href='/gettingstarted/'>Getting Started</a> > Linux
+          
+          
+          
+          
+          
+          
+              
+            </span>
+          </div>
+          
+          <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#oficially-supported-distros">Oficially supported distros:</a></li>
+<li><a href="#community-supported-distros">Community supported distros:</a></li>
+</ul></li>
+<li><a href="#prerequisites">Prerequisites</a>
+<ul>
+<li><a href="#go">Go</a></li>
+<li><a href="#npm">npm</a></li>
+<li><a href="#gcc-gtk-webkit">gcc, gtk, webkit</a>
+<ul>
+<li><a href="#debian-ubuntu-derivatives">Debian/Ubuntu &amp; derivatives</a></li>
+<li><a href="#arch-linux-derivatives">Arch Linux &amp; derivatives</a></li>
+<li><a href="#centos">Centos</a></li>
+<li><a href="#fedora">Fedora</a></li>
+<li><a href="#voidlinux-voidlinux-musl">VoidLinux &amp; VoidLinux-musl</a></li>
+<li><a href="#gentoo">Gentoo</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+          
+        </div>
+      </div>
+      
+      <div id="head-tags">
+        
+      </div>
+      
+        <div id="body-inner">
+          
+          <h1>
+            
+            Linux
+          </h1>
+          
+
+          
+
+
+
+<p>There are many Linux distributions in existence and we strive to support as many as possible.</p>
+
+<h3 id="oficially-supported-distros">Oficially supported distros:</h3>
+
+<table>
+<thead>
+<tr>
+<th>Distro</th>
+<th>Version</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Debian</td>
+<td>8, 9, 10</td>
+</tr>
+
+<tr>
+<td>Ubuntu</td>
+<td>16.04, 18,04, 19.04</td>
+</tr>
+
+<tr>
+<td>Arch</td>
+<td>Rolling</td>
+</tr>
+
+<tr>
+<td>CentOS</td>
+<td>6, 7</td>
+</tr>
+
+<tr>
+<td>Fedora</td>
+<td>29, 30</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="community-supported-distros">Community supported distros:</h3>
+
+<table>
+<thead>
+<tr>
+<th>Distro</th>
+<th>Version</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Zorin</td>
+<td>15</td>
+</tr>
+
+<tr>
+<td>Parrot</td>
+<td>4.7</td>
+</tr>
+
+<tr>
+<td>Mint</td>
+<td>19</td>
+</tr>
+
+<tr>
+<td>Elementary</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>Kali</td>
+<td>Rolling</td>
+</tr>
+
+<tr>
+<td>Neon</td>
+<td>5.16</td>
+</tr>
+
+<tr>
+<td>VoidLinux &amp; VoidLinux-musl</td>
+<td>Rolling</td>
+</tr>
+
+<tr>
+<td>Gentoo</td>
+<td>Rolling</td>
+</tr>
+</tbody>
+</table>
+
+<p><em>If you don&rsquo;t see your distro in the lists bellow you have two options. Either open a ticket asking for support or if you feel adventurus follow the <a href="{{}}">guide how to add support for your linux distro</a> and also consider making a PR so the community  can benefit.</em></p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Wails uses cgo to bind to the native rendering engines so a number of platform dependent libraries are needed as well as an installation of Go. The basic requirements are:</p>
+
+<ul>
+<li>Go 1.12 or above</li>
+<li>npm</li>
+<li>gcc, gtk, webkitgtk</li>
+</ul>
+
+<h3 id="go">Go</h3>
+
+<p>Download Go either using your system package manager or from the <a href="https://golang.org/dl/">Go Downloads Page</a>.</p>
+
+<p>Ensure that you follow the official <a href="https://golang.org/doc/install#install">Go installation instructions</a>.</p>
+
+<p>Add <code>$GOPATH/bin</code> to the <code>PATH</code> and <code>on</code> to the <code>GO111MODULE</code> environment variables. You can do this by adding these lines to your <code>/etc/profile</code> (for a system-wide installation) or <code>$HOME/.profile</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export PATH<span style="color:#f92672">=</span>$PATH:$GOPATH/bin
+export GO111MODULE<span style="color:#f92672">=</span>on</code></pre></div>
+
+<div class="notices note" ><p><em>Note: changes made to a profile file may not apply until the next time you log into your computer. To apply the changes immediately, just run the shell commands directly or execute them from the profile using a command such as <code>source $HOME/.profile</code>.</em></p>
+</div>
+
+
+<h3 id="npm">npm</h3>
+
+<p>Download <code>npm</code> either using your system package manager or from the <a href="https://nodejs.org/en/download/">Node Downloads Page</a>. It is best to use the latest release as that is what we generally test against.</p>
+
+<p>Run <code>npm --version</code> to verify.</p>
+
+<h3 id="gcc-gtk-webkit">gcc, gtk, webkit</h3>
+
+<p>For Linux, Wails uses <code>gcc</code>, <code>webkit</code> and <code>GTK</code>. These need to be installed using the distribution specific commands below.</p>
+
+<h4 id="debian-ubuntu-derivatives">Debian/Ubuntu &amp; derivatives</h4>
+
+<p><code>sudo apt install build-essential libgtk-3-dev libwebkit2gtk-4.0-dev</code></p>
+
+<h4 id="arch-linux-derivatives">Arch Linux &amp; derivatives</h4>
+
+<p><code>sudo pacman -S gcc pkgconf webkit2gtk gtk3</code></p>
+
+<h4 id="centos">Centos</h4>
+
+<p><code>sudo yum install gcc-c++ make pkgconf-pkg-config webkitgtk3-devel gtk3-devel</code></p>
+
+<h4 id="fedora">Fedora</h4>
+
+<p><code>sudo yum install gcc-c++ make pkgconf-pkg-config webkit2gtk3-devel gtk3-devel</code></p>
+
+<h4 id="voidlinux-voidlinux-musl">VoidLinux &amp; VoidLinux-musl</h4>
+
+<p><code>xbps-install base-devel gtk+3-devel webkit2gtk-devel</code></p>
+
+<h4 id="gentoo">Gentoo</h4>
+
+<p><code>sudo emerge gtk+:3 webkit-gtk</code></p>
+
+
+<div class="notices note" ><p>If you have successfully installed these dependencies on a different flavour of Linux, please consider clicking the &ldquo;Edit this page&rdquo; link at the top of the page and submit a PR.</p>
+</div>
+
+
+<p>Now you are ready to move on to the next step of <a href="/gettingstarted/installing/">installing Wails</a>.</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+
+</div>
+
+
+</div>
+
+<div id="navigation">
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+
+    
+
+
+    
+    
+</div>
+
+</section>
+
+<div
+    style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+    <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+</div>
+<script
+    src="/js/clipboard.min.js?1569997041"></script>
+<script
+    src="/js/perfect-scrollbar.min.js?1569997041"></script>
+<script
+    src="/js/perfect-scrollbar.jquery.min.js?1569997041"></script>
+<script
+    src="/js/jquery.sticky.js?1569997041"></script>
+<script
+    src="/js/featherlight.min.js?1569997041"></script>
+<script
+    src="/js/highlight.pack.js?1569997041"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script
+    src="/js/modernizr.custom-3.6.0.js?1569997041"></script>
+<script src="/js/learn.js?1569997041"></script>
+<script
+    src="/js/hugo-learn.js?1569997041"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139310949-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+<link href="/mermaid/mermaid.css?1569997041"
+    rel="stylesheet" />
+<script
+    src="/mermaid/mermaid.js?1569997041"></script>
+<script>
+    mermaid.initialize({ startOnLoad: true });
+</script>
+
+
+</body>
+
+</html>

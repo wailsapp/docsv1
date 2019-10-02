@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.56.3" />
+  <meta name="description" content="Official Wails Documentation">
+<meta name="author" content="Lea Anthony">
+
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+
+  <title>Concepts :: Wails</title>
+
+  
+  <link href="/css/nucleus.css?1569997042" rel="stylesheet">
+  <link href="/css/fontawesome-all.min.css?1569997042"
+    rel="stylesheet">
+  <link href="/css/hybrid.css?1569997042" rel="stylesheet">
+  <link href="/css/featherlight.min.css?1569997042" rel="stylesheet">
+  <link href="/css/perfect-scrollbar.min.css?1569997042"
+    rel="stylesheet">
+  <link href="/css/auto-complete.css?1569997042" rel="stylesheet">
+  <link href="/css/atom-one-dark-reasonable.css?1569997042"
+    rel="stylesheet">
+  <link href="/css/theme.css?1569997042" rel="stylesheet">
+  <link href="/css/hugo-theme.css?1569997042" rel="stylesheet">
+  
+  <link href="/css/theme-wails.css?1569997042"
+    rel="stylesheet">
+  
+
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Open+Sans|Red+Hat+Display&display=swap"
+    rel="stylesheet">
+  <script src="/js/jquery-3.3.1.min.js?1569997042"></script>
+
+  <style>
+    :root #header+#content>#left>#rlblock_left {
+      display: none !important;
+    }
+
+      {
+        {
+        if .Site.Params.disableInlineCopyToClipBoard
+      }
+    }
+
+    :not(pre)>code+span.copy-to-clipboard {
+      display: none;
+    }
+
+      {
+        {
+        end
+      }
+    }
+  </style>
+  
+</head>
+
+<body class="" data-url="/about/concepts/">
+  <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+  <a href="/"><img src="/img/wails-logo-white.svg" style="width:70%" /></a>
+</div>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1569997042"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1569997042"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/wails.app\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1569997042"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/about/" title="About" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/about/">
+          About
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/about/concepts/" title="Concepts" class="dd-item active">
+        <a href="/about/concepts/">
+        Concepts
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/gettingstarted/" title="Getting Started" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/gettingstarted/">
+          Getting Started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/gettingstarted/linux/" title="Linux" class="dd-item ">
+        <a href="/gettingstarted/linux/">
+        Linux
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/gettingstarted/mac/" title="Mac" class="dd-item ">
+        <a href="/gettingstarted/mac/">
+        Mac
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/gettingstarted/windows/" title="Windows" class="dd-item ">
+        <a href="/gettingstarted/windows/">
+        Windows
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/gettingstarted/installing/" title="Installing Wails" class="dd-item ">
+        <a href="/gettingstarted/installing/">
+        Installing Wails
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/" title="Reference" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/">
+          Reference
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/api/" title="API" class="dd-item ">
+        <a href="/reference/api/">
+        API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/runtime/" title="Runtime" class="dd-item ">
+        <a href="/reference/runtime/">
+        Runtime
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/cli/" title="CLI" class="dd-item ">
+        <a href="/reference/cli/">
+        CLI
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/" title="Guides" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/guides/">
+          Guides
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/guides/distro/" title="Add support for your Linux distro" class="dd-item ">
+        <a href="/guides/distro/">
+        Add support for your Linux distro
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/development/" title="Development" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/development/">
+          Development
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/releases/" title="Releases" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/releases/">
+          Releases
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+  <section id="body">
+    <div id="overlay"></div>
+    <div class="padding highlightable">
+      
+      <div>
+        <div id="top-bar">
+          
+          
+          
+          
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page'
+              href="https://github.com/wailsapp/docsv1/edit/master/content/about/concepts.md" target="blank">
+              <i class="fas fa-code-branch"></i>
+              <span id="top-github-link-text">Edit this page</span>
+            </a>
+          </div>
+          
+          
+          
+          <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                <i class="fas fa-bars"></i>
+              </a>
+            </span>
+            
+            <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+            
+            <span class="links">
+              
+              
+              
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href='/'>Wails</a> > <a href='/about/'>About</a> > Concepts
+          
+          
+          
+          
+          
+          
+              
+            </span>
+          </div>
+          
+          <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#ipc-overview">IPC Overview</a></li>
+<li><a href="#binding">Binding</a></li>
+<li><a href="#events">Events</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+          
+        </div>
+      </div>
+      
+      <div id="head-tags">
+        
+      </div>
+      
+        <div id="body-inner">
+          
+          <h1>
+            
+            Concepts
+          </h1>
+          
+
+          
+
+
+
+<p>Wails has been designed to be make the gap between web technologies and Go as minimal as possible. The frontend is a <a href="https://github.com/zserge/webview">Webview</a> component, and you may develop your frontend code using any common Javascript framework you like, and seemlessly interact with your Go code from it. This is done through a shared IPC mechanism.</p>
+
+<p align="center" style="text-align: center">
+   <img src="/images/Overview.svg" width="33%"><br/>
+</p>
+
+<h3 id="ipc-overview">IPC Overview</h3>
+
+<p>The IPC mechanism operates across 2 runtimes - one in Javascript and the other in Go. They both provide a simple interface, removing the burden from the developer from needing to deal with the IPC mechanism directly.</p>
+
+<p align="center" style="text-align: center">
+   <img src="/images/IPC.svg" width="33%"><br/>
+</p>
+
+<p>The runtimes share common components which the developer can interact with: Binding and Events.</p>
+
+<p align="center" style="text-align: center">
+   <img src="/images/IPCDetail.svg" width="33%"><br/>
+</p>
+
+<h3 id="binding">Binding</h3>
+
+<p>A Wails application provides a single method that allows you to expose (bind) your Go code to the frontend. Using this method, you may bind an arbitrary function or a struct with exposed methods. At startup, Wails will analyse bound functions/methods and automatically provide the equivalent functions in Javascript. This allows you to call your bound Go code directly from Javascript.</p>
+
+<p align="center" style="text-align: center">
+   <img src="/images/Binding.svg" width="40%"><br/>
+</p>
+
+<p>The Javascript wrapper functions deal with all of the complexity of calling the Go code. You simply call the function in Javascript and receive a promise back.
+The function to bind your Go code deals with all the complexity of binding. If the call to your Go code completes successfully, the result will be passed to the resolve function. If an error is returned, this will be passed to the reject function.</p>
+
+<h3 id="events">Events</h3>
+
+<p>Wails provides a unified Events system similar to Javascript&rsquo;s native events system. This means that any event that is sent from either Go or Javascript can be picked up by either side. Data may be passed along with any event. This allows you to do neat things like have background processes running in Go and notifying the frontend of any updates.</p>
+
+<p align="center" style="text-align: center">
+   <img src="/images/Events.svg" width="40%"><br/>
+</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+
+</div>
+
+
+</div>
+
+<div id="navigation">
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+
+    
+
+
+    
+    
+    
+    <a class="nav nav-prev" href="/about/" title="About"> <i class="fa fa-chevron-left"></i></a>
+    
+    
+    <a class="nav nav-next" href="/gettingstarted/" title="Getting Started" style="margin-right: 0px;"><i
+            class="fa fa-chevron-right"></i></a>
+    
+    
+</div>
+
+</section>
+
+<div
+    style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+    <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+</div>
+<script
+    src="/js/clipboard.min.js?1569997042"></script>
+<script
+    src="/js/perfect-scrollbar.min.js?1569997042"></script>
+<script
+    src="/js/perfect-scrollbar.jquery.min.js?1569997042"></script>
+<script
+    src="/js/jquery.sticky.js?1569997042"></script>
+<script
+    src="/js/featherlight.min.js?1569997042"></script>
+<script
+    src="/js/highlight.pack.js?1569997042"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script
+    src="/js/modernizr.custom-3.6.0.js?1569997042"></script>
+<script src="/js/learn.js?1569997042"></script>
+<script
+    src="/js/hugo-learn.js?1569997042"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139310949-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+<link href="/mermaid/mermaid.css?1569997042"
+    rel="stylesheet" />
+<script
+    src="/mermaid/mermaid.js?1569997042"></script>
+<script>
+    mermaid.initialize({ startOnLoad: true });
+</script>
+
+
+</body>
+
+</html>

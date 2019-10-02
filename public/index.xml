@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wails</title>
+    <link>https://wails.app/</link>
+    <description>Recent content on Wails</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 29 Aug 2019 04:56:50 +1000</lastBuildDate>
+    
+	<atom:link href="https://wails.app/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux</title>
+      <link>https://wails.app/gettingstarted/linux/</link>
+      <pubDate>Thu, 29 Aug 2019 04:54:28 +1000</pubDate>
+      
+      <guid>https://wails.app/gettingstarted/linux/</guid>
+      <description>There are many Linux distributions in existence and we strive to support as many as possible.
+Oficially supported distros:    Distro Version     Debian 8, 9, 10   Ubuntu 16.04, 18,04, 19.04   Arch Rolling   CentOS 6, 7   Fedora 29, 30    Community supported distros:    Distro Version     Zorin 15   Parrot 4.</description>
+    </item>
+    
+    <item>
+      <title>Mac</title>
+      <link>https://wails.app/gettingstarted/mac/</link>
+      <pubDate>Thu, 29 Aug 2019 04:54:28 +1000</pubDate>
+      
+      <guid>https://wails.app/gettingstarted/mac/</guid>
+      <description>Now you are ready to move on to the next step of installing Wails.</description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>https://wails.app/gettingstarted/windows/</link>
+      <pubDate>Thu, 29 Aug 2019 04:54:28 +1000</pubDate>
+      
+      <guid>https://wails.app/gettingstarted/windows/</guid>
+      <description>Now you are ready to move on to the next step of installing Wails.</description>
+    </item>
+    
+    <item>
+      <title>API</title>
+      <link>https://wails.app/reference/api/</link>
+      <pubDate>Thu, 29 Aug 2019 04:56:50 +1000</pubDate>
+      
+      <guid>https://wails.app/reference/api/</guid>
+      <description>Binding Having just a web frontend means nothing unless you can interact with the system. Wails enables this through &amp;lsquo;binding&amp;rsquo; - making Go code callable from the frontend. There are 2 types of code you can bind to the frontend: Functions and Struct Methods. When they are bound, they may be used in the frontend.
+Functions Binding a function is as easy as this:
+package main import ( &amp;#34;github.com/wailsapp/wails&amp;#34; &amp;#34;fmt&amp;#34; ) func Greet(name string) string { return fmt.</description>
+    </item>
+    
+    <item>
+      <title>Add support for your Linux distro</title>
+      <link>https://wails.app/guides/distro/</link>
+      <pubDate>Thu, 29 Aug 2019 04:56:50 +1000</pubDate>
+      
+      <guid>https://wails.app/guides/distro/</guid>
+      <description>This guide shows all the necessary steps to use unspported linux distribytion with Wails.
+if you managed to get Wails working for your desktop please consider making a Pull Request
+Cli reference
+wails ├── cmd │ ├── cmd-mewn.go │ ├── linuxdb.yaml │ ├── linux.go │ └── system.go └── README.md  </description>
+    </item>
+    
+    <item>
+      <title>Runtime</title>
+      <link>https://wails.app/reference/runtime/</link>
+      <pubDate>Thu, 29 Aug 2019 04:56:50 +1000</pubDate>
+      
+      <guid>https://wails.app/reference/runtime/</guid>
+      <description>Wails comes with a runtime library that may be accessed from Javascript or Go. It has the following subsystems:
+ Events Logging Window Dialog Browser  NOTE: At this time, the Javascript runtime does not include the Window and Dialog subsystems
+When binding a struct with the WailsInit method, the Go runtime object is presented by the Application.
+For the frontend, the runtime is accessed through the window.wails object.</description>
+    </item>
+    
+    <item>
+      <title>Installing Wails</title>
+      <link>https://wails.app/gettingstarted/installing/</link>
+      <pubDate>Thu, 29 Aug 2019 04:54:28 +1000</pubDate>
+      
+      <guid>https://wails.app/gettingstarted/installing/</guid>
+      <description>Installation is as simple as running the following command:
+go get github.com/wailsapp/wails/cmd/wails  Once installed, the wails update command may be used for subsequent updates.
+ To get the latest pre-release with bleeding-edge features the -pre flag can be appended wails update -pre.
+ Setup To finish the installation setup your Wails system by running the setup command wails setup and filling your handle and email.
+Generate a new project Generate a new project using the init command wails init.</description>
+    </item>
+    
+    <item>
+      <title>CLI</title>
+      <link>https://wails.app/reference/cli/</link>
+      <pubDate>Thu, 29 Aug 2019 04:56:50 +1000</pubDate>
+      
+      <guid>https://wails.app/reference/cli/</guid>
+      <description>Wails comes with a CLI tool that allows you to generate, build and bundle your projects. It deals with the complexity of juggling Go and Javascript environments.
+It has a number of commands:
+Help  wails &amp;ndash;help
+ This will output the cli help message with all the available commands and flags.
+Setup  wails setup
+ The setup command does a number of things - it asks you for your name and email so that it can fill in project templates with your details.</description>
+    </item>
+    
+    <item>
+      <title>Concepts</title>
+      <link>https://wails.app/about/concepts/</link>
+      <pubDate>Thu, 29 Aug 2019 04:54:28 +1000</pubDate>
+      
+      <guid>https://wails.app/about/concepts/</guid>
+      <description>Wails has been designed to be make the gap between web technologies and Go as minimal as possible. The frontend is a Webview component, and you may develop your frontend code using any common Javascript framework you like, and seemlessly interact with your Go code from it. This is done through a shared IPC mechanism.
+ IPC Overview The IPC mechanism operates across 2 runtimes - one in Javascript and the other in Go.</description>
+    </item>
+    
+  </channel>
+</rss>

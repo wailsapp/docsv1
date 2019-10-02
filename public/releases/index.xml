@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Releases on Wails</title>
+    <link>https://wails.app/releases/</link>
+    <description>Recent content in Releases on Wails</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 29 Aug 2019 04:56:50 +1000</lastBuildDate>
+    
+	<atom:link href="https://wails.app/releases/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>
