@@ -46,7 +46,7 @@ VERSION_CODENAME=disco
 UBUNTU_CODENAME=disco
 ```
 
-We are interested in `Name` and `ID` fields. Then identify which of the bellow two commands returns gcc's full version . _This is needed for better support when filling tickets via `wails issue`._
+We are interested in `NAME` and `ID` fields. Then identify which of the bellow two commands returns gcc's full version . _This is needed for better support when filling tickets via `wails issue`._
 ```
 gcc -dumpversion
 gcc -dumpfullversion
@@ -60,9 +60,17 @@ $ gcc -dumpfullversion
 8.3.0
 ```
 
-## Add a new entry to `linuxdb.yaml`
+## Make a new entry in `linuxdb.yaml`
 
 `linuxdb.yaml` lives in `wails/cmd/linuxdb.yaml`.
+
+Use the `NAME` and `ID` fields of the previous previous step.
+```yaml
+`ID`:
+    id: `ID`
+    releases:
+        name: `NAME`
+```
 
 If your are on derivative distro that shares libraries and software with it's major a new entry would look like (linux mint sample):
 ```yaml
@@ -102,15 +110,15 @@ If you are adding a previously unspported major release a new entry would like (
 
 ## Mewn
 
-After you are done editing and run `mewn` inside `wails/cmd` directory.
+After you are done editing run `mewn` inside `wails/cmd` directory.
 
-As a result `cmd-mewn.go` should have been re-generated adding our DB entry.
+As a result `cmd-mewn.go` should have been re-generated adding your DB entry.
 
 ## Edit `linux.go`
 
 In `wails/cmd/linux.go` you have to  
 
-* add a new constant with your distro's name
+* add a new constant with your distro's name (use whatever is returned under `NAME` field two steps back)
 
 ```go
 const (
@@ -130,7 +138,7 @@ const (
 )
 ```
 
-* and a new switch case 
+* and a new switch case (`case "ID":`)
 
 ```go
 switch osID {
@@ -143,7 +151,7 @@ switch osID {
 	case "debian":
 		result.Distribution = Debian
 	(...)
-	case "newdistroname":
+	case "newdistroID":
 		result.Distribution = NewDistroName
   }
   ```
@@ -176,8 +184,8 @@ For example if your are on a Debian derivative you would
 		(...)
 		switch distroInfo.Distribution {
 		case Ubuntu, Debian, NewDistroName:
-      libraryChecker = DpkgInstalled
-      (...)
+			libraryChecker = DpkgInstalled
+		(...)
 		}
 ```
 
@@ -189,14 +197,14 @@ If you are adding a major distro with it's own package manager you have to make 
 		(...)
 		switch distroInfo.Distribution {
 		case NewDistroName:
-      libraryChecker = NewPackageManagerInstalled
-      (...)
+			libraryChecker = NewPackageManagerInstalled
+		(...)
 		}
 ```
 
 ## Check that everything works
 
-`cd` to directory `wails/cmd/wails` and install the updated Wails by running `go install`.
+`cd` in directory `wails/cmd/wails` and install the updated Wails by running `go install`.
 
 Now try running `wails setup`.
 
