@@ -8,3 +8,9 @@ chapter = true
 # Releases
 
 The Wails release history
+
+
+| Version  | Release Date   |                   Summary               | Release Notes |
+| -------- | -------------- | --------------------------------------- | ------------- |
+| v0.17.0  | 1st July 2019  | New Angular template, Debian support, tooling updates  | [here](./v0.17.0) |
+| v0.18.2  | 8th Oct 2019 | Refactored runtime, New Event functionality, Windows fixes, more!  | [here](./v0.18.2) |
