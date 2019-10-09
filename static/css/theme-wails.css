@@ -51,6 +51,21 @@ body {
   box-shadow: 3px 3px 42px -5px rgba(0,0,0,0.75);
 }
 
+.showcase-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+.showcase-container img {
+border: 1px solid #555;
+}
+
+.showcase-container h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 #top-bar {
   background: #FFF;
   border-radius: 5px;
@@ -214,7 +229,7 @@ body #chapter h1 {
 h1 {
   font-family: "Good Times Rg", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
   text-align: center;
-  letter-spacing: 1.1rem;
+  letter-spacing: 0.5rem;
   text-transform: uppercase;
   color: #222;
   font-weight: 200;
