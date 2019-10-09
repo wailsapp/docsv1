@@ -12,6 +12,7 @@ Wails comes with a runtime library that may be accessed from Javascript or Go. I
   * Window
   * Dialog
   * Browser
+  * Filesystem
 
 **NOTE: At this time, the Javascript runtime does not include the Window and Dialog subsystems**
 
@@ -24,6 +25,8 @@ For the frontend, the runtime is accessed through the `window.wails` object.
 The Events subsystem provides a means of listening and emitting events across the application as a whole. This means that you can listen for events emitted in both Javascript and Go, and events that you emit will be received by listeners in both Go and Javascript.
 
 In the Go runtime, it is accessible via `runtime.Events` and provides 2 methods: `Emit` and `On`.
+
+<a href="https://godoc.org/github.com/wailsapp/wails/runtime#Events"><img src="https://img.shields.io/badge/godoc-reference-blue.svg" style="margin: 0;"/></a>
 
 #### Emit
 
@@ -90,6 +93,8 @@ func (m *MyStruct) WailsInit(runtime *wails.Runtime) error {
 
 The Log subsystem allows you to log messages at various log levels to the application log.
 
+<a href="https://godoc.org/github.com/wailsapp/wails/runtime#Log"><img src="https://img.shields.io/badge/godoc-reference-blue.svg" style="margin: 0;"/></a>
+
 #### New
 
 > New(prefix string)
@@ -135,6 +140,7 @@ Each of these methods take a string and optional data (like fmt.Printf):
   - Warnf
   - Errorf
   - Fatalf
+  
 
 ```go
   feeling := "okay"
@@ -162,7 +168,11 @@ Each of these methods take a string and a set of fields:
 
 ### Dialog
 
-The Dialog subsystem allows you to activate the Webview's native dialogs. It is accessible via `runtime.Dialog` and has the following methods:
+The Dialog subsystem allows you to activate the Webview's native dialogs. 
+
+<a href="https://godoc.org/github.com/wailsapp/wails/runtime#Dialog"><img src="https://img.shields.io/badge/godoc-reference-blue.svg" style="margin: 0;"/></a>
+
+It is accessible via `runtime.Dialog` and has the following methods:
 
 **NOTE: Opening a Dialog will halt Javascript execution, just like a browser**
 
@@ -203,15 +213,19 @@ Prompts the user to select a file for saving. Returns the path to the file.
 
 The Window subsystem provides methods to interact with the application's main window.
 
+<a href="https://godoc.org/github.com/wailsapp/wails/runtime#Window"><img src="https://img.shields.io/badge/godoc-reference-blue.svg" style="margin: 0;"/></a>
+
 #### SetColour
 
 > SetColour(colour string) error
 
 Sets the background colour of the window to the colour given to it (string). The colour may be specified in the following formats:
 
-  - RGB     "rgb(0, 0, 0)"
-  - RGBA    "rgba(0, 0, 0, 0.8)"
-  - HEX     "#fff"
+|  Colour Type | Example  |
+| ------------ | -------- |
+|   RGB       | rgb(0, 0, 0) |
+|   RGBA      | rgba(0, 0, 0, 0.8) |
+|   HEX       | #fff |
 
 ```go
   runtime.Window.SetColour("#eee")
@@ -266,6 +280,8 @@ Closes the main window and thus terminates the application. Use with care!
 
 The browser subsystem provides methods to interact with the system browser.
 
+<a href="https://godoc.org/github.com/wailsapp/wails/runtime#Browser"><img src="https://img.shields.io/badge/godoc-reference-blue.svg" style="margin: 0;"/></a>
+
 #### OpenURL
 
 > OpenURL(url string)
@@ -276,6 +292,18 @@ Opens the given URL in the system browser.
 runtime.Browser.OpenURL("https://wails.app")
 ```
 
+### Filesystem
+
+The Filesystem subsystem provides a means of accessing filesystem related methods. Currently this is limited to Go.
+
+<a href="https://godoc.org/github.com/wailsapp/wails/runtime#FileSystem"><img src="https://img.shields.io/badge/godoc-reference-blue.svg" style="margin: 0;"/></a>
+
+
+#### HomeDir
+
+> HomeDir() (string, error)
+
+Returns the user's home directory, or an error.
 
 ### A Common Pattern
 
