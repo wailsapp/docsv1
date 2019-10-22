@@ -5,6 +5,8 @@ weight = 15
 chapter = true
 +++
 
+# Tutorials
+
 A collection of tutorials to help understand how to use Wails.
 
 ## Template Overview
