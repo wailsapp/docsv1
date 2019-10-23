@@ -142,6 +142,38 @@ If an error is returned, then the application will log the error and shutdown.
 
 The Runtime Object that is passed to it is the primary means for interacting with the application at runtime. It consists of a number of subsystems which provide access to different parts of the system. This is detailed in the [Wails Runtime](#wails-runtime) section.
 
+#### Struct Shutdown
+
+If your struct has a special shutdown method, Wails will call it during application shutdown. The signature for this method is:
+```go
+  WailsShutdown()
+```
+This allows you to do clean up any resources when the main application is terminated.
+
+```go
+  type MyStruct struct {
+    runtime *wails.Runtime
+  }
+
+  func (s *MyStruct) WailsInit(runtime *wails.Runtime) error {
+    // Save runtime
+    s.runtime = runtime
+
+    // Allocate some resources...
+
+    return nil
+  }
+
+
+  func (s *MyStruct) WailsShutdown() {
+    
+    // De-Allocate some resources...
+
+    return nil
+  }
+
+```
+
 ### Binding Rules
 
 Any Go function (or method) may be bound, so long as it follows the following rules:
