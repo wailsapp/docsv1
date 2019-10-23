@@ -6,7 +6,7 @@ weight = 2
 
 
 <p style="text-align: center">
-   <img src="screenshot.png" style="width:10rem" ><br/>
+   <img src="screenshot.png" style="width:15rem" ><br/>
 </p>
 
 
