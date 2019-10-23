@@ -7,10 +7,10 @@ chapter = true
 
 # Guides
 
-## npm, JS
+### npm, JS
 * Events with React JS template (TBD)
 * Creating new `nuxt` project (TBD)
 
-## Linux
+### Linux
 * [Add support for your Linux distro](./distro.md)
 * Snap your application (TBD)
