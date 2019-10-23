@@ -12,5 +12,5 @@ chapter = true
 * Creating new `nuxt` project (TBD)
 
 ### Linux
-* [Add support for your Linux distro](./distro.md)
+* [Add support for your Linux distro](./distro)
 * Snap your application (TBD)
