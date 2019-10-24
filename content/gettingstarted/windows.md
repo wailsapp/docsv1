@@ -26,6 +26,11 @@ Restart your terminal and do the following checks:
  * Check "c:\Go\bin" is in your PATH variable: `echo %PATH%`
  * If using Go 1.12 instead of 1.13, check "GO111MODULE" environment variable is set to "on": `echo %GO111MODULE%`.
 
+{{% notice note %}}
+It is **STRONGLY** recommended that if you use a terminal on Windows, that you use the git bash terminal and *not* the VSC terminal. This is because it handles signals correctly. We have found the VSC terminal to be quite buggy.
+{{% /notice %}}
+
+
 ### npm
 
 Download NPM from the [Node Downloads Page](https://nodejs.org/en/download/). It is best to use the latest release as that is what we generally test against.
