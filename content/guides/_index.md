@@ -8,7 +8,7 @@ chapter = true
 # Guides
 
 ### Migration
-* [Migrating to v1.0.0](./migration)
+* [Migrating to v1.0.0](./migrate)
 
 ### npm, JS
 * Events with React JS template (TBD)
