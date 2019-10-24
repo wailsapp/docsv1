@@ -28,4 +28,7 @@ Wails.Init(() => {
 });
 ```
 
-If you are feeling adventurous, you could try the **highly experimental** migrate command: `wails migrate`.
+{{% notice note %}}
+If you are feeling adventurous, you could try the **highly experimental** migrate command: 
+  `wails migrate`.
+{{% /notice %}}
