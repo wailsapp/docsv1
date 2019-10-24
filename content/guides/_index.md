@@ -7,6 +7,9 @@ chapter = true
 
 # Guides
 
+### Migration
+* [Migrating to v1.0.0](./migration)
+
 ### npm, JS
 * Events with React JS template (TBD)
 * Creating new `nuxt` project (TBD)
