@@ -5,8 +5,6 @@ weight = 10
 chapter = false
 +++
 
-# Migrating to Wails v1.0.0
-
 The release of v1.0.0 brings with it some breaking changes, however it is relatively easy to migrate older projects. The steps required are:
 
 * Change Wails version in go.mod to latest version
