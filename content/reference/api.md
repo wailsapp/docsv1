@@ -169,8 +169,7 @@ This allows you to do clean up any resources when the main application is termin
     
     // De-Allocate some resources...
 
-    return nil
-  }
+}
 
 ```
 
