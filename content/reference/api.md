@@ -42,7 +42,64 @@ func main() {
 {{< /highlight >}}
 
 
-When this is run, a Javascript function called 'Greet' is made available under the global 'backend' object. The function may be invoked by calling `backend.Greet`, EG: `backend.Greet("World")`. The dynamically generated functions return a standard promise. For this simple example, you could therefore print the result as so: `backend.Greet("World").then(console.log)`.
+When this is run, a Javascript function called 'Greet' is made available under the global 'backend' object. The function may be invoked by calling `backend.Greet`, EG: `backend.Greet("World")`. The dynamically generated functions return a standard promise. For this simple example, you could therefore print the result as so: `backend.Greet("World").then(console.log)`. 
+
+##### Type conversion
+
+Scalar types are automatically converted into the relevant Go types. Objects are converted to `map[string]interface{}`. If you wish to make those concrete types in Go, we recommend you use Hashicorp's [mapstructure](https://github.com/mitchellh/mapstructure). 
+
+Example:
+
+Using a default Vue template project, we update `main.go` to include our struct and callback function:
+
+```go
+  type MyData struct {
+    A string
+    B float64
+    C int64
+  }
+
+  // We are expecting a javascript object of the form:
+  // { A: "", B: 0.0, C: 0 }
+  func basic(data map[string]interface{}) string {
+    var result MyData
+    fmt.Printf("data: %#v\n", data)
+
+    err := mapstructure.Decode(data, &result)
+    if err != nil {
+      // Do something with the error
+    }
+    fmt.Printf("result: %#v\n", result)
+    return "Hello World!"
+  }
+```
+
+In the frontend, we update the `getMessage` method in the `HelloWorld.vue` component to send our object:
+
+```go
+    getMessage: function() {
+      var self = this;
+      var mytestStruct = {
+        A: "hello",
+        B: 1.1,
+        C: 99
+      }
+      window.backend.basic(mytestStruct).then(result => {
+        self.message = result;
+      });
+    }
+```
+
+When you run this, you will get the following output:
+
+```
+data: map[string]interface {}{"A":"hello", "B":1.1, "C":99}
+Result: main.MyData{A:"hello", B:1.1, C:99}
+```
+
+{{% notice warning %}}
+WARNING: It is recommended that business logic and data structure predominantly preside in the Go portion of your application and updates are sent to the front end using events. Managing state in 2 places leads to a very unhappy life.
+{{% /notice %}}
 
 #### Struct Methods
 
