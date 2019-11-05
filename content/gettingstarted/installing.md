@@ -16,6 +16,10 @@ go get github.com/wailsapp/wails/cmd/wails
 Once installed, the `wails update` command may be used for subsequent updates.
 {{% /notice %}}
 
+{{% notice tip %}}
+To get the latest [pre-release]({{< relref "/development/_index.md#branch-workflow" >}}) with bleeding-edge features the `-pre` flag can be appended `wails update -pre`.
+{{% /notice %}}
+
 ### Setup
 
 To finish the installation setup your Wails system by running the [setup command]({{< relref "/reference/cli.md#setup" >}}) `wails setup` and filling your handle and email.
@@ -53,12 +57,12 @@ Change into the frontend directory `cd my-project/frontend` and serve your GUI u
 
 ## Next Steps
 
-If you would like to start making an app right away, we suggest you explore Wails via our _awesome_ [tutorials]({{% relref "../tutorials" %}}).
+If you would like to start making an app right away, we suggest you explore Wails via our _awesome_ [tutorials]({{% relref "../guides#tutorials" %}}).
 If you would prefer to get to know the framework a little better before building anything, we suggest having a look through the
 [concepts]({{% relref "../about/concepts.md" %}}).
 Finally if you are advanced user and would like to get right in to it head over to the [API reference]({{% relref "../reference/api" %}}) & [Cli reference]({{% relref "../reference/cli" %}}) sections.
 
 
 {{% notice tip %}}
-Come by our [Slack](https://gophers.slack.com/messages/CJ4P9F7MZ) channel ([_Invite_](https://invite.slack.golangbridge.org)) for support or just to say hi!
+Come by our [Slack](https://gophers.slack.com/messages/CJ4P9F7MZ) channel ([_Invite_](https://invite.slack.golangbridge.org)) for 24/7 support or just to share with us what you've built with wails!
 {{% /notice %}}

@@ -48,6 +48,7 @@ In Package Main Episode 16, [Alex Pliutau](https://twitter.com/pliutau) builds a
 
 The tutorial is also available in text format at Package Main's [episode 16 github repo](https://github.com/plutov/packagemain/tree/master/16-wails-desktop-app) or as a [Medium article](https://medium.com/js-dojo/building-a-desktop-app-in-go-using-wails-b7f5825f986a).
 
-::: tip
+
+{{% notice note %}}
 This tutorial uses an older version of the Runtime which has had some slight changes since v0.18.0. Please read the [Reference Guide](../reference/#wails-runtime) for more information.
-:::
+{{% /notice %}}
