@@ -57,7 +57,7 @@ Change into the frontend directory `cd my-project/frontend` and serve your GUI u
 
 ## Next Steps
 
-If you would like to start making an app right away, we suggest you explore Wails via our _awesome_ [tutorials]({{% relref "../guides#tutorials" %}}).
+If you would like to start making an app right away, we suggest you explore Wails via our _awesome_ [tutorials]({{% relref "../tutorials" %}}).
 If you would prefer to get to know the framework a little better before building anything, we suggest having a look through the
 [concepts]({{% relref "../about/concepts.md" %}}).
 Finally if you are advanced user and would like to get right in to it head over to the [API reference]({{% relref "../reference/api" %}}) & [Cli reference]({{% relref "../reference/cli" %}}) sections.
