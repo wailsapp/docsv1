@@ -13,12 +13,11 @@ Compiling your application using `wails build -d` will create a debug version of
 
 ## Windows
 
-On Windows, the Webview component doesn't have developer tools natively. To mitigate this (at least to some degree), a very basic console can be invoked by pressing `Shift-ESC`. It allows you to enter javascript commands and does a certain degree of evaluation. The console is considered alpha quality, so if you would like to improve it, please feel free to [improve it](https://github.com/wailsapp/wails/blob/develop/runtime/assets/console.js) and create a PR.
+On Windows, the Webview component doesn't have developer tools natively. To mitigate this (at least to some degree), a very basic console can be invoked by pressing `Shift-ESC`. It allows you to enter javascript commands and does a certain degree of evaluation. The console is considered alpha quality, so if you would like to improve it, please feel free to [create a PR](https://github.com/wailsapp/wails/blob/develop/runtime/assets/console.js).
 
 ### Debugging using Visual Studio
 
 It's possible to debug in Visual Studio by doing the following: 
-
 
 
   * Install a recent version of Visual Studio (The free “Community” Edition is fine. The following steps are based on VS 2017). Make sure the “ASP.NET and web development” workload is selected in the installer;
