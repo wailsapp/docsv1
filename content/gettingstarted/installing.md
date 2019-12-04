@@ -64,5 +64,5 @@ Finally if you are advanced user and would like to get right in to it head over 
 
 
 {{% notice tip %}}
-Come by our [Slack](https://gophers.slack.com/messages/CJ4P9F7MZ) channel ([_Invite_](https://invite.slack.golangbridge.org)) for 24/7 support or just to share with us what you've built with wails!
+Come by our [Slack](https://gophers.slack.com/messages/CJ4P9F7MZ) channel ([_Invite_](https://invite.slack.golangbridge.org)) for a chat or just to share with us what you've built with wails!
 {{% /notice %}}

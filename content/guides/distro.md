@@ -64,7 +64,7 @@ $ gcc -dumpfullversion
 
 `linuxdb.yaml` lives in `wails/cmd/linuxdb.yaml`.
 
-Use the `NAME` and `ID` fields of the previous previous step.
+Use the `NAME` and `ID` fields of the previous step.
 ```yaml
 `ID`:
     id: `ID`
