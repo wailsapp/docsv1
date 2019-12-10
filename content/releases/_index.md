@@ -17,3 +17,4 @@ The Wails release history
 | v0.18.5  | 23rd Oct 2019 | Better shutdown behaviour  | [here](./v0.18.5) |
 | v0.19.0  | 5th Nov 2019 | Better Windows support, Migrate command & misc bugfixes  | [here](./v0.19.0) |
 | v0.20.0  | 5th Dec 2019 | Better Windows support: Angular, Console & HiDPI bugfixes  | [here](./v0.20.0) |
+| v1.0.0 | 10th Dec 2019 | First major release | [here](./v1.0.0) |
