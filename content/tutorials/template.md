@@ -70,13 +70,13 @@ This starts the standard Vue development server and will give you a URL that the
 Open a browser to that URL and you should see something similar to the following:
 
 <div class="imagecontainer">
-<img src="/media/templatedefault.png">
+<img src="/images/templatedefault.png">
 </div>
 
 If you click the button, you get a message:
 
 <div class="imagecontainer">
-<img src="/media/templatedefaulthello.png">
+<img src="/images/templatedefaulthello.png">
 </div>
 
 ## Understanding the App

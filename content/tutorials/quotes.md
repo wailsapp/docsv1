@@ -79,20 +79,20 @@ Binding our quotes struct is a single line change to our existing main function.
  When it is ready, open the browser to the project url and you should see the same familiar screen as in the template tutorial:
 
 <div class="imagecontainer">
-  <img src="/media/templatedefault.png">
+  <img src="/images/templatedefault.png">
 </div>
 
 If you open up the browser's inspector window and select console, you should be able to access the bound Quotes struct:
 
 <div class="imagecontainer">
-  <img src="/media/quotesconsole.png" style="width: 50%">
+  <img src="/images/quotesconsole.png" style="width: 50%">
 </div>
 
 Note that the `GetQuote()` method is available to us. This, just like bound functions, returns a Javascript promise. We can run the method and print the output like so:
 
 
 <div class="imagecontainer">
-  <img src="/media/quotesconsolerun.png" style="width: 50%">
+  <img src="/images/quotesconsolerun.png" style="width: 50%">
 </div>
 
 Now that we have access to our Quotes struct, let's add more quotes.
@@ -121,13 +121,13 @@ func (q *Quotes) GetQuote() *Quote {
 If the previous `wails serve` is still running, press `ctrl-c` to stop it and re-run the serve command. The frontend does not need recompiling and will automatically reconnect to the backend when it becomes available. During that connection time, you will see a screen like this letting you know it is trying to reconnect to the backend:
 
 <div class="imagecontainer">
-  <img src="/media/reconnect.png" style="width: 50%">
+  <img src="/images/reconnect.png" style="width: 50%">
 </div>
 
 Once reconnected, open the console again and re-issue the `GetQuote` command. You should see something like the following:
 
 <div class="imagecontainer">
-  <img src="/media/quotestruct.png" style="width: 40%">
+  <img src="/images/quotestruct.png" style="width: 40%">
 </div>
 
 Now that we have the data in a format we can manipulate, we can update our frontend code to use it.
@@ -209,13 +209,13 @@ In Line 4, we simply update the name of the component's method to call when the 
 If we serve the project now, we can see something like this:
 
 <div class="imagecontainer">
-  <img src="/media/unformattedquote1.png" style="width: 50%">
+  <img src="/images/unformattedquote1.png" style="width: 50%">
 </div>
 
 If we press the button, we can see the quote!
 
 <div class="imagecontainer">
-  <img src="/media/unformattedquote2.png" style="width: 50%">
+  <img src="/images/unformattedquote2.png" style="width: 50%">
 </div>
 
 The styling is terrible. Let's fix that!
@@ -304,13 +304,13 @@ a {
 When we reload the app now, we should see something like this:
 
 <div class="imagecontainer">
-  <img src="/media/formattedquote1.png" style="width: 50%">
+  <img src="/images/formattedquote1.png" style="width: 50%">
 </div>
 
 Pressing the button should yield the following:
 
 <div class="imagecontainer">
-  <img src="/media/formattedquote2.png" style="width: 50%">
+  <img src="/images/formattedquote2.png" style="width: 50%">
 </div>
 
 ### Adding more quotes
@@ -393,7 +393,7 @@ Run `wails serve` again to recompile and serve the app.
 Now when we press the button, we get a fabulous quote:
 
 <div class="imagecontainer">
-  <img src="/media/quote.png" style="width: 50%">
+  <img src="/images/quote.png" style="width: 50%">
 </div>
 
 Now with a slight tweak to the CSS, we can make this look even better. In the component CSS, let's add a margin to the author:
@@ -412,7 +412,7 @@ blockquote:after {
 Now we have a great looking quotes app:
 
 <div class="imagecontainer">
-  <img src="/media/quote2.png" style="width: 50%">
+  <img src="/images/quote2.png" style="width: 50%">
 </div>
 
 ## Building the app
@@ -420,19 +420,19 @@ Now we have a great looking quotes app:
 Now that we have the app working, we want to build it as a standalone app. We do this by running `wails build`. You should now have a `quotes` executable (or `quotes.exe` if on Windows). 
 
 <div class="imagecontainer">
-  <img src="/media/quotesls.png" style="width: 75%">
+  <img src="/images/quotesls.png" style="width: 75%">
 </div>
 
 Running this should run the app. On MacOS, it looks like this:
 
 <div class="imagecontainer">
-  <img src="/media/app1.png" style="width: 75%">
+  <img src="/images/app1.png" style="width: 75%">
 </div>
 
 Pressing the button works as expected:
 
 <div class="imagecontainer">
-  <img src="/media/app2.png" style="width: 75%">
+  <img src="/images/app2.png" style="width: 75%">
 </div>
 
 ## Packaging the app
@@ -444,19 +444,19 @@ Wails provides the ability to package your application into a platform native fo
 On MacOS, running `wails build -p` will generate a .app bundle. If we run this in the quotes project directory you should end up with a quotes.app bundle:
 
 <div class="imagecontainer">
-  <img src="/media/quotesapp1.png" style="width: 75%">
+  <img src="/images/quotesapp1.png" style="width: 75%">
 </div>
 
 If we open this in finder, you will see your application as a standard Mac app:
 
 <div class="imagecontainer">
-  <img src="/media/quotesapp2.png" style="width: 75%">
+  <img src="/images/quotesapp2.png" style="width: 75%">
 </div>
 
 Double clicking this will launch the app as expected. Minimising the app to the dock will show you that the icon works as expected:
 
 <div class="imagecontainer">
-  <img src="/media/quotesdock.png" style="width: 15%">
+  <img src="/images/quotesdock.png" style="width: 15%">
 </div>
 
 Of course, it's unlikely that you'll want to use the default icon, so Wails makes it easy for you to replace it. Just replace `appicon.png` with your own icon and rebuild.
@@ -464,7 +464,7 @@ Of course, it's unlikely that you'll want to use the default icon, so Wails make
 There's a cool icon [here](https://www.onlinewebfonts.com/icon/299634) which can be used. I made some changes so that it works better on my dark desktop, renamed the icon to `appicon.png` and rebuilt:
 
 <div class="imagecontainer">
-  <img src="/media/quotesicon.png" style="width: 95%">
+  <img src="/images/quotesicon.png" style="width: 95%">
 </div>
 
 ### Windows
