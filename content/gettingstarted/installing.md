@@ -9,7 +9,7 @@ disableNextPrev: true
 Installation is as simple as running the following command:
 
 ```
-go get github.com/wailsapp/wails/cmd/wails
+go get -u github.com/wailsapp/wails/cmd/wails
 ```
 
 {{% notice tip %}}
