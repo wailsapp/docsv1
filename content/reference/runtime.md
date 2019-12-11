@@ -237,7 +237,7 @@ Sets the background colour of the window to the colour given to it (string). The
 
 > Fullscreen()
 
-Attempts to make the application window fullscreen. Will fail if the application was started with the option "Resize: false".
+Attempts to make the application window fullscreen. Will fail if the application was started with the option "Resizable: false".
 
 ```go
   runtime.Window.Fullscreen()
