@@ -8,7 +8,7 @@ disableNextPrev: true
 
 There are many Linux distributions in existence and we strive to support as many as possible. 
 
-### Oficially supported distros:
+### Officially supported distros:
 
 Distro  | Version
 --------|--------
