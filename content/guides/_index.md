@@ -17,3 +17,7 @@ chapter = true
 ### Linux
 * [Add support for your Linux distro](./distro)
 * Snap your application (TBD)
+
+### React
+
+* Using [React Router](./reactrouter)
