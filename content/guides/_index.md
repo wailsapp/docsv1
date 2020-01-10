@@ -24,4 +24,4 @@ chapter = true
 
 ### ARM
 
-  * Compiling your app for [ARM](./arm) (TBD)
+  * Compiling your app for [ARM](./arm) (Work in progress)
