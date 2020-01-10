@@ -13,7 +13,7 @@ Work in progress
 
 If you find that compilation aborts with the following error:
 
-```
+```bash
 ✗ Ensuring frontend dependencies are up to date (This may take a while)
 Error: signal: illegal instruction (core dumped)
 
@@ -23,7 +23,7 @@ then you will want to check whether the version of node is compatible with your 
 
 [nodejs/help#1453 (comment)](https://github.com/nodejs/help/issues/1453#issuecomment-415761791)
 
-```
+```bash
 The Illegal instruction error concerns the production (by the JIT) of an instruction that the processor does not recognise as valid. That might arise if the architecture of what was downloaded does not match the real architecture of your machine (you are most likely to be on an x64).
 ```
 
