@@ -8,16 +8,20 @@ chapter = true
 # Guides
 
 ### Migration
-* [Migrating to v1.0.0](./migrate)
+  * [Migrating to v1.0.0](./migrate)
 
 ### npm, JS
-* Events with React JS template (TBD)
-* Creating new `nuxt` project (TBD)
+  * Events with React JS template (TBD)
+  * Creating new `nuxt` project (TBD)
 
 ### Linux
-* [Add support for your Linux distro](./distro)
-* Snap your application (TBD)
+  * [Add support for your Linux distro](./distro)
+  * Snap your application (TBD)
 
 ### React
 
-* Using [React Router](./reactrouter)
+  * Using [React Router](./reactrouter)
+
+### ARM
+
+  * Compiling your app for [ARM](./arm) (TBD)
