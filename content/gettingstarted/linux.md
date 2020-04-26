@@ -13,7 +13,7 @@ There are many Linux distributions in existence and we strive to support as many
 Distro  | Version
 --------|--------
 Debian  | 8, 9, 10
-Ubuntu  | 16.04, 18,04, 19.04
+Ubuntu  | 16.04, 18,04, 19.04, 19.10
 Arch    | Rolling
 CentOS  | 6, 7
 Fedora  | 29, 30
@@ -31,6 +31,11 @@ Kali    | Rolling
 Neon    | 5.16
 VoidLinux & VoidLinux-musl | Rolling
 Gentoo  | Rolling
+OpenSuSE| Leap and Tumbleweed
+Raspbian | default
+ArcoLinux | default
+
+
 
 _If you don't see your distro in the lists bellow you have two options. Either open a ticket asking for support or if you feel adventurus follow the [guide how to add support for your linux distro]({{}}) and also consider making a PR so the community  can benefit._
 
