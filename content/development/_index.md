@@ -10,6 +10,39 @@ disableBreadcrumb = true
 
 In this section we cover all aspects of Wails development and contribution guidelines.
 
+## Overview
+
+  * Ensure you're using Go 1.14+
+  * Clone the [main repository](https://github.com/wailsapp/wails) to an arbitrary local directory.
+  * Make updates to your local repository.
+  * Once you have made changes, run the `wails/scripts/build.sh` script or you can run `go run build.go` in the same directory. This will ensure that the runtime is built and assets are packaged. It will then install your version of the wails cli locally.
+  * When generating a project, ensure that you update the project's `go.mod` file to indicate the local installation of Wails.
+
+Example:
+When first generated, the go.mod file looks something like this:
+```
+module test
+
+go 1.14
+
+require (
+        github.com/leaanthony/mewn v0.10.7
+        github.com/wailsapp/wails v1.0.3-pre2
+)
+```
+Use `replace` to indicate the local install:
+```
+module test
+
+go 1.14
+
+require (
+        github.com/leaanthony/mewn v0.10.7
+        github.com/wailsapp/wails v1.0.3-pre2
+)
+replace github.com/wailsapp/wails v1.0.3-pre2 => /path/to/your/local/wails
+```
+
 ## Issue Driven Development
 
 If there is something to add to the code, whether a bug or enhancement, a ticket should be opened so that it can be discussed. If the coding goes ahead, a new branch should be created from the `develop` branch with a reference to the ticket ID, eg:
@@ -107,3 +140,4 @@ This generates the following `template.json`:
 ```
 
 *Note: The `wailsdir` key is currently unused but will be used in place of bridge in the [near future](https://github.com/wailsapp/wails/issues/88)*
+

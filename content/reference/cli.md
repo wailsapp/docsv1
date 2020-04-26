@@ -98,8 +98,25 @@ Here is a list of all available flags:
 | -f   | Force rebuild of frontend dependencies       |
 | -d   | Build application in Debug mode              |
 | -p   | Package application after a successful build |
+| -x   | Cross-compile to different platform          |
+| -verbose | Increased output from the build process  |
+
 
 The `-p` flag is currently supports OSX and Windows. On OSX, it bundles your binary into a .app file with the default icon. On Windows, it will generate the application resource files and compile it all into a '.exe'. When the `-p` flag is used, the packaging files are left available for editing. Any changes will be picked up by the next build (eg icon).
+
+#### Cross-Compilation
+
+Wails support cross-compiling to the other supported platforms. The target platform is passed using the `-x` flag. Example:
+
+`wails build -x windows/amd64` 
+
+This also supports the `-p` flag for packaging.
+
+The builds are placed in a `build` directory, in your project root directory.
+
+**NOTE: [Docker](https://www.docker.com/) is required for this feature**
+
+Wails uses a custom [xgo](https://github.com/crazy-max/xgo) build and may be found [here](https://github.com/wailsapp/xgo). The image is published [here](https://hub.docker.com/r/wailsapp/xgo) on Dockerhub.
 
 ### Update
 

@@ -108,12 +108,6 @@ If you are adding a previously unspported major release a new entry would like (
             help: Please install with `sudo yum install webkitgtk3-devel` and try again
 ```
 
-## Mewn
-
-After you are done editing run `mewn` inside `wails/cmd` directory.
-
-As a result `cmd-mewn.go` should have been re-generated adding your DB entry.
-
 ## Edit `linux.go`
 
 In `wails/cmd/linux.go` you have to  
