@@ -19,3 +19,4 @@ The Wails release history
 | v0.20.0  | 5th Dec 2019   | Better Windows support: Angular, Console & HiDPI bugfixes  | [here](./v0.20.0) |
 | v1.0.0   | 10th Dec 2019  | First major release | [here](./v1.0.0) |
 | v1.0.2   | 8th Feb 2020   | Vuetify2 template, Typescript definitions generation, more Linux distros, bugfixes | [here](./v1.0.2) |
+| v1.5.0   | 26th Apr 2020  | Cross-compilation, OpenSuSE support, bugfixes | [here](./v1.5.0) |
