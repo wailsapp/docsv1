@@ -13,6 +13,7 @@ Wails uses cgo to bind to the native rendering engines so a number of platform d
 - Go 1.12 or above
 - gcc + libraries
 - npm
+- Docker for Cross-Compilation support
 
 ### Go
 
