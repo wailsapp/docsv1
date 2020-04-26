@@ -32,9 +32,10 @@ Neon    | 5.16
 VoidLinux & VoidLinux-musl | Rolling
 Gentoo  | Rolling
 OpenSuSE| Leap and Tumbleweed
-Raspbian | default
-ArcoLinux | default
-
+Raspbian | 
+ArcoLinux | 
+Deepin | 
+Manjaro + Manjaro-ARM | Rolling
 
 
 _If you don't see your distro in the lists bellow you have two options. Either open a ticket asking for support or if you feel adventurus follow the [guide how to add support for your linux distro]({{}}) and also consider making a PR so the community  can benefit._
