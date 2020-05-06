@@ -144,7 +144,7 @@ Each of these methods take a string and optional data (like fmt.Printf):
 
 ```go
   feeling := "okay"
-  m.Log.Info("I'm %s with the events that are currently unfolding", feeling)
+  m.Log.Infof("I'm %s with the events that are currently unfolding", feeling)
 ```
 
 
