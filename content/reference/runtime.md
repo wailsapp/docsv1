@@ -178,13 +178,26 @@ It is accessible via `runtime.Dialog` and has the following methods:
 
 #### SelectFile
 
-> SelectFile()
+> SelectFile(optionalTitle string, optionalFilter string)
 
 Prompts the user to select a file for opening. Returns the path to the file.
 
 ```go
   selectedFile := runtime.Dialog.SelectFile()
 ```
+
+There is also the option to provide a title and filter:
+
+```go
+  selectedFile := runtime.Dialog.SelectFile("Select your profile picture", "*.jpg,*.png")
+```
+
+Or if you want just a title:
+
+```go
+  selectedFile := runtime.Dialog.SelectFile("Select a file")
+``
+
 
 
 #### SelectDirectory
@@ -200,7 +213,7 @@ Prompts the user to select a directory. Returns the path to the directory.
 
 #### SelectSaveFile
 
-> SelectSaveFile()
+> SelectSaveFile(optionalTitle string, optionalFilter string)
 
 Prompts the user to select a file for saving. Returns the path to the file.
 
@@ -208,6 +221,17 @@ Prompts the user to select a file for saving. Returns the path to the file.
   selectedFile := runtime.Dialog.SelectSaveFile()
 ```
 
+There is also the option to provide a title and filter:
+
+```go
+  selectedFile := runtime.Dialog.SelectSaveFile("Select a file", "*.jpg,*.png")
+```
+
+Or if you want just a title:
+
+```go
+  selectedFile := runtime.Dialog.SelectSaveFile("Select a file")
+``
 
 ### Window
 
