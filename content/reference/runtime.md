@@ -196,7 +196,7 @@ Or if you want just a title:
 
 ```go
   selectedFile := runtime.Dialog.SelectFile("Select a file")
-``
+```
 
 
 
@@ -231,7 +231,7 @@ Or if you want just a title:
 
 ```go
   selectedFile := runtime.Dialog.SelectSaveFile("Select a file")
-``
+```
 
 ### Window
 
