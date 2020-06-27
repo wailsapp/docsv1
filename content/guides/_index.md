@@ -11,15 +11,9 @@ chapter = true
 
   * [Migrating to v1.0.0](./migrate)
 
-### npm, JS
-
-  * Events with React JS template (TBD)
-  * Creating new `nuxt` project (TBD)
-
 ### Linux
 
   * [Add support for your Linux distro](./distro)
-  * Snap your application (TBD)
 
 ### Vue
 
