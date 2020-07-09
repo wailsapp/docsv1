@@ -17,7 +17,7 @@ chapter = true
 
 ### Vue
 
-  * Using [Vue Router](./vuerouter)
+  * Using [Vue Router & Vuex](./vuerouter)
 
 ### React
 
