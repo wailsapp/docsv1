@@ -1,13 +1,13 @@
 +++
 title = "Using Vue Router & Vuex"
-date = 2019-12-25T04:56:50+10:00
+date = 2020-07-15T09:10:12-06:00
 weight = 20
 chapter = false
 +++
 
 Wails supports both [Vue Router](https://router.vuejs.org/) for client routing and [Vuex](https://vuex.vuejs.org/) for client state management. Vue Router and Vuex can be used together, or separately.
 
-This guide assumes that you're working with the [Basic Vue](/reference/cli/#basic-vue) template.
+This guide walks through a basic setup of Vue Router and Vuex with Wails and assumes that you're working with the [Basic Vue](/reference/cli/#basic-vue) template.
 
 ## Vue Router
 
@@ -26,6 +26,8 @@ touch src/router.js
 
 In the routes file, import `Vue`, `VueRouter`, and the `HelloWorld` component.
 
+When instantiating the router, the mode must be set to `abstract`.
+
 ```js
 // router.js
 import Vue from 'vue'
@@ -43,6 +45,8 @@ const router = new VueRouter({
 
 export default router
 ```
+
+In `main.js` import the router and pass it to the Vue constructor options. In the mounted lifecyle hook you can set the router's initial route.
 
 ```js
 // main.js
@@ -63,11 +67,14 @@ Wails.Init(() => {
     render: (h) => h(App),
     // add the router to the Vue constructor
     router,
+    mounted() {
+      this.$router.replace('/')
+    },
   }).$mount('#app')
 })
 ```
 
-Use the `<router-link>` tag to change the current route. Create an entry point for the current route using the `<router-view>` tag.
+In the `App.vue` single file component, use the `<router-link>` tag to create links to routes. Create an entry point for the current route using the `<router-view>` tag.
 
 ```vue
 // App.vue
@@ -138,7 +145,7 @@ import * as Wails from '@wailsapp/runtime'
 Wails.Init(() => {
   new Vue({
     render: (h) => h(App),
-    // add the router to the Vue constructor
+    // add the vuex store to the Vue constructor
     store,
   }).$mount('#app')
 })
