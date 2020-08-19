@@ -15,6 +15,6 @@ In this section we highlight the projects using Wails.
    <a style="width: 50%; padding: 10px;" href='molly-wallet/'><img src="molly-wallet/mollywallet.png"/></a>
    <a style="width: 50%; padding: 10px;" href='portfall/'><img src="portfall/portfall-demo.gif"/></a>
    <a style="width: 50%; padding: 10px;" href='optimus/'><img src="optimus/optimus_screenshot_editor--1200x742.png"/></a>
-   <a style="width: 50%; padding: 10px; margin: 0 auto;" href='restoric/'><video src="restoric/restoric.mp4" /></a>
+   <a style="width: 50%; padding: 10px;" href='restoric/'><img src="restoric/restoric.gif"/></a>
    <a style="width: 50%; padding: 10px;" href='driving-school/'><img src="driving-school/screenshot.png"/></a>
 </p>

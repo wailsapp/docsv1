@@ -6,7 +6,7 @@ weight = 5
 
 
 <p style="text-align: center">
-   <video controls src="./restoric.mp4" style="width: 50%"></video>
+   <img src="restoric.gif"><br/>
 </p>
 
 
