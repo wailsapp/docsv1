@@ -45,6 +45,11 @@ const router = new VueRouter({
 
 export default router
 ```
+{{% notice info %}}
+We've had an unconfirmed report that 'abstract' mode should be used when packing and that 'hash' and 'history' may be used during development.
+https://github.com/wailsapp/wails/issues/492
+{{% /notice %}}
+
 
 In `main.js` import the router and pass it to the Vue constructor options. In the mounted lifecyle hook you can set the router's initial route.
 
