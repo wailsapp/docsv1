@@ -48,16 +48,16 @@ This template consists of a frontend composed of Vuetify components, bundled tog
 
 This template consists of a frontend composed of React components, bundled together using Webpack. It makes a simple call to the backend.
 
-#### Svelte
-
-This template consists of a frontend composed of Svelte components, bundled together using Rollup. It makes a simple call to the backend.
-
 <div class="videocontainer">
 <video width="727" height="454" controls>
   <source src="/videos/init.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 </div>
+
+#### Svelte
+
+This template consists of a frontend composed of Svelte components, bundled together using Rollup. It makes a simple call to the backend.
 
 ### Serve
 
