@@ -13,6 +13,7 @@ Wails comes with a runtime library that may be accessed from Javascript or Go. I
   * Dialog
   * Browser
   * Filesystem
+  * Store
 
 **NOTE: At this time, the Javascript runtime does not include the Window and Dialog subsystems**
 
@@ -342,3 +343,102 @@ func (m *MyStruct) WailsInit(r *wails.Runtime) error {
 	m.Runtime = r
 }
 ```
+
+### Store
+
+Wails has the concept of a synchronised state store: a place to put state that is *automatically* synchronised between your frontend and backend. The workflow is relatively simple: 
+
+  * Create a store 
+  * Set or Update the value in the store
+  * React to updates by Subscribing to store updates
+
+#### New
+
+> New(id string, defaultValue interface{}) (*wails.Store)
+
+Creates a new store with the given (unique) identifier and the given value.
+
+```go
+type Counter struct {
+	r     *wails.Runtime
+	store *wails.Store
+}
+
+// WailsInit is called when the component is being initialised
+func (c *Counter) WailsInit(runtime *wails.Runtime) error {
+	c.r = runtime
+	c.store = runtime.Store.New("Counter", 0)
+	return nil
+}
+```
+
+#### Set
+
+> Set(value interface{}) error
+
+Sets the store's state to the given value. 
+
+```go
+// RandomValue sets the counter to a random value
+func (c *Counter) RandomValue() {
+	c.store.Set(rand.Intn(1000))
+}
+```
+
+#### Update 
+
+> Update(updater interface{})
+
+`Update` accepts a function that is called to update the current value of the store. The function accepts the current store value and returns a value, which is the new value of the store.
+
+The reason `Update` accepts an interface{} is to make this as easy as possible to use in the absense of generics: The function that a store is expecting is one of the following format:
+
+```go
+func(currentValue T) T {}
+```
+
+Example - If you are storing an int in your store, then `Update` will expect a function that receives an int and returns an int:
+
+```go
+c.store.Update(func(currentValue int) int {
+  return currentValue * 2
+})
+```
+{{% notice warning %}}
+If you do not provide a function in the correct format, you will receive a fatal runtime error. You need to ensure your update functions are correct. This will be mitigated by generics.
+{{% /notice %}}
+
+#### Subscribe
+
+> Subscribe(callback interface{})
+
+The `Subscribe` method takes a callback that is called whenever the store has been updated. It is similar to `Update` in that the callback signature should use the same datatype as the store. This signature is:
+
+```go
+func(currentValue T) {}
+```
+
+Example:
+```go
+// WailsInit is called when the component is being initialised
+func (c *Counter) WailsInit(runtime *wails.Runtime) error {
+	c.r = runtime
+	c.store = runtime.Store.New("Counter", 0)
+
+	c.store.Subscribe(func(data int) {
+		println("New Value:", data)
+	})
+	return nil
+}
+```
+
+{{% notice warning %}}
+Calbacks are executed in goroutines.
+{{% /notice %}}
+
+### OnError
+
+> OnError( func(error) )
+
+`OnError` may be used to provide an error handler for the store. This should never be needed and should only be used when debugging issues with synchronisation messages. Example: There may have been a json encoding error that you need to debug.
+
