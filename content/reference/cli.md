@@ -34,7 +34,7 @@ Setup is also the default command so it can be invoked by simply running `wails`
 
 > wails init
 
-The init command builds out a new project based on a template of your choice. We curently support a basic Vue, Vuetify and React templates. The project will be built automatically after initialisation.
+The init command builds out a new project based on a template of your choice. We curently support a basic Vue, Vuetify, React, and Svelte templates. The project will be built automatically after initialisation.
 
 #### Basic Vue
 
@@ -54,6 +54,10 @@ This template consists of a frontend composed of React components, bundled toget
   Your browser does not support the video tag.
 </video>
 </div>
+
+#### Svelte
+
+This template consists of a frontend composed of Svelte components, bundled together using Rollup. It makes a simple call to the backend.
 
 ### Serve
 
