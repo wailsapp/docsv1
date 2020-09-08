@@ -352,6 +352,8 @@ Wails has the concept of a synchronised state store: a place to put state that i
   * Set or Update the value in the store
   * React to updates by Subscribing to store updates
 
+**NOTE: The Javascript equivalent methods are found in the wails runtime module**
+
 #### New
 
 > New(id string, defaultValue interface{}) (*wails.Store)
@@ -436,9 +438,36 @@ func (c *Counter) WailsInit(runtime *wails.Runtime) error {
 Calbacks are executed in goroutines.
 {{% /notice %}}
 
-### OnError
+#### OnError
 
 > OnError( func(error) )
 
 `OnError` may be used to provide an error handler for the store. This should never be needed and should only be used when debugging issues with synchronisation messages. Example: There may have been a json encoding error that you need to debug.
 
+#### Javascript
+
+To hook into the store in Javascript, you create a store with the same ID and use the same methods:
+
+```js
+const runtime = require('@wailsapp/runtime');
+
+// Main entry point
+function start() {
+
+  // New
+  var mystore = runtime.Store.New('Counter');
+  
+  // Set
+  mystore.set(0);
+
+  // Subscribe
+  mystore.subscribe( function(state) {
+		document.getElementById('counter').innerText = state;
+  });
+  
+  // Update
+  mystore.update( function(state) {
+    return state * 2;
+  })
+
+```
