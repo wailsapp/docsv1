@@ -8,7 +8,7 @@ disableNextPrev: true
 
 # Getting Started
 
-<p style="text-align: center; margin-top: 2rem;">Please select your Operating System</p>
+<p style="text-align: center; margin-top: 2rem;">Please select your favourite Operating System</p>
 
 <div>
 <a href="/gettingstarted/mac/" style="color:black; font-size: 4rem; margin: 1rem;"><i class="fab fa-apple"></i> <span style="color:black; font-size: 2rem;">Mac</span></a>
