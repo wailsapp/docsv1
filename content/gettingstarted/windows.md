@@ -38,6 +38,10 @@ Download NPM from the [Node Downloads Page](https://nodejs.org/en/download/). It
 
 Run `npm --version` to verify.
 
+{{% notice note %}}
+There is a [known issue](https://github.com/npm/npx/issues/14) with NPX regarding spaces in your user profile path. If you have any issues, please consult that ticket for workarounds.
+{{% /notice %}}
+
 ### GCC + Libraries
 
 Windows requires gcc and related tooling. The recommended download is from [http://tdm-gcc.tdragon.net/download](http://tdm-gcc.tdragon.net/download).
