@@ -31,5 +31,5 @@ It's possible to use React Router, but you must ensure that you don't use `<Brow
             </Route>
         </Switch>
     </div>
-</MemoryRouter> // or: </HashRouter>
+</MemoryRouter>
 ```
