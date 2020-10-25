@@ -11,6 +11,10 @@ chapter = true
 
   * [Migrating to v1.0.0](./migrate)
 
+### Windows
+
+  * [Developing for Windows](./windows)
+
 ### Linux
 
   * [Add support for your Linux distro](./distro)
