@@ -5,11 +5,12 @@ weight = 20
 chapter = false
 +++
 
-It's possible to use React Router, but you must ensure that you don't use `<BrowserRouter>` and use one of these options :
+It's possible to use React Router, but you must ensure that you don't use `<BrowserRouter>` and use one of these options :  
 - `<MemoryRouter>` [Documentation](https://reactrouter.com/web/api/MemoryRouter)  
-- `<HashRouter>` [Documentation](https://reactrouter.com/web/api/HashRouter)
-```javascript
-// Example
+- `<HashRouter>` [Documentation](https://reactrouter.com/web/api/HashRouter)  
+
+```jsx
+/* Example */
 <MemoryRouter> // or: <HashRouter>
     <div>
         <ul>
