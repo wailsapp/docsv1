@@ -4,11 +4,9 @@ date = 2019-08-29T04:56:50+10:00
 weight = 99
 +++
 
-
 <p style="text-align: center">
    <img src="screenshot.jpg"><br/>
 </p>
-
 
 **Please feel free to use this template to promote your own project!**
 
