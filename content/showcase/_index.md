@@ -5,7 +5,7 @@ weight = 20
 chapter = true
 +++
 
-# Showcase 
+# Showcase
 
 In this section we highlight the projects using Wails.
 
