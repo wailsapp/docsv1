@@ -15,8 +15,37 @@ Compared to the other platforms, developing for Windows is a little trickier for
 
 The best way to ensure your app will work correctly when building is to test using the `wails serve` command and using IE11 to test your app. IE11 is quite behind in many respects so extra attention has to be paid to ensure your code works correctly, such as:
 
-  * Adding polyfills for modern Javascript constructs, EG: Promises (We recommend using corejs!)
+  * Adding polyfills for modern Javascript constructs.
   * Using alternatives for modern HTML APIs
+
+_Note_: mshtml might be close to IE11, but it is not an exact similar environment, some features and browser capabilities might be unavailable in your wails powered app, such as localStorage.  
+
+During development, remember to make sure that `npm run start` creates an IE11 compatible build to be able to use it and preview your app, you can do that by adding this to your `frontend/package.json`:    
+```json
+"browserslist": {
+    "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all",
+        "ie 11"  
+    ],
+    "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version",
+        "ie 11"
+    ]
+}
+```
+
+## Javascript polyfills  
+
+This is a collection of recommended polyfill packages you can use
+
+| Package | Website |
+| ---------------------- | ------------ |
+| core-js  | [Documentation (npm)](https://www.npmjs.com/package/core-js) |
+| react-app-polyfill     | [Documentation (npm)](https://www.npmjs.com/package/react-app-polyfill) |
 
 ## HTML API Alternatives
 
@@ -25,11 +54,14 @@ This is a collection of IE11 compatible libraries
 | Incompatible Construct | Alternatives |
 | ---------------------- | ------------ |
 | `<input type="data">`  | [JQuery Datepicker](https://jqueryui.com/datepicker/) |
-| Modern JS features     | [corejs](https://github.com/zloirock/core-js) |
 
 ## Troubleshooting
 
 ### My app works with `wails serve` but not `wails build`. Why?
 
 Most likely, your application is using a non-IE11 compatible HTML or Javascript construct. Other causes can be the use of "browser APIs" that are not available in the mshtml webview, such as localstorage.
+
+### When running the `<project>.exe` a script error window pops up. Why?
+
+This is similar to the previous issue, make sure to run `wails serve` with devtools open to check that your app renders correctly. If the app renders in IE11 and does not after building, it is possible that you are using a browser feature that exists in IE11 and not in mshtml (ie. localstorage)
 
