@@ -7,7 +7,7 @@ chapter = false
 
 Compared to the other platforms, developing for Windows is a little trickier for the following reasons:
 
-  * The Windows builds use mshtml, which is essentially IE11
+  * The Windows builds use mshtml, which is essentially IE11 (NOTE: We are moving to WebView2 for Wails V2 which will eliminate almost all of the issues discussed on this page)
   * Mshtml does not have a developer console which can make debugging Javascript fairly difficult
 
 
