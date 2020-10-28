@@ -8,7 +8,7 @@ chapter = false
 Compared to the other platforms, developing for Windows is a little trickier for the following reasons:
 
   * The Windows builds use mshtml, which is essentially IE11 (NOTE: We are moving to WebView2 for Wails V2 which will eliminate almost all of the issues discussed on this page)
-  * Mshtml does not have a developer console which can make debugging Javascript fairly difficult
+  * Mshtml does not have a developer console which can make debugging Javascript fairly difficult (However we now have the option to inject firebug lite into your application)
 
 
 ## IE11 Compatibility
@@ -56,6 +56,10 @@ This is a collection of IE11 compatible libraries
 | `<input type="data">`  | [JQuery Datepicker](https://jqueryui.com/datepicker/) |
 
 ## Troubleshooting
+
+### My app has no dev console - I'm flying blind!
+
+As of wails v1.8.1-pre7, there is is a build flag that will inject firebug lite into your app. Build using `wails build -d -firebug` to enable this feature.
 
 ### My app works with `wails serve` but not `wails build`. Why?
 
