@@ -34,19 +34,7 @@ setup 命令可以做很多事情-询问您的姓名和电子邮件，以便它�
 
 > wails init
 
-The init command builds out a new project based on a template of your choice. We curently support a number of frameworks including Vue, Vuetify, React, Angular and Svelte. The project will be built automatically after initialisation.
-
-#### Basic Vue
-
-This template consists of a frontend composed of Vue components, bundled together using Webpack. It makes a simple call to the backend.
-
-#### Vuetify
-
-This template consists of a frontend composed of Vuetify components, bundled together using Webpack. It makes a simple call to the backend.
-
-#### React
-
-This template consists of a frontend composed of React components, bundled together using Webpack. It makes a simple call to the backend.
+The init command builds out a new project based on a template of your choice. We curently support a number of frameworks including Vue, Vuetify, React, Angular, Svelte and even vanilla JS. The project will be built automatically after initialisation.
 
 <div class="videocontainer">
 <video width="727" height="454" controls>
@@ -54,14 +42,6 @@ This template consists of a frontend composed of React components, bundled toget
   Your browser does not support the video tag.
 </video>
 </div>
-
-#### Svelte
-
-This template consists of a frontend composed of Svelte components, bundled together using Rollup. It makes a simple call to the backend.
-
-#### Angular
-
-This template is a basic angular app using webpack.
 
 ### Serve
 
@@ -101,13 +81,17 @@ The build command is the Wails equivalent of `go build`, however it does a numbe
 
 Here is a list of all available flags:
 
-| Flag     | Description                                  |
-| -------- | -------------------------------------------- |
-| -f       | Force rebuild of frontend dependencies       |
-| -d       | Build application in Debug mode              |
-| -p       | Package application after a successful build |
-| -x       | Cross-compile to different platform          |
-| -verbose | Increased output from the build process      |
+| Flag     | Description                                                            |
+| -------- | ---------------------------------------------------------------------- |
+| -f       | Force rebuild of frontend dependencies                                 |
+| -d       | Build application in Debug mode                                        |
+| -p       | Package application after a successful build                           |
+| -x       | Cross-compile to different platform                                    |
+| -gopath  | Specify your GOPATH location. Mounted to /go during cross-compilation. |
+| -ldflags | Extra options for -ldflags                                             |
+| -tags    | Build tags to pass to the go compiler (quoted and space separated)     |
+| -firebug | Inject the firebug console in debug builds (Good for Windows)          |
+| -verbose | Increased output from the build process                                |
 
 The `-p` flag is currently supports OSX and Windows. On OSX, it bundles your binary into a .app file with the default icon. On Windows, it will generate the application resource files and compile it all into a '.exe'. When the `-p` flag is used, the packaging files are left available for editing. Any changes will be picked up by the next build (eg icon).
 
