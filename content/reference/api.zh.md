@@ -5,6 +5,12 @@ weight = 10
 chapter = false
 +++
 
+### Creating your Application
+
+The application is created using `wails.CreateApp`. This takes an [optional configuration](https://pkg.go.dev/github.com/wailsapp/wails#AppConfig) which allows you to customise the application.
+
+Once you have your application, you can bind methods to it.
+
 ### 绑定
 
 除非您可以与系统进行交互，否则仅拥有 Web 前端就没有任何意义。 Wails 通过“绑定”实现了这一点-使 Go 代码可以从前端调用。 您可以将两种代码绑定到前端：
