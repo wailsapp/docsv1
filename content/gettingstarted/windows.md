@@ -38,10 +38,17 @@ Download NPM from the [Node Downloads Page](https://nodejs.org/en/download/). It
 
 Run `npm --version` to verify.
 
+{{% notice note %}}
+There is a [known issue](https://github.com/npm/npx/issues/14) with NPX regarding spaces in your user profile path. If you have any issues, please consult that ticket for workarounds.
+{{% /notice %}}
+
 ### GCC + Libraries
 
 Windows requires gcc and related tooling. The recommended download is from [http://tdm-gcc.tdragon.net/download](http://tdm-gcc.tdragon.net/download).
 
+{{% notice note %}}
+Wails applications on Windows use the mshtml library which is only compatible with IE11. It is **STRONGLY** recommended that you use IE11 to test your application using the `wails serve` command. For more information, please refer to our [Windows Development Guide]({{<ref "../guides/windows.md" >}}).
+{{% /notice %}}
 
 Now you are ready to move on to the next step of [installing Wails]({{< ref "installing.md" >}}).
 
