@@ -6,57 +6,54 @@ draft: false
 disableNextPrev: true
 ---
 
-There are many Linux distributions in existence and we strive to support as many as possible. 
+目前有许多 Linux 发行版，我们努力支持尽可能多的发行版。
 
-### Officially supported distros:
+### 官方支持的发行版:
 
-Distro  | Version
---------|--------
-Debian  | 8, 9, 10
-Ubuntu  | 16.04, 18,04, 19.04, 19.10
-Arch    | Rolling
-CentOS  | 6, 7
-Fedora  | 29, 30
+| Distro | Version                    |
+| ------ | -------------------------- |
+| Debian | 8, 9, 10                   |
+| Ubuntu | 16.04, 18,04, 19.04, 19.10 |
+| Arch   | Rolling                    |
+| CentOS | 6, 7                       |
+| Fedora | 29, 30                     |
 
+### 社区支持的发行版:
 
-### Community supported distros:
+| Distro                     | Version             |
+| -------------------------- | ------------------- |
+| Zorin                      | 15                  |
+| Parrot                     | 4.7                 |
+| Mint                       | 19                  |
+| Elementary                 | 5                   |
+| Kali                       | Rolling             |
+| Neon                       | 5.16                |
+| VoidLinux & VoidLinux-musl | Rolling             |
+| Gentoo                     | Rolling             |
+| OpenSuSE                   | Leap and Tumbleweed |
+| Raspbian                   |
+| ArcoLinux                  |
+| Deepin                     |
+| Manjaro + Manjaro-ARM      | Rolling             |
 
-Distro  | Version
---------|--------
-Zorin   | 15
-Parrot  | 4.7
-Mint    | 19
-Elementary | 5
-Kali    | Rolling
-Neon    | 5.16
-VoidLinux & VoidLinux-musl | Rolling
-Gentoo  | Rolling
-OpenSuSE| Leap and Tumbleweed
-Raspbian | 
-ArcoLinux | 
-Deepin | 
-Manjaro + Manjaro-ARM | Rolling
+_如果您在下面的列表中看不到自己的发行版，则有两种选择。一种是新开一个 Issue 寻求支持，一种是如果您喜欢探索，请按照 [如何为您的 Linux 发行版增加支持]({{}}) 并考虑进行 PR，以便让社区受益_
 
+## 先决条件
 
-_If you don't see your distro in the lists bellow you have two options. Either open a ticket asking for support or if you feel adventurus follow the [guide how to add support for your linux distro]({{}}) and also consider making a PR so the community  can benefit._
+Wails 使用 cgo 绑定到本机渲染引擎，因此需要许多平台依赖项以及 Go 的安装。基本要求是：
 
-
-## Prerequisites
-
-Wails uses cgo to bind to the native rendering engines so a number of platform dependencies are needed as well as an installation of Go. The basic requirements are:
-
-- Go 1.12 or above
+- Go 1.12 或者更高
 - npm
 - gcc, gtk, webkitgtk
 - Docker for Cross-Compilation support
 
 ### Go
 
-Download Go either using your system package manager or from the [Go Downloads Page](https://golang.org/dl/).
+使用系统软件包管理器或从 [Go 下载页面](https://golang.org/dl/).
 
-Ensure that you follow the official [Go installation instructions](https://golang.org/doc/install#install). 
+确保遵循官方的 [Go 安装说明](https://golang.org/doc/install#install).
 
-Add `$GOPATH/bin` to the `PATH` and `on` to the `GO111MODULE` environment variables. You can do this by adding these lines to your `/etc/profile` (for a system-wide installation) or `$HOME/.profile`:
+将 `$GOPATH/bin`添加到 `PATH` 将 `on` 添加到 `GO111MODULE` 环境变量. 也可以将以下内容放到 `/etc/profile` (for a system-wide installation) or `$HOME/.profile`文件中:
 
 ```bash
 export PATH=$PATH:$GOPATH/bin
@@ -64,24 +61,24 @@ export GO111MODULE=on
 ```
 
 {{% notice note %}}
-_Note: changes made to a profile file may not apply until the next time you log into your computer. To apply the changes immediately, just run the shell commands directly or execute them from the profile using a command such as `source $HOME/.profile`._
+_注意：对配置文件的更改可能要等到下一次登录计算机后才能应用。 想要立即生效, 只需要运行如 `source $HOME/.profile`之类的 shell 命令即可_
 {{% /notice %}}
 
 ### npm
 
-Download `npm` either using your system package manager or from the [Node Downloads Page](https://nodejs.org/en/download/). It is best to use the latest release as that is what we generally test against.
+从 [Node Downloads Page](https://nodejs.org/en/download/) 下载 `npm`. 最好使用最新版，因为这是我们通常会测试的版本。
 
-Run `npm --version` to verify.
+运行 `npm --version` 验证安装是否成功.
 
 ### gcc, gtk, webkit
 
-For Linux, Wails uses `gcc`, `webkit` and `GTK`. These need to be installed using the distribution specific commands below.
+对于 Linux, Wails 使用 `gcc`, `webkit` and `GTK`. 这些需要使用下面的特定于发行版的命令进行安装。
 
-#### Debian/Ubuntu & derivatives
+#### Debian/Ubuntu 及其衍生版本
 
 `sudo apt install build-essential libgtk-3-dev libwebkit2gtk-4.0-dev`
 
-#### Arch Linux & derivatives
+#### Arch Linux 及其衍生版本
 
 `sudo pacman -S gcc pkgconf webkit2gtk gtk3`
 
@@ -101,9 +98,8 @@ For Linux, Wails uses `gcc`, `webkit` and `GTK`. These need to be installed usin
 
 `sudo emerge gtk+:3 webkit-gtk`
 
-
 {{% notice note %}}
-If you have successfully installed these dependencies on a different flavour of Linux, please consider clicking the "Edit this page" link at the top of the page and submit a PR.
+如果您已成功在不同版本的 Linux 上安装了这些依赖项，请考虑单击页面顶部的"Edit this page"链接并提交 PR。
 {{% /notice %}}
 
-Now you are ready to move on to the next step of [installing Wails]({{< ref "installing.md" >}}).
+现在，您可以继续进行[安装 Wails]({{< ref "installing.md" >}})的下一步.
