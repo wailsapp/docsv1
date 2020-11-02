@@ -8,4 +8,4 @@ weight = 5
    <img src="portfall-demo.gif"><br/>
 </p>
 
-[Portfall](https://github.com/rekon-oss/portfall) - A desktop k8s port-forwarding portal for easy access to all your cluster UIs
+[Portfall](https://github.com/rekon-oss/portfall) - 桌面k8s端口转发门户，可轻松访问所有群集UI界面。

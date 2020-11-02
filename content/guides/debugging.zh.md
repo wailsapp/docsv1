@@ -15,7 +15,7 @@ Compiling your application using `wails build -d` will create a debug version of
 
 On Windows, the Webview component doesn't have developer tools natively. To mitigate this (at least to some degree), we have a hosted version of Firebug you can inject into your app using the `-firebug` build flag.
 
-### Debugging using Visual Studio
+### 使用 Visual Studio 调试
 
 It's possible to debug in Visual Studio by doing the following:
 

@@ -1,5 +1,5 @@
 +++
-title = "Add your project"
+title = "添加您的项目"
 date = 2019-08-29T04:56:50+10:00
 weight = 99
 +++
@@ -8,7 +8,7 @@ weight = 99
    <img src="screenshot.jpg"><br/>
 </p>
 
-**Please feel free to use this template to promote your own project!**
+**请随时使用此模板来推广您的项目!**
 
 [Project Name](https://github.com/wailsapp/wails) is a program to etc, etc.
 

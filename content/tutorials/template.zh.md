@@ -6,7 +6,7 @@ weight = 10
 
 In this tutorial, we will be looking at the default Vue template and gain an understanding of how Wails works. Whilst we do touch on Vue in this tutorial, it is assumed that the reader has a certain amount of experience with Vue. If not, we recommend the Vue tutorial [here](https://vuejs.org/v2/guide/). 
 
-## Initialise Project
+## 初始化项目
 
 Run `wails init` to generate your project. We will call our project 'Quotes'. Accept the defaults for the following 2 questions:
 
@@ -21,7 +21,7 @@ Project 'Quotes' generated in directory 'quotes'!
 To compile the project, run 'wails build' in the project directory.
 ```
 
-## Serve Project
+## 启动项目
 
 As we will partially be developing this in the browser, we will serve the backend in bridged mode. This means that the Go functions will be available to us in the browser!
 
@@ -79,7 +79,7 @@ If you click the button, you get a message:
 <img src="/images/templatedefaulthello.png">
 </div>
 
-## Understanding the App
+## 了解应用
 
 *What just happened?*
 
@@ -95,7 +95,7 @@ The sequence of operations are as follows:
 
 There is no more to the app than this. Let's look at those steps:
 
-### Waiting for the Backend Connection
+### 等待后端连接
 
 When running `wails serve`, the connection to the backend is managed by a bridge which is dynamically injected into the runtime library. This library does a lot of things, however we only need to be concerned with one function: Init(). The Init() function accepts a callback, which is invoked when the connection to the backend is established. This is demonstrated clearly in main.js:
 
@@ -116,7 +116,7 @@ The bridge sets up the following things:
 
 When the bridge has initialised, it will call the given callback. At this point you know that both the bindings and the runtime is available.
 
-### Mount the main application
+### 挂载主应用程序
 
 When the callback from Init is invoked, we create and mount the main Vue App Component:
 

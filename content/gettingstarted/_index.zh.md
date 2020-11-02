@@ -5,7 +5,7 @@ weight: 10
 chapter: true
 ---
 
-# Getting Started
+# 入门
 
 <p style="text-align: center; margin-top: 2rem;">请选择你的操作系统</p>
 

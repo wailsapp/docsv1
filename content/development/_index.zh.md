@@ -1,5 +1,5 @@
 +++
-title = "开发"
+title = "开发者"
 date = 2019-08-29T04:51:27+10:00
 weight = 30
 chapter = true
@@ -8,7 +8,7 @@ disableBreadcrumb = true
 
 <!-- TODO:翻译未完成 -->
 
-# 开发
+# 开发者
 
 在本节中，我们涵盖了 Wails 开发和贡献指南的所有方面。
 
