@@ -5,6 +5,12 @@ weight = 10
 chapter = false
 +++
 
+### Creating your Application
+
+The application is created using `wails.CreateApp`. This takes an [optional configuration](https://pkg.go.dev/github.com/wailsapp/wails#AppConfig) which allows you to customise the application.
+
+Once you have your application, you can bind methods to it.
+
 ### Binding
 
 Having just a web frontend means nothing unless you can interact with the system. Wails enables this through 'binding' - making Go code callable from the frontend. There are 2 types of code you can bind to the frontend: 
