@@ -101,6 +101,10 @@ For Linux, Wails uses `gcc`, `webkit` and `GTK`. These need to be installed usin
 
 `sudo emerge gtk+:3 webkit-gtk`
 
+#### Solus
+
+`sudo eopkg install libgtk-3-devel libwebkit-gtk-devel -c system.devel`
+
 
 {{% notice note %}}
 If you have successfully installed these dependencies on a different flavour of Linux, please consider clicking the "Edit this page" link at the top of the page and submit a PR.
