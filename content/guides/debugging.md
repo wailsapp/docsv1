@@ -16,10 +16,6 @@ Compiling your application using `wails build -d` will create a debug version of
 
 Modify/create the following files in the `.vscode` directory (create if it doesn't exist) in the root of your project, replacing `myapp` for your project binary name:
 
-## Windows
-
-On Windows, the Webview component doesn't have developer tools natively. To mitigate this (at least to some degree), we have a hosted version of Firebug you can inject into your app using the `-firebug` build flag.
-
 **launch.json**
 ```
 {
@@ -52,6 +48,10 @@ On Windows, the Webview component doesn't have developer tools natively. To miti
   ]
 }
 ```
+
+## Windows
+
+On Windows, the Webview component doesn't have developer tools natively. To mitigate this (at least to some degree), we have a hosted version of Firebug you can inject into your app using the `-firebug` build flag.
 
 ### Debugging using Visual Studio
 
