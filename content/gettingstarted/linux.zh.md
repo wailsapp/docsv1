@@ -102,4 +102,4 @@ _注意：对配置文件的更改可能要等到下一次登录计算机后才�
 如果您已成功在不同版本的 Linux 上安装了这些依赖项，请考虑单击页面顶部的"Edit this page"链接并提交 PR。
 {{% /notice %}}
 
-现在，您可以继续进行[安装 Wails]({{< ref "installing.md" >}})的下一步.
+现在，您可以继续进行[安装 Wails]({{< ref "installing.zh.md" >}})的下一步.
