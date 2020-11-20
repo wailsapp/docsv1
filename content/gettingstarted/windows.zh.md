@@ -43,5 +43,5 @@ Run `npm --version` to verify.
 Windows requires gcc and related tooling. The recommended download is from [http://tdm-gcc.tdragon.net/download](http://tdm-gcc.tdragon.net/download).
 
 
-Now you are ready to move on to the next step of [installing Wails]({{< ref "installing.md" >}}).
+Now you are ready to move on to the next step of [installing Wails]({{< ref "installing.zh.md" >}}).
 

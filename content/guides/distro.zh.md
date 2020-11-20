@@ -24,7 +24,7 @@ Wails uses cgo to bind to the native rendering engines so a number of platform d
 
 Locate the appropriate equivalent libraries for your distribution.
 
-_NOTE: if your distro is a *derivative* and not a *major* distribution there are good chances all necessary dependendancies to be the covered [on the installation's prerequisites section]({{% relref "../gettingstarted/linux.md/#prerequisites" %}})._
+_NOTE: if your distro is a *derivative* and not a *major* distribution there are good chances all necessary dependendancies to be the covered [on the installation's prerequisites section]({{% relref "../gettingstarted/linux.zh.md/#prerequisites" %}})._
 
 ## Gather system's information
 
