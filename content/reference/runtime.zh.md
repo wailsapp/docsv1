@@ -348,7 +348,6 @@ func (m *MyStruct) WailsInit(r *wails.Runtime) error {
 
 ### Store
 
-Wails has the concept of a synchronised state store: a place to put state that is *automatically* synchronised between your frontend and backend. The workflow is relatively simple: 
 Wails有一个同步状态存储的概念：在一块区域存放前端和后端自动同步的状态。工作流程相对简单：
 
   * 创建一个储存
