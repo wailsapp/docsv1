@@ -1,5 +1,5 @@
 +++
-title = "Developing for Windows"
+title = "Windows开发"
 date = 2019-08-29T04:56:50+10:00
 weight = 14
 chapter = false
@@ -60,10 +60,6 @@ This is a collection of IE11 compatible libraries
 ### My app has no dev console - I'm flying blind!
 
 As of wails v1.8.1-pre7, there is is a build flag that will inject firebug lite into your app. Build using `wails build -d -firebug` to enable this feature.
-
-## May app is using custom HTML and I'm getting a script error!
-
-On Windows, you cannot reference external scripts in your HTML, EG: `<script src="main.js"></script>`.
 
 ### My app works with `wails serve` but not `wails build`. Why?
 

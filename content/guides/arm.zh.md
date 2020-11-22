@@ -9,7 +9,7 @@ chapter = false
 Work in progress
 {{% /notice %}}
 
-### Compiler Errors
+### 编译错误
 
 If you find that compilation aborts with the following error:
 

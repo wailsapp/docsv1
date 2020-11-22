@@ -5,11 +5,11 @@ weight = 15
 chapter = true
 +++
 
-# Tutorials
+# 教程
 
 A collection of tutorials to help understand how to use Wails.
 
-## Template Overview
+## 模板概述
 
 In this tutorial we go through the default Vue template to gain an understanding of how Wails works. It is a simple introduction to some of the core concepts of the framework.
 
@@ -31,7 +31,7 @@ This is a comprehensive and advanced tutorial that only requires a basic knowled
 
 [Start the tutorial](./todo)
 
-## CPU Usage App
+## CPU使用率应用
 
 In Package Main Episode 16, [Alex Pliutau](https://twitter.com/pliutau) builds a CPU Usage app with Wails. He covers struct binding, the events system and how to use 3rd party Javascript packages in your app. It's a really great tutorial!
 <br/><br/>

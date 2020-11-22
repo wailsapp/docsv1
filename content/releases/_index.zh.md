@@ -1,16 +1,16 @@
 +++
-title = "发布"
+title = "版本发布"
 date = 2019-08-29T04:56:50+10:00
 weight = 20
 chapter = true
 +++
 
-# Releases
+# 版本发布
 
-The Wails release history
+Wails 版本发布历史
 
 
-| Version  | Release Date   |                   Summary               | Release Notes |
+| 版本      | 发布日期        |                   概要                   | 发行说明 |
 | -------- | -------------- | --------------------------------------- | ------------- |
 | v1.8.0   | 8th Sept 2020  | Sync Stores, Svelte Template, More Linux distros, bugfixes  | [here](./v1.8.0) |
 | v1.6.0   | 19th Jun 2020  | Vanilla JS Template, Windows icons, dialog filters, bugfixes | [here](./v1.6.0) |

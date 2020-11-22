@@ -1,5 +1,5 @@
 +++
-title = "Driving School"
+title = "驾校"
 date = 2019-08-29T04:56:50+10:00
 weight = 15
 +++
@@ -8,6 +8,6 @@ weight = 15
    <img src="screenshot.png"><br/>
 </p>
 
-[Driving School](https://github.com/idirall22/driving_school_app) is an application for the management of a driving school.
+[Driving School](https://github.com/idirall22/driving_school_app) 是一个管理驾校的应用程序。
 
-Status: In Progress.
+状态: 运行中.

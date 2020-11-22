@@ -1,14 +1,13 @@
 ---
 title: "入门"
 date: 2019-08-29T04:51:27+10:00
-weight: 1
+weight: 10
 chapter: true
-disableNextPrev: true
 ---
 
-# Getting Started
+# 入门
 
-<p style="text-align: center; margin-top: 2rem;">Please select your Operating System</p>
+<p style="text-align: center; margin-top: 2rem;">请选择你的操作系统</p>
 
 <div>
 <a href="/gettingstarted/mac/" style="color:black; font-size: 4rem; margin: 1rem;"><i class="fab fa-apple"></i> <span style="color:black; font-size: 2rem;">Mac</span></a>

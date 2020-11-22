@@ -12,14 +12,15 @@ In this section we cover all aspects of Wails development and contribution guide
 
 ## Overview
 
-  * Ensure you're using Go 1.14+
-  * Clone the [main repository](https://github.com/wailsapp/wails) to an arbitrary local directory.
-  * Make updates to your local repository.
-  * Once you have made changes, run the `wails/scripts/build.sh` script or you can run `go run build.go` in the same directory. This will ensure that the runtime is built and assets are packaged. It will then install your version of the wails cli locally.
-  * When generating a project, ensure that you update the project's `go.mod` file to indicate the local installation of Wails.
+- Ensure you're using Go 1.14+
+- Clone the [main repository](https://github.com/wailsapp/wails) to an arbitrary local directory.
+- Make updates to your local repository.
+- Once you have made changes, run the `wails/scripts/build.sh` script or you can run `go run build.go` in the same directory. This will ensure that the runtime is built and assets are packaged. It will then install your version of the wails cli locally.
+- When generating a project, ensure that you update the project's `go.mod` file to indicate the local installation of Wails.
 
 Example:
 When first generated, the go.mod file looks something like this:
+
 ```
 module test
 
@@ -30,7 +31,9 @@ require (
         github.com/wailsapp/wails v1.0.3-pre2
 )
 ```
+
 Use `replace` to indicate the local install:
+
 ```
 module test
 
@@ -46,11 +49,11 @@ replace github.com/wailsapp/wails v1.0.3-pre2 => /path/to/your/local/wails
 ## Issue Driven Development
 
 If there is something to add to the code, whether a bug or enhancement, a ticket should be opened so that it can be discussed. If the coding goes ahead, a new branch should be created from the `develop` branch with a reference to the ticket ID, eg:
-  `64 - Support react`
+`64 - Support react`
 
 Commit messages should follow the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.3/#summary) format:
 
-  * tag[(scope)]: message
+- tag[(scope)]: message
 
 | Tag             | Meaning              |
 | --------------- | -------------------- |
@@ -61,33 +64,32 @@ Commit messages should follow the [conventional commits](https://www.conventiona
 
 Examples:
 
-  * fix: this is a fix for the project as a whole
-  * fix(cli): this is a fix for the cli
-  * docs: updated the contributors
+- fix: this is a fix for the project as a whole
+- fix(cli): this is a fix for the cli
+- docs: updated the contributors
 
 ## Branch Workflow
 
-  * Wails uses a gitflow-like approach to development
-  * Feature/Bugfix branches are created from the `develop` branch
-  * Once the work is complete, pull requests should be made against the develop branch
-  * As features are added, the `develop` branch is tagged with pre-release tags
-  * Releases are made weekly, so at the end of the weekly cycle, the latest features and bugfixes that      were made will be merged to master and tagged with the next appropriate version.
+- Wails uses a gitflow-like approach to development
+- Feature/Bugfix branches are created from the `develop` branch
+- Once the work is complete, pull requests should be made against the develop branch
+- As features are added, the `develop` branch is tagged with pre-release tags
+- Releases are made weekly, so at the end of the weekly cycle, the latest features and bugfixes that were made will be merged to master and tagged with the next appropriate version.
 
 Example:
 
-  * After release v0.14.0, a ticket (#63) is opened requesting react support
-  * This is worked on and a PR is made back to `develop`
-  * Once merged, `develop` is tagged with `v0.14.1-pre`
-  * A ticket (#64) is opened requesting ultralight support
-  * This is worked on and a PR is made back to `develop`
-  * Once merged, `develop` is tagged with `v0.14.2-pre`
-  * We reach the end of our week and merge v0.14.2-pre to master, tagging it as v0.15.0
-  * Work continues on the `devel` branch
+- After release v0.14.0, a ticket (#63) is opened requesting react support
+- This is worked on and a PR is made back to `develop`
+- Once merged, `develop` is tagged with `v0.14.1-pre`
+- A ticket (#64) is opened requesting ultralight support
+- This is worked on and a PR is made back to `develop`
+- Once merged, `develop` is tagged with `v0.14.2-pre`
+- We reach the end of our week and merge v0.14.2-pre to master, tagging it as v0.15.0
+- Work continues on the `devel` branch
 
 <div class="imagecontainer">
   <img src="/images/develbranch.png">
 </div>
-
 
 ## Tooling
 
@@ -120,6 +122,7 @@ Wails v0.14.4-pre - Generating new project template
 ? Please enter a directory name for the template: mithril-basic
 Created new template 'Mithril Basic' in directory '/Users/lea/Projects/wails/cmd/templates/mithril-basic'
 ```
+
 This generates the following `template.json`:
 
 ```json
@@ -139,5 +142,4 @@ This generates the following `template.json`:
 }
 ```
 
-*Note: The `wailsdir` key is currently unused but will be used in place of bridge in the [near future](https://github.com/wailsapp/wails/issues/88)*
-
+_Note: The `wailsdir` key is currently unused but will be used in place of bridge in the [near future](https://github.com/wailsapp/wails/issues/88)_

@@ -14,7 +14,7 @@ In this tutorial, we will be creating a todo app based on the [Vue MVC Todo App]
 
 The source code to the app is available [here](https://github.com/wailsapp/todo). I highly recommend not looking at it unless you really need to.
 
-## Setup
+## 设置
 
 Generate a new project using `wails init`. We will call the project 'todos' and accept the default answers:
 
@@ -43,7 +43,7 @@ Next we will move into the `todos` directory. You should see the following files
 
 Now lets build our frontend!
 
-## Basic Frontend
+## 基础前端
 
 We are going to base our frontend on the cool [Todo MVC](http://todomvc.com/examples/vue/) app that the awesome [Evan You](evanyou.me) created. The main code repository can be located [here](https://github.com/tastejs/todomvc/tree/gh-pages/examples/vue). 
 
@@ -222,7 +222,7 @@ As Vue is serving the frontend, these changes should now be reflected in the bro
 
 That looks much better! You'll notice that whilst the app is responding, it doesn't do much. Next we'll add some code into our component to manage the list.
 
-## Implementing the list
+## 实施清单
 
 We'll store our todo list in an array in the component:
 
@@ -338,7 +338,7 @@ You should now have a styled item like so:
   <img src="/images/todocompleteditem.png" style="width: 75%">
 </div>
 
-## Toggling items
+## 切换选项
 
 Let's now add a toggle for the todo item so we can set it as completed ourselves.
 
@@ -374,7 +374,7 @@ and when you select the item:
   <img src="/images/todostyledtoggle2.png" style="width: 75%">
 </div>
 
-## Using the Vue Dev Tools
+## 使用Vue开发工具
 
 One of the motivators for Wails to fully support developing in the browser was so that developers could use the amazing array of developer extensions available. Vue has a brilliant extension called [Vue Dev Tools](https://github.com/vuejs/vue-devtools) which allows you to inspect your application from a Vue perspective. By default, Wails enables support for this extension.
 
@@ -390,7 +390,7 @@ If we click our toggle button in the page, we can see the value in dev tools tog
 
 Dev Tools is a great way to develop and debug your application. For more information, I highly recommend the awesome Flavio Copes [tutorial](https://flaviocopes.com/vue-devtools/) on it.
 
-## Adding Todo Items
+## 新增待办项
 
 It's about time we had a way of adding todo items. We already have an input at the top of the list but it doesn't do anything. Let's add a binding between that and our component data. We will add a new data item called newTodo and it will be a string:
 
@@ -469,7 +469,7 @@ Now if we enter text into the input field and press return, the item gets added 
   <img src="/images/todoadditem1.png" style="width: 75%">
 </div>
 
-## Removing Todo Items
+## 移除待办项
 
 Now that we can add items and mark them as complete, we should also add the ability to remove items from the list. We will do this by using a simple button on each item:
 
@@ -523,7 +523,7 @@ If we now hover over a todo item, you will see a red 'X' on the right hand side 
   <img src="/images/todoremoveitem1.png" style="width: 75%">
 </div>
 
-## Editing a Todo Item
+## 编辑待办项
 
 Editing a todo item will be the most complicated thing we do with Vue in this tutorial. We need to do the following:
 
@@ -849,7 +849,7 @@ The problem we now have is that every time we start the app, we lose our previou
 
 Currently, our app is completely standalone from the backend. Our main app is simply wrapping the Vue project and displaying it. What we want to do is load our list up from disk when we start our app. To do that, we must be able to bridge our frontend and backend code. We do this using the Wails Bridge.
 
-### Bridging Frontend and Backend
+### 桥接前端和后端
 
 To load our list we will want to call a function in Go which loads a file from a default location and if it doesn't exist, it creates it with an empty list. 
 
@@ -897,7 +897,7 @@ Now that we have established the connection, we can access the backend from the 
 
 Awesome! We now have an easy means to call our Go code, so let's get cracking with our Save.
 
-## Saving the Todo List
+## 保存待办项列表
 
 Our todo store in the frontend is just an array with a number of javascript objects in it. We can serialise this to JSON, which makes it an easy thing to load and save. We want to save whenever there are any changes to this list, whether it's adding, removing or editing. Vue allows us to [watch properties](https://vuejs.org/v2/guide/computed.html#Watchers) and call a function when it changes. We do this by adding the `watch` property on the component:
 

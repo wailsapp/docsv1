@@ -37,4 +37,4 @@ For MacOS, Wails uses `clang` and the native libraries. Make sure you have the x
 
 `xcode-select --install`
 
-Now you are ready to move on to the next step of [installing Wails]({{< ref "installing.md" >}}).
+Now you are ready to move on to the next step of [installing Wails]({{< ref "installing.zh.md" >}}).

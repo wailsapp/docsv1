@@ -1,5 +1,5 @@
 +++
-title = "Molly Wallet"
+title = "Molly 钱包"
 date = 2020-05-07T04:56:50+10:00
 weight = 4
 +++
@@ -8,4 +8,4 @@ weight = 4
    <img src="mollywallet.png"><br/>
 </p>
 
-[Molly Wallet](https://github.com/grvlle/constellation_wallet/) the official $DAG wallet of the Constellation Network. It'll let users interact with the Hypergraph Network in various ways, not limited to producing $DAG transactions.
+[Molly 钱包](https://github.com/grvlle/constellation_wallet/) the official $DAG wallet of the Constellation Network. It'll let users interact with the Hypergraph Network in various ways, not limited to producing $DAG transactions.
