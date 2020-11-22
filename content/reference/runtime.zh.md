@@ -5,27 +5,27 @@ weight = 10
 chapter = false
 +++
 
-Wails comes with a runtime library that may be accessed from Javascript or Go. It has the following subsystems:
+Wails 包含一个可以从go或者JavaScript访问的运行时，它包含下面的子系统
 
-  * Events
-  * Logging
-  * Window
-  * Dialog
-  * Browser
-  * Filesystem
-  * Store
+  * Events  
+  * Logging  
+  * Window  
+  * Dialog  
+  * Browser  
+  * Filesystem  
+  * Store 
 
-**NOTE: At this time, the Javascript runtime does not include the Window and Dialog subsystems**
+**NOTE: 目前，JavaScript运行时不包含window和dialog子系统**
 
-When binding a struct with the `WailsInit` method, the Go runtime object is presented by the Application.
 
-For the frontend, the runtime is accessed through the `window.wails` object.
+当使用`wails init`方法绑定结构体时，应用程序将使用Go运行时对象。
+对于前端，运行时将通过`window.wails`对象访问
 
 ### Events
 
-The Events subsystem provides a means of listening and emitting events across the application as a whole. This means that you can listen for events emitted in both Javascript and Go, and events that you emit will be received by listeners in both Go and Javascript.
+事件子系统提供了在整个应用程序中监听和注册事件的方法。您可以在Go和JavaScript中注册事件，也可以在Go和JavaScript中监听这些事件
 
-In the Go runtime, it is accessible via `runtime.Events` and provides 2 methods: `Emit` and `On`.
+在Go runtime中，通过"runtime.Events"提供`Emit` 和 `On`两种方法用于注册和监听事件
 
 <a href="https://godoc.org/github.com/wailsapp/wails/runtime#Events"><img src="https://img.shields.io/badge/godoc-reference-blue.svg" style="margin: 0;"/></a>
 
@@ -33,9 +33,9 @@ In the Go runtime, it is accessible via `runtime.Events` and provides 2 methods:
 
 > Emit(eventName string, optionalData ...interface{})
 
-The `Emit` method is used to emit named events across the application.
+`Emit` 方法将在应用中注册事件
 
-The first parameter is the name of the event to emit. The second parameter is an optional list of interface{} types, meaning you can pass arbitrary data along with the event.
+第一个参数是注册的事件名称，第二个参数是接口类型的可选列表，这意味着您可以传入您需要的任意数据。
 
 Example 1:
 
@@ -61,9 +61,9 @@ func (m *MyStruct) WailsInit(runtime *wails.Runtime) error {
 
 > On(eventName string, callback func(optionalData ...interface{}))
 
-The `On` method is used to listen for events emitted across the application.  
+`On` 方法用于在应用中监听注册的事件。
 
-The first parameter is the name of the event to listen for. The second parameter is a function to call when the event is emitted. This function has an optional parameter which will contain any data that was sent with the event. To listen to the 2 events emitted in the [emit](####emit) examples:
+第一个参数是监听的事件名称，第二个参数是回调函数，回调函数中传入一个接口列表，用于接收注册时传入的数据。
 
 Example with no data:
 
@@ -92,7 +92,7 @@ func (m *MyStruct) WailsInit(runtime *wails.Runtime) error {
 
 ### Log
 
-The Log subsystem allows you to log messages at various log levels to the application log.
+日志子系统允许您将不同日志级别的消息记录到应用程序日志中。
 
 <a href="https://godoc.org/github.com/wailsapp/wails/runtime#Log"><img src="https://img.shields.io/badge/godoc-reference-blue.svg" style="margin: 0;"/></a>
 
@@ -100,8 +100,7 @@ The Log subsystem allows you to log messages at various log levels to the applic
 
 > New(prefix string)
 
-Creates a new custom Logger with the given prefix.
-
+创建一个新的自定义Logger
 
 ```go
 type MyStruct struct {
@@ -114,12 +113,13 @@ func (m *MyStruct) WailsInit(runtime *wails.Runtime) error {
 }
 ```
 
-
-Once created, you may use any of the logger's methods:
+一旦创建完成，您可以使用logger的任何方法
 
 ##### Standard logging
 
 Each of these methods take a string (like fmt.Println):
+
+你可以像fmt.Println一样使用它们
 
   - Debug
   - Info
@@ -135,6 +135,8 @@ Each of these methods take a string (like fmt.Println):
 ##### Formatted logging
 
 Each of these methods take a string and optional data (like fmt.Printf):
+
+你可以像fmt.Printf一样使用它们
 
   - Debugf
   - Infof
@@ -169,31 +171,31 @@ Each of these methods take a string and a set of fields:
 
 ### Dialog
 
-The Dialog subsystem allows you to activate the Webview's native dialogs. 
+对话框子系统允许您使用本机对话框
 
 <a href="https://godoc.org/github.com/wailsapp/wails/runtime#Dialog"><img src="https://img.shields.io/badge/godoc-reference-blue.svg" style="margin: 0;"/></a>
 
-It is accessible via `runtime.Dialog` and has the following methods:
+可以使用`runtime.Dialog`创建对话框，它包含下列几种方法
 
-**NOTE: Opening a Dialog will halt Javascript execution, just like a browser**
+**NOTE: 打开对话框将停止JavaScript的执行，就像浏览器中的一样**
 
 #### SelectFile
 
 > SelectFile(optionalTitle string, optionalFilter string)
 
-Prompts the user to select a file for opening. Returns the path to the file.
+提示用户选择文件，返回文件的路径
 
 ```go
   selectedFile := runtime.Dialog.SelectFile()
 ```
 
-There is also the option to provide a title and filter:
+还可以使用提示文字和过滤文件类型
 
 ```go
   selectedFile := runtime.Dialog.SelectFile("Select your profile picture", "*.jpg,*.png")
 ```
 
-Or if you want just a title:
+或者只使用提示文字
 
 ```go
   selectedFile := runtime.Dialog.SelectFile("Select a file")
@@ -205,7 +207,7 @@ Or if you want just a title:
 
 > SelectDirectory()
 
-Prompts the user to select a directory. Returns the path to the directory.
+提示用户选择文件夹，返回文件夹的路径
 
 ```go
   selectedDirectory := runtime.Dialog.SelectDirectory()
@@ -216,19 +218,19 @@ Prompts the user to select a directory. Returns the path to the directory.
 
 > SelectSaveFile(optionalTitle string, optionalFilter string)
 
-Prompts the user to select a file for saving. Returns the path to the file.
+提示用户选择要保存的文件，返回文件的路径
 
 ```go
   selectedFile := runtime.Dialog.SelectSaveFile()
 ```
 
-There is also the option to provide a title and filter:
+也可以使用提示文字和文件类型过滤
 
 ```go
   selectedFile := runtime.Dialog.SelectSaveFile("Select a file", "*.jpg,*.png")
 ```
 
-Or if you want just a title:
+或者只使用提示文字
 
 ```go
   selectedFile := runtime.Dialog.SelectSaveFile("Select a file")
@@ -236,7 +238,7 @@ Or if you want just a title:
 
 ### Window
 
-The Window subsystem provides methods to interact with the application's main window.
+窗口子系统提供了与应用程序主窗口交互的方法。
 
 <a href="https://godoc.org/github.com/wailsapp/wails/runtime#Window"><img src="https://img.shields.io/badge/godoc-reference-blue.svg" style="margin: 0;"/></a>
 
@@ -244,7 +246,7 @@ The Window subsystem provides methods to interact with the application's main wi
 
 > SetColour(colour string) error
 
-Sets the background colour of the window to the colour given to it (string). The colour may be specified in the following formats:
+将窗口的背景颜色设置为指定的颜色。颜色可按以下格式指定：
 
 |  Colour Type | Example  |
 | ------------ | -------- |
@@ -262,7 +264,7 @@ Sets the background colour of the window to the colour given to it (string). The
 
 > Fullscreen()
 
-Attempts to make the application window fullscreen. Will fail if the application was started with the option "Resizable: false".
+尝试使应用程序窗口全屏显示。如果设置了"Resizable: false"，将会失败。
 
 ```go
   runtime.Window.Fullscreen()
@@ -274,7 +276,7 @@ Attempts to make the application window fullscreen. Will fail if the application
 
 > UnFullscreen()
 
-Attempts to revert the window back to its size prior to a Fullscreen call. Will fail if the application was started with the option "Resize: false"
+尝试在全屏调用之前还原窗口大小。如果设置了"Resizable: false"，将会失败。
 
 ```go
   UnFullscreen()
@@ -285,7 +287,7 @@ Attempts to revert the window back to its size prior to a Fullscreen call. Will 
 
 > SetTitle(title string)
 
-Sets the title in the application title bar.
+设置应用程序标题中的标题。
 
 ```go
  runtime.Window.SetTitle("We'll need a bigger boat")
@@ -294,7 +296,7 @@ Sets the title in the application title bar.
 
 #### Close
 
-Closes the main window and thus terminates the application. Use with care!
+关闭主窗口，从而终止应用程序。小心使用！
 
 ```go
   runtime.Window.Close()
@@ -303,7 +305,7 @@ Closes the main window and thus terminates the application. Use with care!
 
 ### Browser
 
-The browser subsystem provides methods to interact with the system browser.
+浏览器子系统提供与系统浏览器交互的方法。
 
 <a href="https://godoc.org/github.com/wailsapp/wails/runtime#Browser"><img src="https://img.shields.io/badge/godoc-reference-blue.svg" style="margin: 0;"/></a>
 
@@ -311,7 +313,7 @@ The browser subsystem provides methods to interact with the system browser.
 
 > OpenURL(url string)
 
-Opens the given URL in the system browser.
+在系统浏览器中打开URL。
 
 ```go
 runtime.Browser.OpenURL("https://wails.app")
@@ -319,7 +321,7 @@ runtime.Browser.OpenURL("https://wails.app")
 
 ### Filesystem
 
-The Filesystem subsystem provides a means of accessing filesystem related methods. Currently this is limited to Go.
+文件系统子系统提供了与文件系统相关的方法。目前仅限于Go。
 
 <a href="https://godoc.org/github.com/wailsapp/wails/runtime#FileSystem"><img src="https://img.shields.io/badge/godoc-reference-blue.svg" style="margin: 0;"/></a>
 
@@ -328,11 +330,11 @@ The Filesystem subsystem provides a means of accessing filesystem related method
 
 > HomeDir() (string, error)
 
-Returns the user's home directory, or an error.
+返回用户的主目录和错误。
 
 ### A Common Pattern
 
-A common pattern for the Runtime is to simply save it as part of the struct and use it when needed:
+运行时的通用模式是将其保存为结构体的一部分，并在需要时使用它：
 
 ```go
 type MyStruct struct {
@@ -347,18 +349,19 @@ func (m *MyStruct) WailsInit(r *wails.Runtime) error {
 ### Store
 
 Wails has the concept of a synchronised state store: a place to put state that is *automatically* synchronised between your frontend and backend. The workflow is relatively simple: 
+Wails有一个同步状态存储的概念：在一块区域存放前端和后端自动同步的状态。工作流程相对简单：
 
-  * Create a store 
-  * Set or Update the value in the store
-  * React to updates by Subscribing to store updates
+  * 创建一个储存
+  * 设置或者更新储存中的值
+  * 通过订阅存储更新来响应更新
 
-**NOTE: The Javascript equivalent methods are found in the wails runtime module**
+**NOTE: 在wails运行时模块中可以找到Javascript等效方法**
 
 #### New
 
 > New(id string, defaultValue interface{}) (*wails.Store)
 
-Creates a new store with the given (unique) identifier and the given value.
+创建一个具有唯一标识符和默认值创建新存储。
 
 ```go
 type Counter struct {
@@ -378,7 +381,7 @@ func (c *Counter) WailsInit(runtime *wails.Runtime) error {
 
 > Set(value interface{}) error
 
-Sets the store's state to the given value. 
+设置储存中的值
 
 ```go
 // RandomValue sets the counter to a random value
@@ -391,7 +394,7 @@ func (c *Counter) RandomValue() {
 
 > Update(updater interface{})
 
-`Update` accepts a function that is called to update the current value of the store. The function accepts the current store value and returns a value, which is the new value of the store.
+`Update`接收一个函数，函数的参数为当前储存的值，返回更新后的值
 
 The reason `Update` accepts an interface{} is to make this as easy as possible to use in the absense of generics: The function that a store is expecting is one of the following format:
 
@@ -399,7 +402,7 @@ The reason `Update` accepts an interface{} is to make this as easy as possible t
 func(currentValue T) T {}
 ```
 
-Example - If you are storing an int in your store, then `Update` will expect a function that receives an int and returns an int:
+Example - 如果你储存一个int类型的值，`Update`将接收一个函数，函数的参数将是一个int类型的值，返回一个int类型的值：
 
 ```go
 c.store.Update(func(currentValue int) int {
@@ -407,14 +410,14 @@ c.store.Update(func(currentValue int) int {
 })
 ```
 {{% notice warning %}}
-If you do not provide a function in the correct format, you will receive a fatal runtime error. You need to ensure your update functions are correct. This will be mitigated by generics.
+如果没有提供正确格式的函数，将收到致命的运行时错误。
 {{% /notice %}}
 
 #### Subscribe
 
 > Subscribe(callback interface{})
 
-The `Subscribe` method takes a callback that is called whenever the store has been updated. It is similar to `Update` in that the callback signature should use the same datatype as the store. This signature is:
+`Subscribe` 方法接收更新存储时的回调函数。它与`Update`类似，回调函数应该使用与存储相同的数据类型:
 
 ```go
 func(currentValue T) {}
@@ -435,18 +438,18 @@ func (c *Counter) WailsInit(runtime *wails.Runtime) error {
 ```
 
 {{% notice warning %}}
-Calbacks are executed in goroutines.
+回调函数在goroutine中执行
 {{% /notice %}}
 
 #### OnError
 
 > OnError( func(error) )
 
-`OnError` may be used to provide an error handler for the store. This should never be needed and should only be used when debugging issues with synchronisation messages. Example: There may have been a json encoding error that you need to debug.
+`OnError` 提供为存储区发生错误处理的方法。这不是必须的，它应该只在调试同步消息的问题时使用。例如json编码发生错误时。
 
 #### Javascript
 
-To hook into the store in Javascript, you create a store with the same ID and use the same methods:
+Javascript的钩子，请使用相同的ID创建存储，并使用相同的方法：
 
 ```js
 const runtime = require('@wailsapp/runtime');
