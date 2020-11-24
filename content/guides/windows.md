@@ -61,7 +61,7 @@ This is a collection of IE11 compatible libraries
 
 As of wails v1.8.1-pre7, there is is a build flag that will inject firebug lite into your app. Build using `wails build -d -firebug` to enable this feature.
 
-## May app is using custom HTML and I'm getting a script error!
+## My app is using custom HTML and I'm getting a script error!
 
 On Windows, you cannot reference external scripts in your HTML, EG: `<script src="main.js"></script>`.
 
