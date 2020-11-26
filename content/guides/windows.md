@@ -57,11 +57,15 @@ This is a collection of IE11 compatible libraries
 
 ## Troubleshooting
 
+### My app is starting but I'm just getting a blank screen
+
+Most likely, your application is using a non-IE11 compatible HTML or Javascript construct. Other causes can be the use of "browser APIs" that are not available in the mshtml webview, such as localstorage. Try running `wails serve` and opening up the application in IE11. Check the dev console for more details.
+
 ### My app has no dev console - I'm flying blind!
 
 As of wails v1.8.1-pre7, there is is a build flag that will inject firebug lite into your app. Build using `wails build -d -firebug` to enable this feature.
 
-## My app is using custom HTML and I'm getting a script error!
+### My app is using custom HTML and I'm getting a script error!
 
 On Windows, you cannot reference external scripts in your HTML, EG: `<script src="main.js"></script>`.
 
