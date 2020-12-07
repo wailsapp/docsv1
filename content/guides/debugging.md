@@ -11,9 +11,47 @@ Compiling your application using `wails build -d` will create a debug version of
   * You can control the log level by using the `-loglevel` flag when launching your application
   * The Developer tools will be accessible in your app via the right click menu (Linux & Mac)
 
+
+## Debugging using Visual Studio Code
+
+Modify/create the following files in the `.vscode` directory (create if it doesn't exist) in the root of your project, replacing `myapp` for your project binary name:
+
+**launch.json**
+```
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Wails: build debug",
+      "type": "go",
+      "request": "launch",
+      "mode": "exec",
+      "program": "${workspaceFolder}/build/myapp",
+      "preLaunchTask": "wails_debug_build",
+      "env": {},
+      "args": []
+    }
+  ]
+}
+```
+
+**tasks.json**
+```
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "wails_debug_build",
+      "type": "shell",
+      "command": "wails build -d"
+    }
+  ]
+}
+```
+
 ## Windows
 
-On Windows, the Webview component doesn't have developer tools natively. To mitigate this (at least to some degree), a very basic console can be invoked by pressing `Shift-ESC`. It allows you to enter javascript commands and does a certain degree of evaluation. The console is considered alpha quality, so if you would like to improve it, please feel free to [create a PR](https://github.com/wailsapp/wails/blob/develop/runtime/assets/console.js).
+On Windows, the Webview component doesn't have developer tools natively. To mitigate this (at least to some degree), we have a hosted version of Firebug you can inject into your app using the `-firebug` build flag.
 
 ### Debugging using Visual Studio
 
@@ -26,7 +64,7 @@ It's possible to debug in Visual Studio by doing the following:
 
   * Click Select... and choose Debug there code types: -> Script
 
-  * Find and select the process of your DeskGap application in Available Pocesses;
+  * Find and select the process of your Wails application in Available Pocesses;
 
   * Click Attach. The DOM Explorer and JavaSript Console should now show up. If not, open them in Debug -> Windows.
 

@@ -5,9 +5,9 @@ weight = 20
 chapter = true
 +++
 
-# Showcase
+# 项目展示
 
-In this section we highlight the projects using Wails.
+在本节中，我们重点介绍使用Wails开发的项目。
 
 <p style="text-align: center">
    <a style="width: 50%; padding: 10px;" href='wally/'><img src="wally/wally.png"/></a>

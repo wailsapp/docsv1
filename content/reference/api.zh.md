@@ -5,14 +5,20 @@ weight = 10
 chapter = false
 +++
 
+### Creating your Application
+
+The application is created using `wails.CreateApp`. This takes an [optional configuration](https://pkg.go.dev/github.com/wailsapp/wails#AppConfig) which allows you to customise the application.
+
+Once you have your application, you can bind methods to it.
+
 ### 绑定
 
-除非您可以与系统进行交互，否则仅拥有 Web 前端就没有任何意义。 Wails 通过“绑定”实现了这一点-使 Go 代码可以从前端调用。 您可以将两种代码绑定到前端：
+除非您可以与系统进行交互，否则仅使用 Web 前端就没有任何意义。 Wails 通过“绑定”实现了这一点-可以从前端调用 Go 代码。 您可以将两种代码绑定到前端：
 
 - 函数
 - 结构体方法
 
-绑定它们时，可以在前端中使用它们。
+绑定它们，就可以在前端使用它们。
 
 #### 函数
 
@@ -41,11 +47,11 @@ app.Run()
 }
 {{< /highlight >}}
 
-当这个函数运行时，一个名为“Greet”的 Javascript 函数在全局“backend”对象下可用。可以通过调用`backend.Greet`，例如：`backend.Greet("World")`。动态生成的函数返回一个标准的 promise。对于这个简单的例子，您可以这样打印结果：`backend.Greet("World").then(console.log)`。
+当这个函数运行时，一个名为“Greet”的 Javascript 函数在全局“backend”对象下可用。可以通过调用`backend.Greet`，例如：`backend.Greet("World")`。动态生成的函数返回一个标准的 Promise。对于这个简单的例子，您可以这样打印结果：`backend.Greet("World").then(console.log)`。
 
 ##### 类型转换
 
-标量类型会自动转换为相关的 Go 类型。 对象被转换为“ map [string] interface {}”。如果要在 Go 中创建这些具体类型，建议您使用 Hashicorp 的[mapstructure](https://github.com/mitchellh/mapstructure).
+标量类型会自动转换为相关的 Go 类型。 对象被转换为“map[string] interface{}”。如果要在 Go 中创建这些具体类型，建议您使用 Hashicorp 的[mapstructure](https://github.com/mitchellh/mapstructure).
 
 例如:
 
@@ -58,7 +64,7 @@ app.Run()
     C int64
   }
 
-  //我们期待以下形式的javascript对象：
+  //我们希望有以下形式的javascript对象：
   // { A: "", B: 0.0, C: 0 }
   func basic(data map[string]interface{}) string {
     var result MyData
@@ -73,7 +79,7 @@ app.Run()
   }
 ```
 
-在前端，我们更新“ HelloWorld.vue”组件中的“ getMessage”方法以发送对象：
+在前端，我们更新“HelloWorld.vue”组件中的“getMessage”方法以发送对象：
 
 ```go
     getMessage: function() {
@@ -97,7 +103,7 @@ Result: main.MyData{A:"hello", B:1.1, C:99}
 ```
 
 {{% notice warning %}}
-警告：建议业务逻辑和数据结构主要位于应用程序的“执行”部分，然后使用事件将更新发送到前端。 在两个地方管理状态会导致非常不愉快的开发体验。
+警告：建议业务逻辑和数据结构主要位于应用程序的“执行”部分，然后使用事件将更新发送到前端。 在两个地方管理状态会导致开发体验很糟糕。
 {{% /notice %}}
 
 #### 结构体方法
@@ -262,7 +268,7 @@ func main() {
   ...
 ```
 
-在 Javascript 中，使用新用户名调用“ MyStruct.MyBoundMethod”将返回一个承诺，该承诺将没有任何价值。 用现有用户名调用“ MyStruct.MyBoundMethod”将返回一个承诺，该承诺将被拒绝，错误设置为“\$name' already exists”。
+在 Javascript 中，使用新用户名调用“ MyStruct.MyBoundMethod”将返回一个 Promise，该 Promise 将没有任何价值。 用现有用户名调用“ MyStruct.MyBoundMethod”将返回一个 Promise，该 Promise 将被拒绝，错误设置为“\$name' already exists”。
 
 最好返回两个值，一个结果和一个错误，因为这直接映射到 Javascript Promise。 如果您什么都没有退回，那么事件可能更合适。
 

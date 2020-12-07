@@ -5,7 +5,7 @@ weight = 17
 chapter = true
 +++
 
-# Guides
+# 指南
 
 ### Migration
 

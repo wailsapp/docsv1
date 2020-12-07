@@ -6,8 +6,8 @@ chapter = true
 disableBreadcrumb = true
 +++
 
-# Links
+# 友情链接
 
-This is collection of links to other sites that discuss Wails
+这是是其他讨论Wails的网站的链接
 
-  * [A great write up](https://rekon.uk/2020/04/portfall-a-desktop-k8s-port-forwarding-portal-for-easy-access-to-all-your-cluster-uis/) on the use of Wails in creating [Portfall](https://github.com/rekon-oss/portfall) - A desktop k8s port-forwarding portal for easy access to all your cluster UIs
+  * [一篇好文章](https://rekon.uk/2020/04/portfall-a-desktop-k8s-port-forwarding-portal-for-easy-access-to-all-your-cluster-uis/) 使用 Wails 创建 [Portfall](https://github.com/rekon-oss/portfall) - 桌面版k8s端口转发应用，可以轻松访问所有集群的UI界面。

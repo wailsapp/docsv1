@@ -1,110 +1,117 @@
 +++
-title = "开发"
+title = "开发者"
 date = 2019-08-29T04:51:27+10:00
 weight = 30
 chapter = true
 disableBreadcrumb = true
 +++
 
-# Development
+<!-- TODO:翻译未完成 -->
 
-In this section we cover all aspects of Wails development and contribution guidelines.
+# 开发者
 
-## Overview
+在本节中，我们涵盖了 Wails 开发和贡献指南的所有方面。
 
-  * Ensure you're using Go 1.14+
-  * Clone the [main repository](https://github.com/wailsapp/wails) to an arbitrary local directory.
-  * Make updates to your local repository.
-  * Once you have made changes, run the `wails/scripts/build.sh` script or you can run `go run build.go` in the same directory. This will ensure that the runtime is built and assets are packaged. It will then install your version of the wails cli locally.
-  * When generating a project, ensure that you update the project's `go.mod` file to indicate the local installation of Wails.
+## 概述
 
-Example:
-When first generated, the go.mod file looks something like this:
+- 确保您使用的是 Go 1.14+
+- 克隆主仓库 [主仓库](https://github.com/wailsapp/wails) 到本地目录
+- 更新本地仓库
+- 更改完成后, 运行 `wails/scripts/build.sh`或者在相同目录运行 `go run build.go` 。 构建打包完成后将在本地安装 wails cli 程序
+- 生成项目时，请确保更新项目的`go.mod`文件以指向 Wails 的本地安装目录。
+
+示例:
+首次生成时，go.mod 文件如下所示:
+
 ```
 module test
 
 go 1.14
 
 require (
-        github.com/leaanthony/mewn v0.10.7
-        github.com/wailsapp/wails v1.0.3-pre2
+  github.com/leaanthony/mewn v0.10.7
+  github.com/wailsapp/wails v1.0.3-pre2
 )
 ```
-Use `replace` to indicate the local install:
+
+使用 `replace`标识本地安装:
+
 ```
 module test
 
 go 1.14
 
 require (
-        github.com/leaanthony/mewn v0.10.7
-        github.com/wailsapp/wails v1.0.3-pre2
+  github.com/leaanthony/mewn v0.10.7
+  github.com/wailsapp/wails v1.0.3-pre2
 )
 replace github.com/wailsapp/wails v1.0.3-pre2 => /path/to/your/local/wails
 ```
 
-## Issue Driven Development
+## 问题驱动开发
 
-If there is something to add to the code, whether a bug or enhancement, a ticket should be opened so that it can be discussed. If the coding goes ahead, a new branch should be created from the `develop` branch with a reference to the ticket ID, eg:
-  `64 - Support react`
+如果有什么东西需要添加到代码中，不管是新功能还是 bug，都应该新开一个 Issue，以便进行讨论。如果继续编写代码，则应该从“develop”分支创建一个新分支，并引用 Issue ID。示例：
+`64 - Support react`
 
-Commit messages should follow the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.3/#summary) format:
+提交规范应该遵循 [conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.3/#summary)格式:
 
-  * tag[(scope)]: message
+- tag[(scope)]: message
+- 标签[(域)]:提交消息
 
-| Tag             | Meaning              |
-| --------------- | -------------------- |
-| fix             | Bugfix               |
-| feat            | New Feature          |
-| docs            | Documentation update |
-| BREAKING CHANGE | API Change           |
+ps:为了更好的交流，请尽量使用英文。
 
-Examples:
+| Tag             | Meaning    |
+| --------------- | ---------- |
+| fix             | 错误修正   |
+| feat            | 新功能     |
+| docs            | 文档更新   |
+| BREAKING CHANGE | API Change |
 
-  * fix: this is a fix for the project as a whole
-  * fix(cli): this is a fix for the cli
-  * docs: updated the contributors
+示例:
 
-## Branch Workflow
+- fix: this is a fix for the project as a whole
+- fix(cli): this is a fix for the cli
+- docs: updated the contributors
 
-  * Wails uses a gitflow-like approach to development
-  * Feature/Bugfix branches are created from the `develop` branch
-  * Once the work is complete, pull requests should be made against the develop branch
-  * As features are added, the `develop` branch is tagged with pre-release tags
-  * Releases are made weekly, so at the end of the weekly cycle, the latest features and bugfixes that      were made will be merged to master and tagged with the next appropriate version.
+## 分支工作流
 
-Example:
+- Wails 使用类似 gitflow 的开发方法
+- Feature/Bugfix 分支是从`develop`分支创建的
+- 一旦工作完成，应针对开发分支提出拉取请求
+- 随着功能的添加，`develop`分支被标记有预发行（pre-release）标签
+- 每周发布一次，因此在每周周期结束时，所做的最新功能和错误修正将合并到母版中，并用下一个适当的版本进行标记。
 
-  * After release v0.14.0, a ticket (#63) is opened requesting react support
-  * This is worked on and a PR is made back to `develop`
-  * Once merged, `develop` is tagged with `v0.14.1-pre`
-  * A ticket (#64) is opened requesting ultralight support
-  * This is worked on and a PR is made back to `develop`
-  * Once merged, `develop` is tagged with `v0.14.2-pre`
-  * We reach the end of our week and merge v0.14.2-pre to master, tagging it as v0.15.0
-  * Work continues on the `devel` branch
+示例:
+
+- 在 v0.14.0 版本之后，将打开一个票证(#63)，请求提供支持
+- 这个工作完成，将回到 `develop` 分支
+- 合并后 `develop`将被标记为 `v0.14.1-pre`
+- 打开一个票证(#64) 来请求提供支持
+- 如果可以的话，PR 将合并到`develop`分支
+- 合并后, `develop` 分支会有标记 `v0.14.2-pre`
+- 我们在本周结束的时候将 v0.14.2-pre 合并到 master, 并标记为 v0.15.0
+- 继续在`devel` 分支开发
 
 <div class="imagecontainer">
   <img src="/images/develbranch.png">
 </div>
 
+## 工具
 
-## Tooling
-
-The Wails cli has developer tooling built in, but needs activating. To create a developer version, do the following:
+Wails cli 内置了开发人员工具，但需要激活去创建开发者版本，请执行以下操作：
 
 ```
 cd cmd/wails
 go install --tags=dev
 ```
 
-This unlocks a `wails dev` command that has subcommands for development.
+这将解锁一个带有开发子命令的“ wails dev”命令。
 
-### Creating new project templates
+### 创建一个新的项目模板
 
-With a developer enabled cli, you can run `wails dev newtemplate` to create a new project template. You will be asked a number of questions regarding your template and as a result, a new directory will be created in `<project-root>/cmd/templates`.
+在启用了开发人员的 cli 之后，您可以运行`wails dev newtemplate`来创建新的项目模板。系统将询问您一些有关模板的问题，结果将在`<project-root>/cmd/templates`中创建一个新目录。
 
-Here is an example run:
+下面是一个运行示例：
 
 ```
 Wails v0.14.4-pre - Generating new project template
@@ -120,7 +127,8 @@ Wails v0.14.4-pre - Generating new project template
 ? Please enter a directory name for the template: mithril-basic
 Created new template 'Mithril Basic' in directory '/Users/lea/Projects/wails/cmd/templates/mithril-basic'
 ```
-This generates the following `template.json`:
+
+这将生成 `template.json`文件:
 
 ```json
 {
@@ -139,5 +147,4 @@ This generates the following `template.json`:
 }
 ```
 
-*Note: The `wailsdir` key is currently unused but will be used in place of bridge in the [near future](https://github.com/wailsapp/wails/issues/88)*
-
+_注意: The `wailsdir` 目前未使用，但将来会使用 [near future](https://github.com/wailsapp/wails/issues/88)_
