@@ -63,7 +63,7 @@ Most likely, your application is using a non-IE11 compatible HTML or Javascript 
 
 ### My app has no dev console - I'm flying blind!
 
-As of wails v1.8.1-pre7, there is is a build flag that will inject firebug lite into your app. Build using `wails build -d -firebug` to enable this feature.
+Check out the [Debugging Guide for Windows](/guides/debugging/#windows)
 
 ### My app is using custom HTML and I'm getting a script error!
 
