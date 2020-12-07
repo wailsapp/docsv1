@@ -59,7 +59,8 @@ This is a collection of IE11 compatible libraries
 
 ### My app has no dev console - I'm flying blind!
 
-As of wails v1.8.1-pre7, there is is a build flag that will inject firebug lite into your app. Build using `wails build -d -firebug` to enable this feature.
+Check out the [Debugging Guide for Windows](/guides/debugging/#windows)
+
 
 ### My app works with `wails serve` but not `wails build`. Why?
 
