@@ -1,7 +1,7 @@
 +++
 title = "Tuxedo Keyboard UI"
 date = 2019-08-29T04:56:50+10:00
-weight = 2
+weight = 10
 +++
 
 <p style="text-align: center">
