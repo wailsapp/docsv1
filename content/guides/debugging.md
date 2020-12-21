@@ -11,7 +11,6 @@ Compiling your application using `wails build -d` will create a debug version of
   * You can control the log level by using the `-loglevel` flag when launching your application
   * The Developer tools will be accessible in your app via the right click menu (Linux & Mac)
 
-
 ## Debugging using Visual Studio Code
 
 Modify/create the following files in the `.vscode` directory (create if it doesn't exist) in the root of your project, replacing `myapp` for your project binary name:
@@ -51,7 +50,24 @@ Modify/create the following files in the `.vscode` directory (create if it doesn
 
 ## Windows
 
-On Windows, the Webview component doesn't have developer tools natively. To mitigate this (at least to some degree), we have a hosted version of Firebug you can inject into your app using the `-firebug` build flag.
+On Windows, the Webview component doesn't have developer tools natively, however there are a couple of ways to attach a remote debugger:
+
+## Debugging using IEChooser/F12Chooser
+
+It's possible to use a little-known utility for attaching the IE dev tools to your application: IEChooser.exe (or F12Chooser.exe depending on your windows version). The steps to attach are:
+
+  1. Launch your Wails app
+  2. Run `C:\Windows\System32\F12\IEChooser.exe` (or `F12Chooser.exe`)
+  3. Select the application - it usually appears as `about: blank`
+  4. The dev tools will attach to the app
+
+Note: This video is high resolution. Best viewed full screen.
+<div>
+  <video style="width: 100%; max-width: 1552px; max-height: 1078px;" controls>
+    <source src="/videos/windows-dev-tools.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
 
 ### Debugging using Visual Studio
 
