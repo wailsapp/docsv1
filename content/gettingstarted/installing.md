@@ -47,12 +47,12 @@ If all went well, you should have a compiled program in your local directory. Ru
 While developing your apps using wails the preferred method is by the [serve command]({{< relref "/reference/cli.md#serve" >}}) `wails serve`.
 
 {{% notice tip %}}
-This produces a much **faster** lightweight build in _debug_ mode, excluding `npm` build scripts, saving time when developing the backend and also enabling use of `npm run serve` for partial browser development of frontend!
+This produces a much **faster** lightweight build in _debug_ mode, excluding `npm` build scripts, saving time when developing the backend and also enabling use of `npm run start` for partial browser development of frontend!
 {{% /notice %}}
 
-#### `npm run serve`
+#### `npm run start`
 
-Change into the frontend directory `cd my-project/frontend` and serve your GUI using `npm run serve`.
+Change into the frontend directory `cd my-project/frontend` and serve your GUI using `npm run start`.
 
 
 ## Next Steps
