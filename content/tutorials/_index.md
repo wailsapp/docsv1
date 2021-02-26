@@ -11,7 +11,7 @@ A collection of tutorials to help understand how to use Wails.
 
 ## Template Overview
 
-In this tutorial we go through the default Vue template to gain an understanding of how Wails works. It is a simple introduction to some of the core concepts of the framework.
+In this tutorial we go through the default Vue template to gain an understanding of how Wails works. It is a simple introduction to some of the core concepts of Wails.
 
 [Start the tutorial](./template)
 
@@ -25,7 +25,7 @@ This is recommended for those who are proficient in Javascript and Go and are lo
 
 ## Todo
 
-What's a framework without a Todo app? We revisit the classic app, basing it on the [Todo MVC](http://todomvc.com/examples/vue/) version.
+We revisit the classic app, basing it on the [Todo MVC](http://todomvc.com/examples/vue/) version.
 
 This is a comprehensive and advanced tutorial that only requires a basic knowledge of Javascript and Go. It covers all aspects of Wails and is recommended for people of all skill levels.
 
@@ -47,7 +47,6 @@ In Package Main Episode 16, [Alex Pliutau](https://twitter.com/pliutau) builds a
 <br/>
 
 The tutorial is also available in text format at Package Main's [episode 16 github repo](https://github.com/plutov/packagemain/tree/master/16-wails-desktop-app) or as a [Medium article](https://medium.com/js-dojo/building-a-desktop-app-in-go-using-wails-b7f5825f986a).
-
 
 {{% notice note %}}
 This tutorial uses an older version of the Runtime which has had some slight changes since v0.18.0. Please read the [Reference Guide](../reference/#wails-runtime) for more information.

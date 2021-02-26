@@ -7,4 +7,4 @@ chapter = true
 
 # Reference
 
-This section goes into detail about the components of the Wails framework
+This section goes into detail about the components of Wails
