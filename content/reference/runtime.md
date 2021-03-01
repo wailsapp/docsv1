@@ -5,17 +5,17 @@ weight = 10
 chapter = false
 +++
 
-Wails comes with a runtime library that may be accessed from Javascript or Go. It has the following subsystems:
+Wails comes with a runtime library that may be accessed from JavaScript or Go. It has the following subsystems:
 
-  * Events
-  * Logging
-  * Window
-  * Dialog
-  * Browser
-  * Filesystem
-  * Store
+  * [Events](#events)
+  * [Log](#log)
+  * [Window](#window)
+  * [Dialog](#dialog)
+  * [Browser](#browser)
+  * [Filesystem](#filesystem)
+  * [Store](#store)
 
-**NOTE: At this time, the Javascript runtime does not include the Window and Dialog subsystems**
+**NOTE: At this time, the JavaScript runtime does not include the Window and Dialog subsystems**
 
 When binding a struct with the `WailsInit` method, the Go runtime object is presented by the Application.
 
@@ -23,7 +23,7 @@ For the frontend, the runtime is accessed through the `window.wails` object.
 
 ### Events
 
-The Events subsystem provides a means of listening and emitting events across the application as a whole. This means that you can listen for events emitted in both Javascript and Go, and events that you emit will be received by listeners in both Go and Javascript.
+The Events subsystem provides a means of listening and emitting events across the application as a whole. This means that you can listen for events emitted in both JavaScript and Go, and events that you emit will be received by listeners in both Go and JavaScript.
 
 In the Go runtime, it is accessible via `runtime.Events` and provides 2 methods: `Emit` and `On`.
 
@@ -45,7 +45,6 @@ func (m *MyStruct) WailsInit(runtime *wails.Runtime) error {
 }
 ```
 
-
 Example 2:
 
 ```go
@@ -55,7 +54,6 @@ func (m *MyStruct) WailsInit(runtime *wails.Runtime) error {
   runtime.Events.Emit("initialised", message)
 }
 ```
-
 
 #### On
 
@@ -76,7 +74,6 @@ func (m *MyStruct) WailsInit(runtime *wails.Runtime) error {
 }
 ```
 
-
 Example with data:
 
 ```go
@@ -88,7 +85,6 @@ func (m *MyStruct) WailsInit(runtime *wails.Runtime) error {
   return nil
 }
 ```
-
 
 ### Log
 
@@ -102,24 +98,22 @@ The Log subsystem allows you to log messages at various log levels to the applic
 
 Creates a new custom Logger with the given prefix.
 
-
 ```go
 type MyStruct struct {
-	log *wails.CustomLogger
+  log *wails.CustomLogger
 }
 
 func (m *MyStruct) WailsInit(runtime *wails.Runtime) error {
-	m.log = runtime.Log.New("MyStruct")
-	return nil
+  m.log = runtime.Log.New("MyStruct")
+  return nil
 }
 ```
-
 
 Once created, you may use any of the logger's methods:
 
 ##### Standard logging
 
-Each of these methods take a string (like fmt.Println):
+Each of these methods takes a string (like fmt.Println):
 
   - Debug
   - Info
@@ -131,10 +125,9 @@ Each of these methods take a string (like fmt.Println):
   m.Log.Info("This is fine")
 ```
 
-
 ##### Formatted logging
 
-Each of these methods take a string and optional data (like fmt.Printf):
+Each of these methods takes a string and optional data (like fmt.Printf):
 
   - Debugf
   - Infof
@@ -148,10 +141,9 @@ Each of these methods take a string and optional data (like fmt.Printf):
   m.Log.Infof("I'm %s with the events that are currently unfolding", feeling)
 ```
 
-
 ##### Field logging
 
-Each of these methods take a string and a set of fields:
+Each of these methods takes a string and a set of fields:
 
   - DebugFields
   - InfoFields
@@ -159,13 +151,11 @@ Each of these methods take a string and a set of fields:
   - ErrorFields
   - FatalFields
 
-
 ```go
   m.Log.InfoFields("That's okay", wails.Fields{
     "things are going to be": "okay",
   })
 ```
-
 
 ### Dialog
 
@@ -175,7 +165,7 @@ The Dialog subsystem allows you to activate the Webview's native dialogs.
 
 It is accessible via `runtime.Dialog` and has the following methods:
 
-**NOTE: Opening a Dialog will halt Javascript execution, just like a browser**
+**NOTE: Opening a Dialog will halt JavaScript execution, just like a browser**
 
 #### SelectFile
 
@@ -200,7 +190,6 @@ Or if you want just a title:
 ```
 
 
-
 #### SelectDirectory
 
 > SelectDirectory()
@@ -210,7 +199,6 @@ Prompts the user to select a directory. Returns the path to the directory.
 ```go
   selectedDirectory := runtime.Dialog.SelectDirectory()
 ```
-
 
 #### SelectSaveFile
 
@@ -257,7 +245,6 @@ Sets the background colour of the window to the colour given to it (string). The
 ```
 
 
-
 #### Fullscreen
 
 > Fullscreen()
@@ -267,7 +254,6 @@ Attempts to make the application window fullscreen. Will fail if the application
 ```go
   runtime.Window.Fullscreen()
 ```
-
 
 
 #### UnFullscreen
@@ -280,7 +266,6 @@ Attempts to revert the window back to its size prior to a Fullscreen call. Will 
   UnFullscreen()
 ```
 
-
 #### SetTitle
 
 > SetTitle(title string)
@@ -291,7 +276,6 @@ Sets the title in the application title bar.
  runtime.Window.SetTitle("We'll need a bigger boat")
 ```
 
-
 #### Close
 
 Closes the main window and thus terminates the application. Use with care!
@@ -299,7 +283,6 @@ Closes the main window and thus terminates the application. Use with care!
 ```go
   runtime.Window.Close()
 ```
-
 
 ### Browser
 
@@ -323,7 +306,6 @@ The Filesystem subsystem provides a means of accessing filesystem related method
 
 <a href="https://godoc.org/github.com/wailsapp/wails/runtime#FileSystem"><img src="https://img.shields.io/badge/godoc-reference-blue.svg" style="margin: 0;"/></a>
 
-
 #### HomeDir
 
 > HomeDir() (string, error)
@@ -336,11 +318,11 @@ A common pattern for the Runtime is to simply save it as part of the struct and 
 
 ```go
 type MyStruct struct {
-	Runtime  *wails.Runtime
+  Runtime  *wails.Runtime
 }
 
 func (m *MyStruct) WailsInit(r *wails.Runtime) error {
-	m.Runtime = r
+  m.Runtime = r
 }
 ```
 
@@ -352,7 +334,7 @@ Wails has the concept of a synchronised state store: a place to put state that i
   * Set or Update the value in the store
   * React to updates by Subscribing to store updates
 
-**NOTE: The Javascript equivalent methods are found in the wails runtime module**
+**NOTE: The JavaScript equivalent methods are found in the wails runtime module**
 
 #### New
 
@@ -362,15 +344,15 @@ Creates a new store with the given (unique) identifier and the given value.
 
 ```go
 type Counter struct {
-	r     *wails.Runtime
-	store *wails.Store
+  r     *wails.Runtime
+  store *wails.Store
 }
 
 // WailsInit is called when the component is being initialised
 func (c *Counter) WailsInit(runtime *wails.Runtime) error {
-	c.r = runtime
-	c.store = runtime.Store.New("Counter", 0)
-	return nil
+  c.r = runtime
+  c.store = runtime.Store.New("Counter", 0)
+  return nil
 }
 ```
 
@@ -383,7 +365,7 @@ Sets the store's state to the given value.
 ```go
 // RandomValue sets the counter to a random value
 func (c *Counter) RandomValue() {
-	c.store.Set(rand.Intn(1000))
+  c.store.Set(rand.Intn(1000))
 }
 ```
 
@@ -393,7 +375,7 @@ func (c *Counter) RandomValue() {
 
 `Update` accepts a function that is called to update the current value of the store. The function accepts the current store value and returns a value, which is the new value of the store.
 
-The reason `Update` accepts an interface{} is to make this as easy as possible to use in the absense of generics: The function that a store is expecting is one of the following format:
+The reason `Update` accepts an interface{} is to make this as easy as possible to use in the absence of generics: The function that a store is expecting is one of the following format:
 
 ```go
 func(currentValue T) T {}
@@ -424,18 +406,18 @@ Example:
 ```go
 // WailsInit is called when the component is being initialised
 func (c *Counter) WailsInit(runtime *wails.Runtime) error {
-	c.r = runtime
-	c.store = runtime.Store.New("Counter", 0)
+  c.r = runtime
+  c.store = runtime.Store.New("Counter", 0)
 
-	c.store.Subscribe(func(data int) {
-		println("New Value:", data)
-	})
-	return nil
+  c.store.Subscribe(func(data int) {
+    println("New Value:", data)
+  })
+  return nil
 }
 ```
 
 {{% notice warning %}}
-Calbacks are executed in goroutines.
+Callbacks are executed in goroutines.
 {{% /notice %}}
 
 #### OnError
@@ -444,9 +426,9 @@ Calbacks are executed in goroutines.
 
 `OnError` may be used to provide an error handler for the store. This should never be needed and should only be used when debugging issues with synchronisation messages. Example: There may have been a json encoding error that you need to debug.
 
-#### Javascript
+#### JavaScript
 
-To hook into the store in Javascript, you create a store with the same ID and use the same methods:
+To hook into the store in JavaScript, you create a store with the same ID and use the same methods:
 
 ```js
 const runtime = require('@wailsapp/runtime');
@@ -462,7 +444,7 @@ function start() {
 
   // Subscribe
   mystore.subscribe( function(state) {
-		document.getElementById('counter').innerText = state;
+    document.getElementById('counter').innerText = state;
   });
   
   // Update
@@ -471,3 +453,4 @@ function start() {
   })
 
 ```
+

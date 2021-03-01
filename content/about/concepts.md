@@ -1,10 +1,10 @@
 ---
-title: "Concepts"
+title: 'Concepts'
 date: 2019-08-29T04:54:28+10:00
 draft: false
 ---
 
-Wails has been designed to be make the gap between web technologies and Go as minimal as possible. The frontend is a [Webview](https://github.com/zserge/webview) component, and you may develop your frontend code using any common Javascript framework you like, and seemlessly interact with your Go code from it. This is done through a shared IPC mechanism.
+Wails has been designed to be make the gap between web technologies and Go as minimal as possible. The frontend is a [Webview](https://github.com/zserge/webview) component, and you may develop your frontend code using almost any common Javascript framework you like, and seemlessly interact with your Go code from it. This is done through a shared IPC mechanism.
 
 <p align="center" style="text-align: center">
    <img src="/images/Overview.svg" width="33%"><br/>
@@ -18,18 +18,15 @@ The IPC mechanism operates across 2 runtimes - one in Javascript and the other i
    <img src="/images/wailsapptech.svg" width="33%"><br/>
 </p>
 
-
 The runtimes share common components which the developer can interact with: Binding and Events.
 
 <p align="center" style="text-align: center">
    <img src="/images/IPCDetail.svg" width="33%"><br/>
 </p>
 
-
 ### Binding
 
 A Wails application provides a single method that allows you to expose (bind) your Go code to the frontend. Using this method, you may bind an arbitrary function or a struct with exposed methods. At startup, Wails will analyse bound functions/methods and automatically provide the equivalent functions in Javascript. This allows you to call your bound Go code directly from Javascript.
-
 
 <p align="center" style="text-align: center">
    <img src="/images/Binding.svg" width="40%"><br/>

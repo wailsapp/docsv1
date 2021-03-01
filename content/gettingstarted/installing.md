@@ -1,5 +1,5 @@
 ---
-title: "Installing Wails"
+title: 'Installing Wails'
 date: 2019-08-29T04:54:28+10:00
 draft: false
 weight: 10
@@ -54,14 +54,12 @@ This produces a much **faster** lightweight build in _debug_ mode, excluding `np
 
 Change into the frontend directory `cd my-project/frontend` and serve your GUI using `npm run serve`.
 
-
 ## Next Steps
 
 If you would like to start making an app right away, we suggest you explore Wails via our _awesome_ [tutorials]({{% relref "../tutorials" %}}).
-If you would prefer to get to know the framework a little better before building anything, we suggest having a look through the
+If you would prefer to get to know Wails a little better before building anything, we suggest having a look through the
 [concepts]({{% relref "../about/concepts.md" %}}).
 Finally if you are advanced user and would like to get right in to it head over to the [API reference]({{% relref "../reference/api" %}}) & [Cli reference]({{% relref "../reference/cli" %}}) sections.
-
 
 {{% notice tip %}}
 Come by our [Slack](https://gophers.slack.com/messages/CJ4P9F7MZ) channel ([_Invite_](https://invite.slack.golangbridge.org)) for a chat or just to share with us what you've built with wails!
