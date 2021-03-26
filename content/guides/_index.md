@@ -30,3 +30,7 @@ chapter = true
 ### ARM
 
   * Compiling your app for [ARM](./arm) (Work in progress)
+
+### Logging to file
+
+  * A [great article](https://blog.nndi-tech.com/beaker/wails-1x-logging-to-file/) about logging to a file
