@@ -12,6 +12,7 @@ The Wails release history
 
 | Version  | Release Date   |                   Summary               | Release Notes |
 | -------- | -------------- | --------------------------------------- | ------------- |
+| v1.16.0  | 8th Sept 2020  | Native embed                            | [here](./v1.16.0) |
 | v1.8.0   | 8th Sept 2020  | Sync Stores, Svelte Template, More Linux distros, bugfixes  | [here](./v1.8.0) |
 | v1.6.0   | 19th Jun 2020  | Vanilla JS Template, Windows icons, dialog filters, bugfixes | [here](./v1.6.0) |
 | v1.5.0   | 26th Apr 2020  | Cross-compilation, OpenSuSE support, bugfixes | [here](./v1.5.0) |
