@@ -21,4 +21,5 @@ In this section we highlight the projects using Wails.
    <a style="width: 50%; padding: 10px;" href='tuxedo-keyboard-ui/'><img src="tuxedo-keyboard-ui/screenshot.png"/></a>
    <a style="width: 50%; padding: 10px;" href='restoric/'><img src="restoric/restoric.gif"/></a>
    <a style="width: 50%; padding: 10px;" href='driving-school/'><img src="driving-school/screenshot.png"/></a>
+   <a style="width: 50%; padding: 10px;" href='cerberus-sm/'><img src="cerberus-sm/screenshot.png"/></a>
 </p>
