@@ -437,7 +437,7 @@ Pressing the button works as expected:
 
 ## Packaging the app
 
-Wails provides the ability to package your application into a platform native format. Packaing is indicated by running `wails build -p`.
+Wails provides the ability to package your application into a platform native format. Packaging is indicated by running `wails build -p`.
 
 ### MacOS
 
@@ -473,7 +473,7 @@ Due to the nature of Windows, a standard build will also package the app with th
 
 ### Linux
 
-Currently, packing on Linux isn't supported as it could mean many things. There is the potential to support snap packages in the future.
+Currently, packaging on Linux isn't supported as it could mean many things. There is the potential to support snap packages in the future.
 
 ## Exercises
 
