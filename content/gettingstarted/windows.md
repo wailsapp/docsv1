@@ -44,7 +44,7 @@ There is a [known issue](https://github.com/npm/npx/issues/14) with NPX regardin
 
 ### GCC + Libraries
 
-Windows requires gcc and related tooling. The recommended download is from [http://tdm-gcc.tdragon.net/download](http://tdm-gcc.tdragon.net/download).
+Windows requires gcc and related tooling. The recommended download is from [https://jmeubank.github.io/tdm-gcc/download/](https://jmeubank.github.io/tdm-gcc/download/).
 
 {{% notice note %}}
 Wails applications on Windows use the mshtml library which is only compatible with IE11. It is **STRONGLY** recommended that you use IE11 to test your application using the `wails serve` command. For more information, please refer to our [Windows Development Guide]({{<ref "../guides/windows.md" >}}).
