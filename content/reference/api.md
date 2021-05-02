@@ -33,7 +33,7 @@ import (
 )
 
 func Greet(name string) string {
-  return fmt.Printf("Hello %s!", name)
+  return fmt.Sprintf("Hello %s!", name)
 }
 
 func main() {
@@ -270,7 +270,7 @@ In Javascript, the call to `MyStruct.MyBoundMethod` will return a promise that w
   ...
 ```
 
-In Javascript, the call to `MyStruct.MyBoundMethod` with a new user name will return a promise that will resolve with no value. A call to `MyStruct.MyBoundMethod` with an existing user name will return a promise that will reject with the error set to `user '$name' already exists`.
+In Javascript, the call to `MyStruct.AddUser` with a new user name will return a promise that will resolve with no value. A call to `MyStruct.AddUser` with an existing user name will return a promise that will reject with the error set to `user '$name' already exists`.
 
 It's good practice to return 2 values, a result and an error, as this maps directly to Javascript promises. If you are not returning anything, then perhaps events may be a better fit.
 
