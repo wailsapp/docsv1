@@ -5,27 +5,66 @@ weight = 5
 chapter = false
 +++
 
-Compiling your application using `wails build -d` will create a debug version of your application. This means the following:
+使用`wails build -d`编译应用程序将创建应用程序的调试版本。这意味着：
 
-- Logs will be output to the console it was started in
-- You can control the log level by using the `-loglevel` flag when launching your application
-- The Developer tools will be accessible in your app via the right click menu (Linux & Mac)
+- 日志将输出到启动它的控制台
+- 您可以在启动应用程序时使用`-loglevel`标志来控制日志级别
+- 通过右键菜单（Linux 和 Mac）可以在您的应用中访问开发者工具
+
+## 使用 Visual Studio Code 进行调试
+
+在项目根目录的`.vscode`目录中修改/创建以下文件（如果不存在则创建），将`myapp`替换为项目二进制名称：
+
+**launch.json**
+
+```
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Wails: build debug",
+      "type": "go",
+      "request": "launch",
+      "mode": "exec",
+      "program": "${workspaceFolder}/build/myapp",
+      "preLaunchTask": "wails_debug_build",
+      "env": {},
+      "args": []
+    }
+  ]
+}
+```
+
+**tasks.json**
+
+```
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "wails_debug_build",
+      "type": "shell",
+      "command": "wails build -d"
+    }
+  ]
+}
+```
 
 ## Windows
 
+在 Windows 上，Webview 组件本身没有开发人员工具，但是有两种附加远程调试器的方法：
 
-On Windows, the Webview component doesn't have developer tools natively, however there are a couple of ways to attach a remote debugger:
+## 使用 IEChooser/F12Chooser 进行调试
 
-## Debugging using IEChooser/F12Chooser
+可以使用鲜为人知的实用程序将 IE 开发工具附加到您的应用程序：IEChooser.exe（或 F12Chooser.exe，具体取决于您的 Windows 版本）。附加步骤为：
 
-It's possible to use a little-known utility for attaching the IE dev tools to your application: IEChooser.exe (or F12Chooser.exe depending on your windows version). The steps to attach are:
+1. 启动您的 Wails 应用
+2. 运行 `C:\Windows\System32\F12\IEChooser.exe` (or `F12Chooser.exe`)
+3. 选择应用程序-它通常显示为 `about: blank`
+4. 开发工具将附加到应用程序
 
-  1. Launch your Wails app
-  2. Run `C:\Windows\System32\F12\IEChooser.exe` (or `F12Chooser.exe`)
-  3. Select the application - it usually appears as `about: blank`
-  4. The dev tools will attach to the app
+注意：此视频是高分辨率的。全屏观看效果最佳。
 
-Note: This video is high resolution. Best viewed full screen.
 <div>
   <video style="width: 100%; max-width: 1552px; max-height: 1078px;" controls>
     <source src="/videos/windows-dev-tools.mp4" type="video/mp4">
@@ -33,18 +72,18 @@ Note: This video is high resolution. Best viewed full screen.
   </video>
 </div>
 
-### 使用 Visual Studio 调试
+### 使用 Visual Studio 进行调试
 
-It's possible to debug in Visual Studio by doing the following:
+通过执行以下操作，可以在 Visual Studio 中进行调试：
 
-- Install a recent version of Visual Studio (The free “Community” Edition is fine. The following steps are based on VS 2017). Make sure the “ASP.NET and web development” workload is selected in the installer;
+- 安装 Visual Studio 的最新版本（可以使用免费的`社区`版。以下步骤基于 VS 2017）。确保在安装程序中选择了`ASP.NET和Web开发`工作负载
 
-- Open Debug -> Attach to Process...;
+- 打开 Debug -> Attach to Process...
 
-- Click Select... and choose Debug there code types: -> Script
+- 单击 选择... 然后选择调试那里的代码类型: -> Script
 
-- Find and select the process of your Wails application in Available Pocesses;
+- 在可用流程中找到并选择您的 Wails 应用程序的进程
 
-- Click Attach. The DOM Explorer and JavaSript Console should now show up. If not, open them in Debug -> Windows.
+- 单击附加。现在应该显示 DOM Explorer 和 JavaSript 控制台。如果没有，请在`调试 -> Windows`中打开它们。
 
-Many thanks to our friends over at [DeskGap](https://deskgap.com/devtools/) for this information!
+非常感谢我们在 [DeskGap](https://deskgap.com/devtools/) 上的朋友提供的这些信息！

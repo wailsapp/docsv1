@@ -15,7 +15,7 @@ disableBreadcrumb = true
 ## 概述
 
 - 确保您使用的是 Go 1.14+
-- 克隆主仓库 [主仓库](https://github.com/wailsapp/wails) 到本地目录
+- 克隆 [主仓库](https://github.com/wailsapp/wails) 到本地目录
 - 更新本地仓库
 - 更改完成后, 运行 `wails/scripts/build.sh`或者在相同目录运行 `go run build.go` 。 构建打包完成后将在本地安装 wails cli 程序
 - 生成项目时，请确保更新项目的`go.mod`文件以指向 Wails 的本地安装目录。
@@ -34,7 +34,7 @@ require (
 )
 ```
 
-使用 `replace`标识本地安装:
+使用 `replace`表示本地安装:
 
 ```
 module test
@@ -50,7 +50,7 @@ replace github.com/wailsapp/wails v1.0.3-pre2 => /path/to/your/local/wails
 
 ## 问题驱动开发
 
-如果有什么东西需要添加到代码中，不管是新功能还是 bug，都应该新开一个 Issue，以便进行讨论。如果继续编写代码，则应该从“develop”分支创建一个新分支，并引用 Issue ID。示例：
+如果有什么东西需要添加到代码中，不管是错误还是新功能，都应该新创建一个 Issue，以便进行讨论。如果继续编写代码，则应该从`develop`分支创建一个新分支，并引用 Issue ID。示例：
 `64 - Support react`
 
 提交规范应该遵循 [conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.3/#summary)格式:
@@ -58,9 +58,7 @@ replace github.com/wailsapp/wails v1.0.3-pre2 => /path/to/your/local/wails
 - tag[(scope)]: message
 - 标签[(域)]:提交消息
 
-ps:为了更好的交流，请尽量使用英文。
-
-| Tag             | Meaning    |
+| 标签            | 含义       |
 | --------------- | ---------- |
 | fix             | 错误修正   |
 | feat            | 新功能     |
@@ -73,20 +71,22 @@ ps:为了更好的交流，请尽量使用英文。
 - fix(cli): this is a fix for the cli
 - docs: updated the contributors
 
+ps:为了更好的交流，请尽量使用英文。
+
 ## 分支工作流
 
 - Wails 使用类似 gitflow 的开发方法
 - Feature/Bugfix 分支是从`develop`分支创建的
-- 一旦工作完成，应针对开发分支提出拉取请求
+- 工作完成后，应针对开发分支提出拉取请求
 - 随着功能的添加，`develop`分支被标记有预发行（pre-release）标签
 - 每周发布一次，因此在每周周期结束时，所做的最新功能和错误修正将合并到母版中，并用下一个适当的版本进行标记。
 
 示例:
 
-- 在 v0.14.0 版本之后，将打开一个票证(#63)，请求提供支持
+- 在 v0.14.0 版本之后，将打开一个 Issue(#63)，请求提供支持
 - 这个工作完成，将回到 `develop` 分支
 - 合并后 `develop`将被标记为 `v0.14.1-pre`
-- 打开一个票证(#64) 来请求提供支持
+- 打开一个 Issue(#64) 来请求提供支持
 - 如果可以的话，PR 将合并到`develop`分支
 - 合并后, `develop` 分支会有标记 `v0.14.2-pre`
 - 我们在本周结束的时候将 v0.14.2-pre 合并到 master, 并标记为 v0.15.0
@@ -98,14 +98,14 @@ ps:为了更好的交流，请尽量使用英文。
 
 ## 工具
 
-Wails cli 内置了开发人员工具，但需要激活去创建开发者版本，请执行以下操作：
+Wails Cli 内置了开发人员工具，但需要激活。要开发新版本，请执行以下操作：
 
 ```
 cd cmd/wails
 go install --tags=dev
 ```
 
-这将解锁一个带有开发子命令的“ wails dev”命令。
+这将解锁一个带有`wails dev`的开发子命令。
 
 ### 创建一个新的项目模板
 
@@ -147,4 +147,4 @@ Created new template 'Mithril Basic' in directory '/Users/lea/Projects/wails/cmd
 }
 ```
 
-_注意: The `wailsdir` 目前未使用，但将来会使用 [near future](https://github.com/wailsapp/wails/issues/88)_
+_注意: `wailsdir` 目前未使用，但以后会使用 [near future](https://github.com/wailsapp/wails/issues/88)_

@@ -10,7 +10,7 @@ disableNextPrev: true
 
 ### 官方支持的发行版:
 
-| Distro | Version                    |
+| 发行版 | 版本                       |
 | ------ | -------------------------- |
 | Debian | 8, 9, 10                   |
 | Ubuntu | 16.04, 18,04, 19.04, 19.10 |
@@ -20,7 +20,7 @@ disableNextPrev: true
 
 ### 社区支持的发行版:
 
-| Distro                     | Version             |
+| 发行版                     | 版本                |
 | -------------------------- | ------------------- |
 | Zorin                      | 15                  |
 | Parrot                     | 4.7                 |
@@ -36,11 +36,11 @@ disableNextPrev: true
 | Deepin                     |
 | Manjaro + Manjaro-ARM      | Rolling             |
 
-_如果您在下面的列表中看不到自己的发行版，则有两种选择。一种是新开一个 Issue 寻求支持，一种是如果您喜欢探索，请按照 [如何为您的 Linux 发行版增加支持]({{}}) 并考虑进行 PR，以便让社区受益_
+_如果您在下面的列表中看不到自己的发行版，你有有两种选择。一种是新开一个 Issue 寻求支持，一种是如果您喜欢探索，请按照 [如何为您的 Linux 发行版增加支持]({{}}) 并考虑进行 PR，以便让社区受益_
 
 ## 先决条件
 
-Wails 使用 cgo 绑定到本机渲染引擎，因此需要许多平台依赖项以及 Go 的安装。基本要求是：
+Wails 使用 cgo 绑定到原生渲染引擎，因此需要许多平台依赖项以及 Go 的安装。基本要求是：
 
 - Go 1.12 或者更高
 - npm
@@ -66,7 +66,7 @@ _注意：对配置文件的更改可能要等到下一次登录计算机后才�
 
 ### npm
 
-从 [Node Downloads Page](https://nodejs.org/en/download/) 下载 `npm`. 最好使用最新版，因为这是我们通常会测试的版本。
+从 [Node 下载界面](https://nodejs.org/en/download/) 下载 `npm`. 最好使用最新版，因为这是我们通常会测试的版本。
 
 运行 `npm --version` 验证安装是否成功.
 
@@ -99,7 +99,7 @@ _注意：对配置文件的更改可能要等到下一次登录计算机后才�
 `sudo emerge gtk+:3 webkit-gtk`
 
 {{% notice note %}}
-如果您已成功在不同版本的 Linux 上安装了这些依赖项，请考虑单击页面顶部的"Edit this page"链接并提交 PR。
+如果您已成功在不同版本的 Linux 上安装了这些依赖项，请考虑单击页面顶部的"编辑此页面"链接并提交 PR。
 {{% /notice %}}
 
-现在，您可以继续进行[安装 Wails]({{< ref "installing.zh.md" >}})的下一步.
+现在，您可以继续进行[Wails 安装]({{< ref "installing.zh.md" >}})的下一步.

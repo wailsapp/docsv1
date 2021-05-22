@@ -13,10 +13,10 @@ _if you managed to get Wails working for your desktop please consider making a P
 
 Wails uses cgo to bind to the native rendering engines so a number of platform dependent libraries are needed.
 
-* npm - [Official Node docs]()
-* gcc
-* gtk
-* webkitgtk
+- npm - [Official Node docs]()
+- gcc
+- gtk
+- webkitgtk
 
 ### gcc, pkg-config
 
@@ -24,7 +24,7 @@ Wails uses cgo to bind to the native rendering engines so a number of platform d
 
 Locate the appropriate equivalent libraries for your distribution.
 
-_NOTE: if your distro is a *derivative* and not a *major* distribution there are good chances all necessary dependendancies to be the covered [on the installation's prerequisites section]({{% relref "../gettingstarted/linux.zh.md/#prerequisites" %}})._
+_NOTE: if your distro is a *derivative* and not a *major* distribution there are good chances all necessary dependendancies to be the covered [on the installation's prerequisites section]({{% relref "../gettingstarted/linux.md/#prerequisites" %}})._
 
 ## Gather system's information
 
@@ -47,12 +47,14 @@ UBUNTU_CODENAME=disco
 ```
 
 We are interested in `NAME` and `ID` fields. Then identify which of the bellow two commands returns gcc's full version . _This is needed for better support when filling tickets via `wails issue`._
+
 ```
 gcc -dumpversion
 gcc -dumpfullversion
 ```
 
 _For example on Ubuntu you need to use the `-dumpfullversion` flag._
+
 ```
 $ gcc -dumpversion
 8
@@ -65,6 +67,7 @@ $ gcc -dumpfullversion
 `linuxdb.yaml` lives in `wails/cmd/linuxdb.yaml`.
 
 Use the `NAME` and `ID` fields of the previous step.
+
 ```yaml
 `ID`:
     id: `ID`
@@ -73,6 +76,7 @@ Use the `NAME` and `ID` fields of the previous step.
 ```
 
 If your are on derivative distro that shares libraries and software with it's major a new entry would look like (linux mint sample):
+
 ```yaml
 linuxmint:
     id: linuxmint
@@ -86,6 +90,7 @@ linuxmint:
 ```
 
 If you are adding a previously unspported major release a new entry would like (centOS entry sample)
+
 ```yaml
   centos:
     id: centos
@@ -110,9 +115,9 @@ If you are adding a previously unspported major release a new entry would like (
 
 ## Edit `linux.go`
 
-In `wails/cmd/linux.go` you have to  
+In `wails/cmd/linux.go` you have to
 
-* add a new constant with your distro's name (use whatever is returned under `NAME` field two steps back)
+- add a new constant with your distro's name (use whatever is returned under `NAME` field two steps back)
 
 ```go
 const (
@@ -132,7 +137,7 @@ const (
 )
 ```
 
-* and a new switch case (`case "ID":`)
+- and a new switch case (`case "ID":`)
 
 ```go
 switch osID {
@@ -148,11 +153,12 @@ switch osID {
 	case "newdistroID":
 		result.Distribution = NewDistroName
   }
-  ```
+```
 
 When adding a major distro you need to also add a new function to support your distro's specific package manager.
 
 Here is a sample for `dpkg`.
+
 ```go
 // DpkgInstalled uses dpkg to see if a package is installed
 func DpkgInstalled(packageName string) (bool, error) {

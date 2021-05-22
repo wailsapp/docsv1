@@ -6,12 +6,12 @@ chapter = false
 +++
 
 {{% notice info %}}
-Work in progress
+工作正在进行中
 {{% /notice %}}
 
 ### 编译错误
 
-If you find that compilation aborts with the following error:
+如果您发现编译中止并出现以下错误：
 
 ```bash
 ✗ Ensuring frontend dependencies are up to date (This may take a while)
@@ -19,7 +19,8 @@ Error: signal: illegal instruction (core dumped)
 
 ✗ exit status 255
 ```
-then you will want to check whether the version of node is compatible with your processor:
+
+那么您将要检查 Nodejs 的版本是否与您的处理器兼容：
 
 [nodejs/help#1453 (comment)](https://github.com/nodejs/help/issues/1453#issuecomment-415761791)
 
@@ -27,14 +28,12 @@ then you will want to check whether the version of node is compatible with your 
 The Illegal instruction error concerns the production (by the JIT) of an instruction that the processor does not recognise as valid. That might arise if the architecture of what was downloaded does not match the real architecture of your machine (you are most likely to be on an x64).
 ```
 
-To test whether this is the reason you are experiencing the 'Illegal instruction' error, run:
+要测试是否这是您遇到`非法指令`错误的原因，请运行：
 
-    `node --v8-options` 
+    `node --v8-options`
 
-and look at the second line. It should contain an `ARM` flag, EG:
+然后看第二行。它应包含一个`ARM`标志， 例如:
 
 `ARMv7=1 VFP3=0 VFP32DREGS=0 NEON=0 SUDIV=0`
 
-This indicates that this version of node is compiled for ARMv7. Ensure the correct version of node is installed for your processor.
-
-
+这表明此版本的 Nodejs 是为 ARMv7 编译的。确保为您的处理器安装了正确版本的 Nodejs。

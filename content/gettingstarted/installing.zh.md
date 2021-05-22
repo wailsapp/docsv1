@@ -13,7 +13,7 @@ go get -u github.com/wailsapp/wails/cmd/wails
 ```
 
 {{% notice tip %}}
-安装后，“wails update”命令可用于后续更新。
+安装后，`wails update`命令可用于后续更新。
 {{% /notice %}}
 
 {{% notice tip %}}
@@ -34,7 +34,7 @@ go get -u github.com/wailsapp/wails/cmd/wails
 
 切换到项目目录`cd my-project` 并且使用构建命令[构建命令]({{< relref "/reference/cli.zh.md#build" >}}) `wails build` 构建你的项目。
 
-如果一切顺利，则应该在本地目录中有一个已编译的程序。如果使用 Windows，请使用./my-project 来运行它或双击 myproject.exe。
+如果一切顺利，则应该在本地目录中有一个已编译的程序。如果使用 Windows，请使用./my-project 或双击 myproject.exe 运行它。
 
 <div class="imagecontainer">
 <img src="/images/app.png" style="width:65%">
@@ -52,15 +52,15 @@ go get -u github.com/wailsapp/wails/cmd/wails
 
 #### `npm run serve`
 
-切换到目录 `cd my-project/frontend` 并且使用`npm run serve`开启GUI服务 .
+切换到目录 `cd my-project/frontend` 并且使用`npm run serve`开启 GUI 服务 .
 
 ## 下一步
 
-如果你想马上开始制作一个应用程序，我们建议你通过我们的_awesome_ [tutorials]({{% relref "../tutorials" %}}).
+如果你想马上开始制作一个应用程序，我们建议你通过我们的*awesome* [tutorials]({{% relref "../tutorials" %}}).
 如果您希望在构建任何东西之前更好地了解框架，我们建议您查看一下
 [concepts]({{% relref "../about/concepts.zh.md" %}}).
 最后，如果您是高级用户并且希望直接进入到 [API 参考]({{% relref "../reference/api" %}}) 和[Cli 参考]({{% relref "../reference/cli" %}}) 部分
 
 {{% notice tip %}}
-来我们的 [Slack](https://gophers.slack.com/messages/CJ4P9F7MZ) 频道 ([_Invite_](https://invite.slack.golangbridge.org)) 聊天或者和我们分享你用wails构建起来的东西。
+来我们的 [Slack](https://gophers.slack.com/messages/CJ4P9F7MZ) 频道 ([_邀请_](https://invite.slack.golangbridge.org)) 聊天或者和我们分享你用 wails 构建起来的作品。
 {{% /notice %}}
