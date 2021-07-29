@@ -24,6 +24,7 @@ Ensure that you follow the official [Go installation instructions](https://golan
  * Check Go is installed corectly: `go version`
  * Check "~/go/bin" is in your PATH variable: `echo $PATH | grep go/bin`
  * Check "GO111MODULE" environment variable is set to "on": `echo ${GO111MODULE}`
+ * Check "CGO_ENABLED" environment variable is set to "1": `echo ${CGO_ENABLED}`
 
 ### npm
 
