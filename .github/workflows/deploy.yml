@@ -31,4 +31,4 @@ jobs:
           USERNAME: ${{ secrets.DEPLOY_HOST_USER }} # 为了用户信息安全对敏感数据可以在secrets中配置请看下图
           PASSWORD: ${{ secrets.DEPLOY_HOST_PASSWORD }}
           SOURCE: "public"
-          TARGET: "/www/wwwroot/v1.wails.top"
+          TARGET: "/www/wwwroot/wails.top"
