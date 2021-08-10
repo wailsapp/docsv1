@@ -16,6 +16,8 @@ In this section we highlight the projects using Wails.
    <a style="width: 50%; padding: 10px;" href='surge/'><img src="surge/surge.png"/></a>
    <a style="width: 50%; padding: 10px;" href='portfall/'><img src="portfall/portfall-demo.gif"/></a>
    <a style="width: 50%; padding: 10px;" href='optimus/'><img src="optimus/optimus_screenshot_editor--1200x742.png"/></a>
+   <a style="width: 50%; padding: 10px;" href='filehound-export-utility/'><img src="filehound-export-utility/screenshot.jpg"/></a>
+   <a style="width: 50%; padding: 10px;" href='encrypt-easy/'><img src="encrypt-easy/screenshot.jpg"/></a>
    <a style="width: 50%; padding: 10px;" href='cpuRoller/'><img src="cpuRoller/sample.png"/></a>
    <a style="width: 50%; padding: 10px;" href='lacap/'><img src="lacap/screenshot.jpg"/></a>
    <a style="width: 50%; padding: 10px;" href='tuxedo-keyboard-ui/'><img src="tuxedo-keyboard-ui/screenshot.png"/></a>
