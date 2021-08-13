@@ -34,7 +34,7 @@ Select the default options.
 
 Change into the project directory `cd my-project` and compile your application using the [build command]({{< relref "/reference/cli.md#build" >}}) `wails build`.
 
-If all went well, you should have a compiled program in your local directory. Run it with `./my-project` or double click `myproject.exe` if on windows.
+If all went well, you should have a compiled program in the build directory. Run it with `build/my-project` or double click `myproject.exe` if on windows.
 
 <div class="imagecontainer">
 <img src="/images/app.png" style="width:65%">
