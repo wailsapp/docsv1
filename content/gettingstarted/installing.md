@@ -6,8 +6,12 @@ weight: 10
 disableNextPrev: true
 ---
 
-Installation is as simple as running the following command:
+Installation is as simple as running the following command (Go 1.17+):
 
+```
+go install github.com/wailsapp/wails/cmd/wails@latest
+```
+or if using Go 1.16:
 ```
 go get -u github.com/wailsapp/wails/cmd/wails
 ```
