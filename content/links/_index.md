@@ -8,6 +8,6 @@ disableBreadcrumb = true
 
 # Links
 
-This is collection of links to other sites that discuss Wails
+This is collection of links to other sites that elaborate Wails
 
   * [A great write up](https://rekon.uk/2020/04/portfall-a-desktop-k8s-port-forwarding-portal-for-easy-access-to-all-your-cluster-uis/) on the use of Wails in creating [Portfall](https://github.com/rekon-oss/portfall) - A desktop k8s port-forwarding portal for easy access to all your cluster UIs
