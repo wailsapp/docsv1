@@ -25,7 +25,7 @@ Modify/create the following files in the `.vscode` directory (create if it doesn
       "type": "go",
       "request": "launch",
       "mode": "exec",
-      "program": "${workspaceFolder}/build/myapp",
+      "program": "${workspaceFolder}/build/bin/<your app name here>",
       "preLaunchTask": "wails_debug_build",
       "env": {},
       "args": []
@@ -42,7 +42,7 @@ Modify/create the following files in the `.vscode` directory (create if it doesn
     {
       "label": "wails_debug_build",
       "type": "shell",
-      "command": "wails build -d"
+      "command": "wails build -debug"
     }
   ]
 }
